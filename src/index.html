@@ -1,29 +1,52 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>FoodList / Red Social para Restaurantes y Servicios de Alimentos</title>
-</head>
-<body>
-  <section>
-    <img src="/src/img/iconplaceholder.svg" alt="App icon smartphone screen with a menu app and a hand" srcset="">
-    <h3> FoodList</h3>
-  </section>
-<form action="" method="post">
-  
-  <input type="email" name="email" id="user-email" placeholder="Introduzca su email">
-  <input type="password" name="password" id="user-password" placeholder="Introduzca su email">
-  <input type="submit" value="submit"placeholder="Ingresar">
-</form>
-
- 
-  <!-- The core Firebase JS SDK is always required and must be listed first -->
-<script src="/__/firebase/7.5.2/firebase-app.js"></script>
-<!-- Initialize Firebase -->
-<script src="/__/firebase/init.js"></script>
-  <script type="module" src="index.js"></script>
-  <script type="module" src="firebase-control.js"></script>
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <main id="inicio" class="container-login">
+    <section class="section-img">¡Estas a coma en Joe!</section>
+    <section class="login">
+        <h1>Inicia sesión</h1>
+        <form id="form.autentication" class="flex-form" action="">
+          <div class="inputForm">
+            <label for="email"> Ingrese su correo: </label>
+            <input type="text"
+              name="session-email"
+              value=""  placeholder="email"
+              class="form-email"  id="email"   required/>
+          </div>
+          <div class="inputForm">
+            <label for="email"> Ingrese su contraseña: </label>
+            <input
+              type="password"
+              name="session-password"
+              value=""
+              placeholder="password"
+              class="form-password"
+              id="password"/>
+          </div>
+          <div class="inputForm">
+            <button
+              type="submit"
+              name=""
+              class="button-login"
+              value="Iniciar Sesión">Iniciar sesión</button>
+            <a class="forgot" href="#" rel="noopener">Olvidaste tu contraseña</a>
+          </div>
+          <div class="register">
+            <p class="signup-helper">"¿Eres Nuevo?"
+              <a href="#" id="login-signup-link">Registrate Ahora</a>
+            </p>
+          </div>
+        </form>
+      </section>
+    </main>
+    <script src="https://www.gstatic.com/firebasejs/7.5.2/firebase-app.js"></script>
+    <script type="module" src="index.js"></script>
+  </body>
 </html>
