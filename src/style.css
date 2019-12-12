@@ -18,7 +18,7 @@ font-family: 'Muli', sans-serif;
     justify-content: center;
     align-items: center;
     padding: 2em;
-    background: lightgreen;
+    background: red;
     /* border: 2px solid red; */
 }
 
@@ -33,6 +33,14 @@ font-family: 'Muli', sans-serif;
   padding:2em 3em 2em 2em;
   /* border: 2px solid red; */
   
+}
+.container-login{
+    background:lightsteelblue;
+    width: auto;
+    height: inherit;
+    padding: 2em;
+    margin-top: 2em;
+    border-radius: 2em;
 }
 .img{
     width: 20em;
@@ -83,7 +91,7 @@ font-family: 'Muli', sans-serif;
 .input-wrapper .input{
     font-size: 1em;
     line-height: 1.5;
-    color:white;
+    color:darkslategrey;
     display:block;
     width: 100%;
     background: white;
@@ -146,4 +154,3 @@ font-family: 'Muli', sans-serif;
     color: lightseagreen;
     font-size: 1em;
 }
- 
