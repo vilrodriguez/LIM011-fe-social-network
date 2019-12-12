@@ -4,48 +4,50 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>Document</title>
+    <title>BonApetit - App para Restaurantes</title>
     <link rel="stylesheet" href="style.css" />
+    <link href="https://fonts.googleapis.com/css?family=Muli|Pacifico&display=swap" rel="stylesheet"> 
   </head>
   <body>
-    <main id="inicio" class="container-login">
-    <section class="section-img">¡Estas a coma en Joe!</section>
-    <section class="login">
-        <h1>Inicia sesión</h1>
-        <form id="form.autentication" class="flex-form" action="">
-          <div class="inputForm">
-            <label for="email"> Ingrese su correo: </label>
-            <input type="text"
-              name="session-email"
-              value=""  placeholder="email"
-              class="form-email"  id="email"   required/>
+    <div class="limiter">
+
+      <!--<img class="wave" src="/src/img/backgroundimgfood.jpg" alt="picture with food on dishes" >-->
+      <main id="inicio" class="container">
+        <div class="wrapper">
+
+          <div class="img">
+            <img src="/src/img/application.png" alt="vector of a smartphone with burguer menu" >
+        </div>
+        <div class="container-login">
+          
+          <form class="form"id="form-autentication" class="form-autentication" action="post">
+            <img class="avatar" src="/src/img/online-menu-big.png" alt="placeholder image" >
+      <div class="titles">
+        <h1 class="title-app">~Bon-a-Petit~</h1>
+        <h3>Red Social para Restaurants y Food Trucks</h3>
+      </div>
+      <div class="input-wrapper">
+        <!--<label for="email"> Ingrese su correo: </label>-->
+        <input class="input form-email" id="email" type="email" name="session-email"  placeholder="Ingrese su correo:"    required/>
+      </div>
+          <div class="input-wrapper">
+            <!--<label for="email"> Ingrese su contraseña: </label>-->
+            <input class="input form-password" id="password" type="password"   name="session-password"  placeholder="Ingrese su contraseña:"/>
           </div>
-          <div class="inputForm">
-            <label for="email"> Ingrese su contraseña: </label>
-            <input
-              type="password"
-              name="session-password"
-              value=""
-              placeholder="password"
-              class="form-password"
-              id="password"/>
+          <div class="btn-wrapper">
+            <button class="submit btn" type="submit" class="button-login" > Iniciar sesión</button>
           </div>
-          <div class="inputForm">
-            <button
-              type="submit"
-              name=""
-              class="button-login"
-              value="Iniciar Sesión">Iniciar sesión</button>
-            <a class="forgot" href="#" rel="noopener">Olvidaste tu contraseña</a>
-          </div>
-          <div class="register">
-            <p class="signup-helper">"¿Eres Nuevo?"
-              <a href="#" id="login-signup-link">Registrate Ahora</a>
+          <div class="links">
+            <p class="singup-text"> <a class="link forgot" href="#" rel="noopener">Olvidaste tu contraseña</a></p>
+            <p class="singup-text p"><span class="new">¿Eres Nuevo?</span>
+              <a class="link register" href="#" id="login-signup-link">Registrate Ahora</a>
             </p>
           </div>
         </form>
-      </section>
+      </div>
+    </div>
     </main>
+  </div>
     <script src="https://www.gstatic.com/firebasejs/7.5.2/firebase-app.js"></script>
     <script type="module" src="index.js"></script>
   </body>
