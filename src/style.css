@@ -5,12 +5,9 @@ box-sizing: border-box;
 font-family: 'Muli', sans-serif;
 }
 
-.limiter{
-    width: 100vw;
-    margin: 0 auto;
-}
 .container{
     width: 100%;
+    margin: 0 auto;
     min-height: 100vh;
     display:flex;
     flex-wrap: wrap;
