@@ -27,7 +27,7 @@ export default () => {
                 <input id="button-login" class="submit btn" type="submit" class="button-login" value="Iniciar sesión"></input>
             </div>
             <div class="links">
-                <p class="singup-text"> <a class="link forgot" href="#/recuperar" rel="noopener">Olvidaste tu
+                <p class="singup-text"> <a class="link forgot" href="#/" rel="noopener">Olvidaste tu
                     contraseña</a></p>
                 <p class="singup-text p"><span class="new">¿Eres Nuevo?
                 <a class="link register" href="#/register" id="register">Registrate Ahora</a>

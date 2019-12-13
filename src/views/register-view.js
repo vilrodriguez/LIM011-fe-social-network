@@ -22,10 +22,13 @@ export default () => {
           </div>
           <div class="input-wrapper">
             <input class="input form-password" id="password" type="password" name="session-password"
-              placeholder="Ingrese su contraseña:" />
+              placeholder="Crear contraseña:" />
           </div>
           <div class="btn-wrapper">
             <input id="button-register" class="submit btn" type="submit" class="button-login" value="Registrar"></input>
+          </div>
+          <div class="links">
+            <p class="singup-text">¿Ya tienes una cuenta?&nbsp;<a class="link register" href="#/"><span id="" class="register-href">Iniciar Sesión</span></a></p>
           </div>
         </form>
       </div>
