@@ -3,7 +3,6 @@ margin: 0;
 padding: 0;
 box-sizing: border-box;
 font-family: 'Muli', sans-serif;
-
 }
 
 .container{
@@ -21,13 +20,13 @@ font-family: 'Muli', sans-serif;
 
 .wrapper{
     width: 90%;
-  background: lightgray;
-  border-radius: 2em;
-  overflow: hidden;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-around;
-  padding:2em 3em 2em 2em;
+    background: lightgray;
+    border-radius: 2em;
+    overflow: hidden;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    padding:2em 3em 2em 2em;
   /* border: 2px solid red; */
   
 }
@@ -68,14 +67,18 @@ font-family: 'Muli', sans-serif;
 }
 .titles .title-app{
     font-family: 'Pacifico', cursive;
-    font: size adjust 4em;
+    font-size:  2.5em;
     font-weight: normal;
     text-align: center;
+    margin-top: .5em;
+    color:darkslategray;
+    /* margin:1em 0 0.5em 0; */
 }
 .titles h3{
-    font-size: .8em;
+    font-size: 1.1em;
     font-weight: lighter;
-    padding: 1em;
+    padding: .5em;
+    color: dimgray;
 }
 .input-wrapper{
     position: relative;
@@ -113,14 +116,15 @@ font-family: 'Muli', sans-serif;
     font-size: 1em;
     line-height: 1.5;
     color:white;
-    transition: all 0.4s;
+    transition: all .8s;
     padding: 0em 1em 0em 1em;
     /* border: 3px dotted red; */
 }
 
 .btn-wrapper .submit:hover{
-    background: gray;
-    color: purple;
+    background:lightseagreen;
+    color: darkslategrey;
+    font-size: 1.1em;
 }
 ::placeholder{
     color:gray;
@@ -150,4 +154,18 @@ font-family: 'Muli', sans-serif;
 .links .link:hover{
     color: lightseagreen;
     font-size: 1em;
+}
+@media(max-width: 60em){
+    .img{
+      display:none;
+    }
+    .img img{
+        display:none;
+    }
+    .container-login{
+        width: 100%;
+        padding: 1em;
+        display: flex;
+        justify-content: center;
+    }
 }
