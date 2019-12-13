@@ -10,16 +10,18 @@ font-family: 'Muli', sans-serif;
     max-height: 100vh;
     display:flex;
     flex-wrap: wrap;
-    justify-content: center;
     align-items: center;
-    /* padding: 1.5em; */
-     background-image: url("/src/img/backgroundimgfood.jpg");
-     background-repeat: space;
-     background-attachment: fixed;
-     background-position: top;
-     background-size: contain;
- 
-    /* border: 2px solid red; */
+    justify-content: center;
+    background-image: url("/src/img/fondo-REd-Social.svg");
+    background-position: top;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: top;
+    background-size: cover;
+    margin:0;
+    padding:0;
+    
+     /* border: 2px solid red; */
 }
 
 .wrapper{
@@ -31,41 +33,45 @@ font-family: 'Muli', sans-serif;
     flex-wrap: wrap;
     justify-content: space-around;
     padding:1.5em 1em 1em 1em;
-  border: 2px solid blueviolet; 
+  /* border: 2px solid blueviolet;  */
   
 }
 .container-login{
-    background:lightsteelblue;
-    width: auto;
+    width: 30em;
     height: inherit;
-    padding: 1em;
-    /* margin-top: 1.5em; */
-    border-radius: 2em;
     min-width: fit-content;
+    padding: 2em;
     overflow: auto;
-    border: 2px solid blue; 
+    border-radius: 2em;
+    background:rgb(120, 169, 233);
+    /* background-color: rgba(255, 0, 0, 0.4); */
+    display: flex;
+    justify-content: center;
+    /* border: 4px double blue; */ 
+    /* margin-top: 1.5em; */
 }
 .img{
     width: auto;
-    /* height: inherit; */
     display: flex;
     justify-content: flex-end;
     align-items: center;
-    border: 2px solid red; 
+     /* border: 2px solid red;  */
 }
 .img img{
    max-width: 100%;
    display:flex;
    justify-self: center;
+   
 }
 .form{
     width: 20em;
     height: auto;
     display:flex;
+    flex-wrap: wrap;
     align-items: center;
     justify-content: center;
-    flex-wrap: wrap;
-    border: 3px dashed greenyellow; 
+    /* border: 3px dashed greenyellow;  */
+    
 
 }
 .titles {
@@ -77,73 +83,78 @@ font-family: 'Muli', sans-serif;
     /* border: 3px dashed purple; */
 }
 .titles .title-app{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
     font-family: 'Pacifico', cursive;
     font-size:  2.5em;
     font-weight: normal;
     text-align: center;
     margin-top: .5em;
     color:darkslategray;
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    justify-content: center;
     /* margin:1em 0 0.5em 0; */
 }
 .titles h3{
-    font-size: 1.1em;
-    font-weight: lighter;
     padding: .5em;
-    color: dimgray;
+    font-size: 1.2em;
+    font-weight: lighter;
+    color:darkslategray;
     word-break: break-word;
+    
 }
 .input-wrapper{
     position: relative;
     width: 100%;
     z-index: 1;
-    margin-bottom: 10px;
+    display:flex;
+    justify-self: center;
+    justify-content: center;
+    margin-bottom: 1.5em;
     /* margin-top: 2em; */
     /* border: 4px double rgb(59, 31, 26); */
 }
 .input-wrapper .input{
+    width: 100%;
+    height: 3em;
     font-size: 1em;
     line-height: 1.5;
-    color:darkslategrey;
+    color:darkslategray;
     display:block;
-    width: 100%;
-    background: white;
-    height: 3em;
+    background:whitesmoke;
     border-radius: 2em;
-    padding: 1em;
     border-style:none;
-    /* border: 3px dotted lightseagreen; */
+    padding: 1em;
+     /* border: 3px dotted lightseagreen;  */
 }
 .btn-wrapper .submit{
     width: 100%;
+    height: 3em;
     display:flex;
     flex-wrap: wrap;
-    background: tomato;
-    height: 3em;
-    border-radius: 2em;
-    border-style: none;
-    text-align: center;
-    text-transform: uppercase;
     justify-content: center;
     align-items: center;
+    border-radius: 2em;
+    border-style: none;
     font-size: 1em;
     line-height: 1.5;
+    text-align: center;
+    text-transform: uppercase;
     color:white;
+    background: #e43950;
+    padding: 0em 1.5em 0em 1.5em;
     transition: all .8s;
-    padding: 0em 1em 0em 1em;
     /* border: 3px dotted red; */
 }
 
 .btn-wrapper .submit:hover{
-    background:lightseagreen;
-    color: darkslategrey;
+    background: lightseagreen;
+    color: rgb(255, 233, 161);
     font-size: 1.1em;
+    font-weight:bold;
 }
 ::placeholder{
-    color:gray;
+    color:dimgray;
     font-size: 1em;
     
 }
@@ -152,35 +163,36 @@ font-family: 'Muli', sans-serif;
     flex-direction: row;
     flex-wrap: nowrap;
     text-align: center;
-    font-size: .9em;
+    font-size: 1em;
     padding: 1em;
-    color:darkslategrey;
+    color:darkslategray;
     /* border: 3px dotted red; */
-    
 }
 .links span{
     font-weight: bold;
+    font-size: 1.2em;
 }
 .links .link{
      text-decoration: none;
     color: gray;
     font-size: 1em;
     transition: .5s;
+    
 }
 .links .link:hover{
-    color: tomato;
+    color:#e43950;
     font-size: 1.1em;
 }
 .links .other-singup-text{
     color: darkslategray;
-    font-size: 1em;
-    margin: 1em 0 1em 0;
+    font-size: 1.2em;
+    margin: .5em 0 .5em 0;
     display: block;
 }
 .links .link-icon .other-icon{
     width: 2em;
     height: auto;
-    margin: 1em 0.2em 1em 0.2em;
+    margin: .5em .2em .5em .2em;
     transition: .5s;
     
 }
@@ -192,19 +204,22 @@ font-family: 'Muli', sans-serif;
 }
 
 @media(max-width: 60em){
-    .container-login{
-     /*    min-width: fit-content; */
-        width: 100vw;
-       height: 100vh;
-       padding: 1.5em;
-       display:flex;
-       justify-content: center;
-    }
     .wrapper{
         width:100vw;
         width:100vw;
         padding: 0;
-
+    } 
+    .container-login{
+       width: 100vw;
+       height: 100vh;
+       padding: 2em 1.5em 2em 1.5em;
+       display:flex;
+       justify-content: center;
+       border-radius: 0;
+/*        border: 2px solid red; */
+    }
+    .form{
+        padding: 0 1em 0 1em;
     }
     .img{
       display:none;
@@ -212,18 +227,23 @@ font-family: 'Muli', sans-serif;
     .img img{
         display:none;
     }
-    
-/* .titles {
-     border: 3px dashed pink;
-     width: min-content;
+ 
+    .input-wrapper .input{
+        width: inherit;
+    }   
+.titles {
+    width: inherit; 
+    /* border: 3px dashed pink; */
+     word-break: break-word;
 }
 .titles .title-app{
     font-size:  2em;
-    /* display: flex; */
-    flex-wrap: wrap;
 }
+   
 .titles h3{
    word-break: break-word;
 } 
 
 }
+
+
