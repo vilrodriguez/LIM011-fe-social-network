@@ -1,54 +1,25 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>BonApetit - App para Restaurantes</title>
-    <link rel="stylesheet" href="style.css" />
-    <link href="https://fonts.googleapis.com/css?family=Muli|Pacifico&display=swap" rel="stylesheet"> 
-  </head>
-  <body>
-    <div class="limiter">
 
-      <!--<img class="wave" src="/src/img/backgroundimgfood.jpg" alt="picture with food on dishes" >-->
-      <main class="container" id="main" >
-        <div class="wrapper">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <title>BonApetit - App para Restaurantes</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css?family=Muli|Pacifico&display=swap" rel="stylesheet">
+</head>
 
-          <div class="img">
-            <img src="/src/img/application.png" alt="vector of a smartphone with burguer menu" >
-        </div>
-        <div class="container-login">
-          
-          <form class="form"id="form-autentication" class="form-autentication" action="post">
-            <img class="avatar" src="/src/img/online-menu-big.png" alt="placeholder image" >
-      <div class="titles">
-        <h1 class="title-app">~Bon-a-Petit~</h1>
-        <h3>Red Social para Restaurants y Food Trucks</h3>
-      </div>
-      <div class="input-wrapper">
-        <!--<label for="email"> Ingrese su correo: </label>-->
-        <input class="input form-email" id="email" type="email" name="session-email"  placeholder="Ingrese su correo:"    required/>
-      </div>
-          <div class="input-wrapper">
-            <!--<label for="email"> Ingrese su contraseña: </label>-->
-            <input class="input form-password" id="password" type="password"   name="session-password"  placeholder="Ingrese su contraseña:"/>
-          </div>
-          <div class="btn-wrapper">
-            <button class="submit btn" type="submit" class="button-login" > Iniciar sesión</button>
-          </div>
-          <div class="links">
-            <p class="singup-text"> <a class="link forgot" href="#" rel="noopener">Olvidaste tu contraseña</a></p>
-            <p class="singup-text p"><span class="new">¿Eres Nuevo?</span>
-              <a class="link register" href="#" id="login-signup-link">Registrate Ahora</a>
-            </p>
-          </div>
-        </form>
-      </div>
+<body>
+  <!--<img class="wave" src="/src/img/backgroundimgfood.jpg" alt="picture with food on dishes" >-->
+  <main>
+    <div id="container" class="container"> 
     </div>
-    </main>
-  </div>
-    <script src="https://www.gstatic.com/firebasejs/7.5.2/firebase-app.js"></script>
-    <script type="module" src="index.js"></script>
-  </body>
+  </main>
+  <script src="https://www.gstatic.com/firebasejs/7.6.0/firebase.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/7.6.0/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/7.6.0/firebase-auth.js"></script>
+  <script type="module" src="./main.js"></script>
+</body>
+
 </html>
