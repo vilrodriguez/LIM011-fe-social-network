@@ -1,4 +1,4 @@
-import { crearUser } from '../functions/authentication.js';
+import { createUser } from '../firebase-controller/register-users.js';
 
 export default () => {
   const divElement = document.createElement('div');
@@ -36,8 +36,15 @@ export default () => {
   `;
   divElement.innerHTML = viewRegiter;
   const btnRegister = divElement.querySelector('#button-register');
-  btnRegister.addEventListener('click', () => {
-    // const email = divElement.querySelector('input[type = ""]')
+
+  btnRegister.addEventListener('click', (e) => {
+    e.preventDefault();
+    console.log(btnRegister);
+    const email = divElement.querySelector('input[type = "email"]').value;
+    const password = divElement.querySelector('input[type= "password"]').value;
+    console.log(email);
+    console.log(password);
+    createUser(email, password);
   });
   return divElement;
 };
