@@ -6,9 +6,9 @@ export default () => {
   const viewRegiter = `
     <div class="wrapper">
       <div class="img">
-        <img src="/src/img/application.png" alt="vector of a smartphone with burguer menu">
+      <img src="/src/img/side-img.svg" alt="SVG image of different prepared dishes and a hand holding a smartphone">
       </div>
-      <div class="container-register">
+      <div class="container-login">
         <form class="form" id="form-register" action="post">
           <img class="avatar" src="/src/img/online-menu-big.png" alt="placeholder image">
           <div class="titles">
