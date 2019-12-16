@@ -28,7 +28,7 @@ export default () => {
             <input id="button-register" class="submit btn" type="submit" class="button-login" value="Registrar"></input>
           </div>
           <div class="links">
-            <p class="singup-text">¿Ya tienes una cuenta?&nbsp;<a class="link register" href="#/"><span id="" class="register-href">Iniciar Sesión</span></a></p>
+            <p class="singup-text">¿Ya tienes una cuenta?&nbsp;<a class="link register" href="#/"><span id="" class="link register-href">Iniciar Sesión</span></a></p>
           </div>
         </form>
       </div>

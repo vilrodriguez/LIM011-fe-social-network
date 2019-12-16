@@ -12,7 +12,9 @@
         flex-wrap: wrap;
         align-items: center;
         justify-content: center;
-        background-image: url("/src/img/fondo-REd-Social.svg");
+        /* background-image: url("/src/img/fondo-REd-Social.svg"); */
+        background-image: url("/src/img/backtexture.jpg");
+        background-size: 100%; 
         background-position: top;
         background-repeat: no-repeat;
         background-attachment: fixed;
