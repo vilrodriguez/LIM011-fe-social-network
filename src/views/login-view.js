@@ -1,4 +1,5 @@
-import from { }
+import { signInUser } from '../firebase-controller/signIn.js';
+
 export default () => {
   const divElement = document.createElement('div');
   divElement.className = 'wrapper';
@@ -46,7 +47,12 @@ export default () => {
   const btnLogin = divElement.querySelector('#button-login');
   btnLogin.addEventListener('click', (e) => {
     e.preventDefault();
-    console.log('Ingresaste a la red');
+    const email = divElement.querySelector('input[type="email"]').value;
+    const password = divElement.querySelector('input[type="password"]').value;
+    console.log(email);
+    console.log(password);
+
+    signInUser(email, password);
   });
   return divElement;
 };
