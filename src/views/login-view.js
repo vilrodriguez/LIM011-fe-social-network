@@ -1,8 +1,9 @@
+import from { }
 export default () => {
   const divElement = document.createElement('div');
-  divElement.className = 'container';
+  divElement.className = 'wrapper';
   const viewLogin = ` 
-    <div class="wrapper">
+  <div class="wrapper">
         <div class="img">
         <img src="/src/img/side-img.svg" alt="SVG image of different prepared dishes and a hand holding a smartphone">
         </div>
@@ -38,12 +39,14 @@ export default () => {
             </div>
             </form>
         </div>
-    </div>
+        </div>
+    
   `;
   divElement.innerHTML = viewLogin;
   const btnLogin = divElement.querySelector('#button-login');
-  btnLogin.addEventListener('click', () => {
-    console.log('Ingresa a la red');
+  btnLogin.addEventListener('click', (e) => {
+    e.preventDefault();
+    console.log('Ingresaste a la red');
   });
   return divElement;
 };

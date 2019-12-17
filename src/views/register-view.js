@@ -3,7 +3,7 @@ import { createUser } from '../firebase-controller/register-users.js';
 export default () => {
   const divElement = document.createElement('div');
   divElement.className = 'container';
-  const viewRegiter = `
+  const viewRegister = `
     <div class="wrapper">
       <div class="img">
       <img src="/src/img/side-img.svg" alt="SVG image of different prepared dishes and a hand holding a smartphone">
@@ -34,7 +34,7 @@ export default () => {
       </div>
     </div>
   `;
-  divElement.innerHTML = viewRegiter;
+  divElement.innerHTML = viewRegister;
   const btnRegister = divElement.querySelector('#button-register');
 
   btnRegister.addEventListener('click', (e) => {
