@@ -3,7 +3,7 @@
 export const createUser = (email, password) => {
   // eslint-disable-next-line no-console
   console.log(email, password);
-  firebase.auth().createUserWithEmailAndPassword(email, password).then(()=>{ console.log(' Te has registrado exitozamente')}).catch((error) => {
+  firebase.auth().createUserWithEmailAndPassword(email, password).then(()=>{ console.log(' Te has registrado exitosamente')}).catch((error) => {
     const errorCode = error.code;
     const errorMessage = error.message;
     // eslint-disable-next-line no-console
