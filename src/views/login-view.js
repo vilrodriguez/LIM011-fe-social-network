@@ -1,8 +1,8 @@
-import { signInUser } from '../firebase-controller/signIn.js';
+import { signInUser } from '../firebase-controller/userAuthentication.js';
 
 export default () => {
   const divElement = document.createElement('div');
-  divElement.className = 'wrapper';
+  divElement.className = 'container';
   const viewLogin = ` 
   <div class="wrapper">
         <div class="img">
@@ -53,6 +53,7 @@ export default () => {
     console.log(password);
 
     signInUser(email, password);
+    alert(' Te has logeado');
   });
   return divElement;
 };

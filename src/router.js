@@ -1,4 +1,4 @@
-import { components } from '../views/index.js';
+import { components } from './views/index.js';
 
 export const changeView = (route) => {
   const container = document.getElementById('container');
@@ -13,4 +13,8 @@ export const changeView = (route) => {
       break;
     default: break;
   }
+};
+export const initRouter = () => {
+  changeView(window.location.hash);
+  window.addEventListener('hashchange', () => changeView(window.location.hash));
 };

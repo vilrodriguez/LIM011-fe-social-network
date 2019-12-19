@@ -1,4 +1,4 @@
-import { createUser } from '../firebase-controller/register-users.js';
+import { createUser } from '../firebase-controller/userAuthentication.js';
 
 export default () => {
   const divElement = document.createElement('div');
