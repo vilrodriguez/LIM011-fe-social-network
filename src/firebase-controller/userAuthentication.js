@@ -12,6 +12,7 @@ export const createUser = (email, password) => {
     alert(errorMessage);
   });
 };
+export const userCurrent = () => firebase.auth().currentUser;
 
 export const signInUser = (email, password) => {
   firebase.auth().signInWithEmailAndPassword(email, password).then(() => { console.log('Me loguie'); }).catch((error) => {
@@ -23,6 +24,7 @@ export const signInUser = (email, password) => {
     alert(errorMessage);
   });
 };
+
 export const signInWithGoogle = () => {
   const provider = new firebase.auth.GoogleAuthProvider();
   firebase.auth().signInWithPopup(provider).then((result) => {
