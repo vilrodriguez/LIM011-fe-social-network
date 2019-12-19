@@ -1,10 +1,10 @@
-import { signInUser, signInWithGoogle } from '../firebase-controller/userAutentication.js';
+import { signInUser, signInWithGoogle, signInWithFacebook } from '../firebase-controller/userAutentication.js';
 
 export default () => {
   const divElement = document.createElement('div');
   divElement.className = 'container';
   const viewLogin = ` 
-    <div class="wrapper">
+  <div class="wrapper">
         <div class="img">
         <img src="/src/img/side-img.svg" alt="SVG image of different prepared dishes and a hand holding a smartphone">
         </div>
@@ -40,7 +40,7 @@ export default () => {
             </div>
             </form>
         </div>
-    </div>
+        </div>
   `;
   divElement.innerHTML = viewLogin;
   const btnLogin = divElement.querySelector('#button-login');
@@ -54,12 +54,15 @@ export default () => {
     console.log(password);
 
     signInUser(email, password);
+    alert(' Te has logeado');
   });
 
-  google.addEventListener('ssclick', (e) => {
+  google.addEventListener('click', (e) => {
     e.preventDefault();
     signInWithGoogle();
   });
-
+  facebook.addEventListener('click', (e) =>{
+    signInWithFacebook();
+  })
   return divElement;
 };
