@@ -12,6 +12,7 @@ export const createUser = (email, password) => {
     alert(errorMessage);
   });
 };
+export const userCurrent = () => firebase.auth().currentUser;
 
 export const signInUser = (email, password) => {
   firebase.auth().signInWithEmailAndPassword(email, password).then(() => { console.log('Me loguie'); }).catch((error) => {
@@ -28,18 +29,25 @@ export const signInWithGoogle = () => {
   const provider = new firebase.auth.GoogleAuthProvider();
   firebase.auth().signInWithPopup(provider).then((result) => {
     // This gives you a Google Access Token. You can use it to access the Google API.
-    let token = result.credential.accessToken;
+    const token = result.credential.accessToken;
+    console.log(token);
+
     // The signed-in user info.
-    let user = result.user;
+    const user = result.user;
+    console.log(user);
     // ...
-}).catch((error) => {
+  }).catch((error) => {
     // Handle Errors here.
-    let errorCode = error.code;
-    let errorMessage = error.message;
+    const errorCode = error.code;
+    console.log(errorCode);
+    const errorMessage = error.message;
+    console.log(errorMessage);
     // The email of the user's account used.
-    let email = error.email;
+    const email = error.email;
+    console.log(email);
     // The firebase.auth.AuthCredential type that was used.
-    let credential = error.credential;
+    const credential = error.credential;
+    console.log(credential);
     // ...
-    });
+  });
 };
