@@ -1,4 +1,4 @@
-import { signInUser, signInWithGoogle } from '../firebase-controller/userAutentication.js';
+import { signInUser, signInWithGoogle } from '../firebase-controller/userAuthentication.js';
 
 export default () => {
   const divElement = document.createElement('div');
