@@ -1,4 +1,4 @@
-import { signInUser } from '../firebase-controller/userAuthentication.js';
+import { signInUser, signInWithGoogle } from '../firebase-controller/userAutentication.js';
 
 export default () => {
   const divElement = document.createElement('div');
@@ -31,8 +31,8 @@ export default () => {
             <div class="links">
                 
             <p class="other-singup-text"> O Ingresa con:</p>
-            <p> <a class="link-icon" href="#" rel="noopener"><img class="other-icon" src="/src/img/facebookicon.svg"/></a>
-              <a class="link-icon" href="#" rel="noopener"><img class="other-icon" src="/src/img/gmail.svg"/></a></p>
+            <p> <a id = "facebook"class="link-icon" href="#" rel="noopener"><img class="other-icon" src="/src/img/facebookicon.svg"/></a>
+              <a id="google" class="link-icon" href="#" rel="noopener"><img class="other-icon" src="/src/img/gmail.svg"/></a></p>
             <p class="singup-text"> <a class="link forgot" href="#" rel="noopener">¿Olvidaste tu contraseña?</a></p>
             <p class="singup-text p"><span class="new">¿Eres Nuevo?</span>
               <a class="link register" href="#/register" id="login-signup-link"> Regístrate Ahora</a>
@@ -45,6 +45,8 @@ export default () => {
   `;
   divElement.innerHTML = viewLogin;
   const btnLogin = divElement.querySelector('#button-login');
+  const google = divElement.querySelector('#google');
+  const facebook = divElement.querySelector('#facebook');
   btnLogin.addEventListener('click', (e) => {
     e.preventDefault();
     const email = divElement.querySelector('input[type="email"]').value;
@@ -55,5 +57,11 @@ export default () => {
     signInUser(email, password);
     alert(' Te has logeado');
   });
+
+  google.addEventListener('ssclick', (e) => {
+    e.preventDefault();
+    signInWithGoogle();
+  });
+
   return divElement;
 };

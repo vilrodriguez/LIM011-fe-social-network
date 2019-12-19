@@ -1,6 +1,6 @@
 import { components } from './views/index.js';
 
-export const changeView = (route) => {
+const changeView = (route) => {
   const container = document.getElementById('container');
   container.innerHTML = '';
   switch (route) {
