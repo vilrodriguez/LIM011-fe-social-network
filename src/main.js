@@ -1,9 +1,8 @@
-import { changeView } from './controllers/route.js';
+import { initRouter } from './router.js';
 import { firebaseConfig } from './firebase-controller/firebaseConfig.js';
 
-const initRouter = () => {
+const init = () => {
   firebase.initializeApp(firebaseConfig);
-  changeView(window.location.hash);
-  window.addEventListener('hashchange', () => changeView(window.location.hash));
+  initRouter();
 };
-window.addEventListener('load', initRouter);
+window.onload = init();
