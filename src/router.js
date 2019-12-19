@@ -14,7 +14,6 @@ const changeView = (route) => {
     default: break;
   }
 };
-
 export const initRouter = () => {
   changeView(window.location.hash);
   window.addEventListener('hashchange', () => changeView(window.location.hash));
