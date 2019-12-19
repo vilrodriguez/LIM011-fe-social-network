@@ -28,18 +28,39 @@ export const signInWithGoogle = () => {
   const provider = new firebase.auth.GoogleAuthProvider();
   firebase.auth().signInWithPopup(provider).then((result) => {
     // This gives you a Google Access Token. You can use it to access the Google API.
-    let token = result.credential.accessToken;
+    const token = result.credential.accessToken;
     // The signed-in user info.
-    let user = result.user;
+    const user = result.user;
     // ...
 }).catch((error) => {
     // Handle Errors here.
-    let errorCode = error.code;
-    let errorMessage = error.message;
+    const errorCode = error.code;
+    const errorMessage = error.message;
     // The email of the user's account used.
-    let email = error.email;
+    const email = error.email;
     // The firebase.auth.AuthCredential type that was used.
-    let credential = error.credential;
+    const credential = error.credential;
     // ...
     });
 };
+export const signInWithFacebook = () =>{
+  const provider = new firebase.auth.FacebookAuthProvider();
+  console.log(provider);
+  firebase.auth().useDeviceLanguage();
+  firebase.auth().signInWithPopup(provider).then(function(result) {
+    // This gives you a Facebook Access Token. You can use it to access the Facebook API.
+    var token = result.credential.accessToken;
+    // The signed-in user info.
+    var user = result.user;
+    // ...
+  }).catch(function(error) {
+    // Handle Errors here.
+    var errorCode = error.code;
+    var errorMessage = error.message;
+    // The email of the user's account used.
+    var email = error.email;
+    // The firebase.auth.AuthCredential type that was used.
+    var credential = error.credential;
+    // ...
+  });
+}

@@ -1,4 +1,4 @@
-import { signInUser, signInWithGoogle } from '../firebase-controller/userAutentication.js';
+import { signInUser, signInWithGoogle, signInWithFacebook } from '../firebase-controller/userAutentication.js';
 
 export default () => {
   const divElement = document.createElement('div');
@@ -41,7 +41,6 @@ export default () => {
             </form>
         </div>
         </div>
-    
   `;
   divElement.innerHTML = viewLogin;
   const btnLogin = divElement.querySelector('#button-login');
@@ -58,10 +57,12 @@ export default () => {
     alert(' Te has logeado');
   });
 
-  google.addEventListener('ssclick', (e) => {
+  google.addEventListener('click', (e) => {
     e.preventDefault();
     signInWithGoogle();
   });
-
+  facebook.addEventListener('click', (e) =>{
+    signInWithFacebook();
+  })
   return divElement;
 };
