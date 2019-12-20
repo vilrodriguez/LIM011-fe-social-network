@@ -54,8 +54,10 @@ export default () => {
   });
 
   google.addEventListener('click', (e) => {
-    e.preventDefault();
     signInWithGoogle();
   });
+  facebook.addEventListener('click', (e) =>{
+    signInWithFacebook();
+  })
   return divElement;
 };
