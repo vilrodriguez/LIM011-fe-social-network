@@ -51,7 +51,7 @@ export const signInWithGoogle = () => {
     // ...
   });
 };
-export const signInWithFacebook = () =>{
+export const signInWithFacebook = () => {
   const provider = new firebase.auth.FacebookAuthProvider();
   console.log(provider);
   firebase.auth().useDeviceLanguage();
