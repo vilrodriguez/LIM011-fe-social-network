@@ -5,23 +5,29 @@ export const createUser = (email, password) => {
     const errorCode = error.code;
     const errorMessage = error.message;
     // eslint-disable-next-line no-console
-    console.log(error.message);
+    /* console.log(error.message);
     // eslint-disable-next-line no-alert
     alert(errorCode);
     // eslint-disable-next-line no-alert
-    alert(errorMessage);
+    alert(errorMessage); */
   });
 };
 export const userCurrent = () => firebase.auth().currentUser;
 
 export const signInUser = (email, password) => {
-  firebase.auth().signInWithEmailAndPassword(email, password).then(() => { console.log('Me loguie'); }).catch((error) => {
+  firebase.auth().signInWithEmailAndPassword(email, password).catch((error) => {
     const errorCode = error.code;
-    // eslint-disable-next-line no-console
-    console.log(errorCode);
-    const errorMessage = error.message;
+    /* console.log(errorCode); */
+    let errorMessage = error.message;
+    if (error.code === 1) {
+      errorMessage = 'contrasena invalida';
+    }
+    return new Promise((resolve, reject) => {
+      reject(errorMessage);
+
+    })
     // eslint-disable-next-line no-alert
-    alert(errorMessage);
+    /* alert(errorMessage); */
   });
 };
 
@@ -48,7 +54,7 @@ export const signInWithGoogle = () => {
     // The firebase.auth.AuthCredential type that was used.
     const credential = error.credential;
     console.log(credential);
-    // ...
+    
   });
 };
 export const signInWithFacebook = () =>{
@@ -60,7 +66,7 @@ export const signInWithFacebook = () =>{
     const token = result.credential.accessToken;
     // The signed-in user info.
     const user = result.user;
-    // ...
+    
   }).catch(function(error) {
     // Handle Errors here.
     const errorCode = error.code;
@@ -69,6 +75,6 @@ export const signInWithFacebook = () =>{
     const email = error.email;
     // The firebase.auth.AuthCredential type that was used.
     const credential = error.credential;
-    // ...
+    
   });
 }
