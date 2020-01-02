@@ -4,15 +4,13 @@ export default () => {
   const homeView = `<header>
                       <nav class="topnav" id="myTopnav">
                         <a href="#/home" class="active">BonApetit</a>
-                        <div>
-                        </div>
                         <div class="dropdown" id="button-nav">
                           <button class="dropbtn"> 
                             Marilyn Rivero ^ 
                           </button>
                           <div class="dropdown-content" id="button-nav-content">
-                            <a href="#/home">Mi perfil</a>
-                            <a href="#/home">Cerrar sesión</a>
+                            <a href="#/profile">Mi perfil</a>
+                            <a href="#/">Cerrar sesión</a>
                           </div>
                         </div>
                       </nav>
