@@ -10,5 +10,5 @@ export const components = {
   register: Register,
   home: Home,
   profile: Profile,
-  notFound: notFound,
+  notfound: notFound,
 };
