@@ -6,3 +6,9 @@ node_modules/
 package-lock.json
 Workflow.md
 text.txt
+stylelint.config.js
+Readme.md
+package.json
+.eslintrc
+.babelrc
+settings.json
