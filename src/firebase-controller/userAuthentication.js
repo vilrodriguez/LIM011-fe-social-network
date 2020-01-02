@@ -33,11 +33,10 @@ export const signInWithGoogle = () => {
   firebase.auth().signInWithPopup(provider).then((result) => {
     // This gives you a Google Access Token. You can use it to access the Google API.
     const token = result.credential.accessToken;
-    console.log(token);
 
     // The signed-in user info.
     const user = result.user;
-    console.log(user);
+    console.log("te has logueado con gmail");
     // ...
   }).catch((error) => {
     // Handle Errors here.
@@ -51,18 +50,19 @@ export const signInWithGoogle = () => {
     // The firebase.auth.AuthCredential type that was used.
     const credential = error.credential;
     console.log(credential);
+    console.log("no te has logueado con gmail")
     // ...
   });
 };
 export const signInWithFacebook = () => {
   const provider = new firebase.auth.FacebookAuthProvider();
-  console.log(provider);
   firebase.auth().useDeviceLanguage();
   firebase.auth().signInWithPopup(provider).then((result) => {
     // This gives you a Facebook Access Token. You can use it to access the Facebook API.
     const token = result.credential.accessToken;
     // The signed-in user info.
     const user = result.user;
+    console.log("te has logeado con facebook");
     // ...
   }).catch((error) => {
     // Handle Errors here.
@@ -72,6 +72,7 @@ export const signInWithFacebook = () => {
     const email = error.email;
     // The firebase.auth.AuthCredential type that was used.
     const credential = error.credential;
+    console.log("no has podido ingresar con facebook");
     // ...
   });
 };
