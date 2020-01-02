@@ -1,5 +1,4 @@
 import { createUser } from '../firebase-controller/userAuthentication.js';
-/* eslint no-console: ["error", { allow: ["warn", "error"] }] */
 
 export default () => {
   const divElement = document.createElement('div');
