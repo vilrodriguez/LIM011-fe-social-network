@@ -10,11 +10,12 @@ const changeView = (route) => {
       break;
     case '#/register': container.appendChild(components.register());
       break;
-
     case '#/home': container.appendChild(components.home());
       break;
-
-    default: break;
+    case '#/profile': container.appendChild(components.profile());
+      break;
+    default: container.appendChild(components.notFound());
+    break;
   }
 };
 export const initRouter = () => {

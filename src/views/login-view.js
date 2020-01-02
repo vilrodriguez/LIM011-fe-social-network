@@ -1,10 +1,15 @@
-import { signInUser, signInWithGoogle, signInWithFacebook } from '../firebase-controller/userAuthentication.js';
+import {
+  signInUser,
+  signInWithGoogle,
+  signInWithFacebook,
+} from '../firebase-controller/userAuthentication.js';
 
 export default () => {
   const viewLogin = ` 
   <div class="wrapper">
         <div class="img">
-          <img src="/img/side-img.svg" alt="SVG image of different prepared dishes and a hand holding a smartphone">
+          <img src = "/img/side_image2.svg"
+          alt = "SVG image of different prepared dishes and a hand holding a smartphone"/>
         </div>
         <div class="container-login">
             <form class="form" id="form-autentication" class="form-autentication" action="post">
