@@ -15,7 +15,10 @@ export const createUser = (email, password) => {
 export const userCurrent = () => firebase.auth().currentUser;
 
 export const signInUser = (email, password) => {
-  firebase.auth().signInWithEmailAndPassword(email, password).then(() => { console.log('Me loguie'); }).catch((error) => {
+  firebase.auth().signInWithEmailAndPassword(email, password).then(() => {
+    location = '#/home';
+    console.log('Me loguie');
+  }).catch((error) => {
     const errorCode = error.code;
     // eslint-disable-next-line no-console
     console.log(errorCode);
