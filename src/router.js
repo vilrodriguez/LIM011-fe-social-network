@@ -13,6 +13,8 @@ const changeView = (route) => {
 
     case '#/home': container.appendChild(components.home());
       break;
+    case '#/profile': container.appendChild(components.profile());
+      break;
 
     default: break;
   }

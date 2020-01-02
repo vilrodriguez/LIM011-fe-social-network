@@ -1,7 +1,7 @@
 import {
   signInUser,
   signInWithGoogle,
-  signInWithFacebook
+  signInWithFacebook,
 } from '../firebase-controller/userAuthentication.js';
 
 export default () => {
