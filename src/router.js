@@ -10,6 +10,10 @@ const changeView = (route) => {
       break;
     case '#/register': container.appendChild(components.register());
       break;
+
+    case '#/home': container.appendChild(components.home());
+      break;
+
     default: break;
   }
 };

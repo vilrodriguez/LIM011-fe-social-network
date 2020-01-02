@@ -48,7 +48,10 @@ export default () => {
   const btnLogin = divElement.querySelector('#button-login');
   const google = divElement.querySelector('#google');
   const facebook = divElement.querySelector('#facebook');
+<<<<<<< HEAD
 
+=======
+>>>>>>> eac7d9db194ab8d78064b25a1a46d9f73588991c
   btnLogin.addEventListener('click', (e) => {
     e.preventDefault();
     const email = divElement.querySelector('input[type="email"]').value;
