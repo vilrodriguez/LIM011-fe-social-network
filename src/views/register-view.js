@@ -1,4 +1,6 @@
-import { createUser } from '../firebase-controller/userAuthentication.js';
+import {
+  createUser
+} from '../firebase-controller/userAuthentication.js';
 /* eslint no-console: ["error", { allow: ["warn", "error"] }] */
 
 export default () => {
@@ -7,7 +9,8 @@ export default () => {
   const viewRegister = `
     <div class="wrapper">
       <div class="img">
-      <img src="/img/side-img.svg" alt="SVG image of different prepared dishes and a hand holding a smartphone">
+      <img src = "/img/side_image2.svg"
+          alt = "SVG image of different prepared dishes and a hand holding a smartphone"/>
       </div>
       <div class="container-login">
         <form class="form" id="form-register" action="post">
