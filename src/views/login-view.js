@@ -8,7 +8,7 @@ export default () => {
   const viewLogin = ` 
   <div class="wrapper">
         <div class="img">
-          <img src = "/src/img/side_image2.svg"
+          <img src = "/img/side_image2.svg"
           alt = "SVG image of different prepared dishes and a hand holding a smartphone"/>
         </div>
         <div class="container-login">
