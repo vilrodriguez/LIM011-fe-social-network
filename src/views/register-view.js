@@ -1,7 +1,6 @@
 import {
-  createUser
+  createUser,
 } from '../firebase-controller/userAuthentication.js';
-/* eslint no-console: ["error", { allow: ["warn", "error"] }] */
 
 export default () => {
   const divElement = document.createElement('div');
@@ -48,9 +47,6 @@ export default () => {
     console.log(btnRegister);
     const email = divElement.querySelector('input[type = "email"]').value;
     const password = divElement.querySelector('input[type= "password"]').value;
-    /* eslint no-console: "error" */
-
-    // custom console
     console.log(email);
     console.log(password);
     createUser(email, password);
