@@ -1,12 +1,6 @@
 export const createUser = (email, password) => {
-  // console.log(email, password);
-  firebase.auth().createUserWithEmailAndPassword(email, password).catch((error) => {
-    const errorCode = error.code;
-    const errorMessage = error.message;
-    // console.log(error.message);
-    // alert(errorCode);
-    // alert(errorMessage);
-  });
+  console.log(email, password);
+  return firebase.auth().createUserWithEmailAndPassword(email, password);
 };
 
 export const signInUser = (email, password) => {
