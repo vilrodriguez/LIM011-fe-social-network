@@ -8,12 +8,12 @@ export default () => {
   const viewRegister = `
     <div class="wrapper">
     <div class="img">
-    <img src = "/src/img/side_image2.svg"
+    <img src = "https://vilrodriguez.github.io/LIM011-fe-social-network/src/img/side_image2.svg"
     alt = "SVG image of different prepared dishes and a hand holding a smartphone"/>
   </div>
       <div class="container-login">
         <form class="form" id="form-register" action="post">
-          <img class="avatar" src="/img/online-menu-big.png" alt="placeholder image">
+          <img class="avatar" src="https://vilrodriguez.github.io/LIM011-fe-social-network/src/img/online-menu-big.png" alt="placeholder image">
           <div class="titles">
             <h1 class="title-app">~Bon-a-Petit~</h1>
             <h3>Red Social para Restaurants y Food Trucks</h3>
