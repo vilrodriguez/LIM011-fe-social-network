@@ -201,6 +201,7 @@ body {
             width:100vw;
             width:100vw;
             padding: 0;
+            border-radius:0;
         } 
         .container-login{
         width: 100vw;
@@ -335,6 +336,19 @@ header {
         display: block;
         text-align: left;
     }
+}
+/********** 404 error page ******/
+.error-message{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 4em;
+}
+.error-message img{
+    width: 25%;
+    height:25%;
+    margin-top: 2em;
 }
 /************* Home *************/
 .home {

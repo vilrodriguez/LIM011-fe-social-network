@@ -1,32 +1,17 @@
 export const createUser = (email, password) => {
-/* eslint no-console: ["error", { allow: ["warn", "error"] }] */
-  // custom console
   console.log(email, password);
-  firebase.auth().createUserWithEmailAndPassword(email, password).catch((error) => {
-    const errorCode = error.code;
-    const errorMessage = error.message;
-    /* eslint no-console: ["error", { allow: ["warn", "error"] }] */
-    // custom console
-    console.log(error.message);
-
-    alert(errorCode);
-
-    alert(errorMessage);
-  });
+  return firebase.auth().createUserWithEmailAndPassword(email, password);
 };
 
 export const signInUser = (email, password) => {
   firebase.auth().signInWithEmailAndPassword(email, password).then(() => {
     location = '#/home';
-    console.log('Me loguie');
+    // console.log('Me loguie');
   }).catch((error) => {
     const errorCode = error.code;
-    /* eslint no-console: ["error", { allow: ["warn", "error"] }] */
-    // custom console
-    console.log(errorCode);
     const errorMessage = error.message;
-    /* eslint no-alert: "error" */
-    alert(errorMessage);
+    // console.log(errorCode);
+    // alert(errorMessage);
   });
 };
 export const signInWithGoogle = () => {
@@ -34,37 +19,27 @@ export const signInWithGoogle = () => {
   firebase.auth().signInWithPopup(provider).then((result) => {
     // This gives you a Google Access Token. You can use it to access the Google API.
     const token = result.credential.accessToken;
-
     // The signed-in user info.
     const user = result.user;
     console.log("te has logueado con gmail");
-    // ...
   }).catch((error) => {
-    // Handle Errors here.
     const errorCode = error.code;
-    console.log(errorCode);
     const errorMessage = error.message;
-    console.log(errorMessage);
-    // The email of the user's account used.
     const email = error.email;
-    console.log(email);
-    // The firebase.auth.AuthCredential type that was used.
     const credential = error.credential;
-    console.log(credential);
-    console.log("no te has logueado con gmail")
-    // ...
+    // console.log("no te has logueado con gmail")
+    // console.log(errorCode);
+    // console.log(errorMessage);
+    // console.log(email);
   });
 };
 export const signInWithFacebook = () => {
   const provider = new firebase.auth.FacebookAuthProvider();
   firebase.auth().useDeviceLanguage();
   firebase.auth().signInWithPopup(provider).then((result) => {
-    // This gives you a Facebook Access Token. You can use it to access the Facebook API.
     var token = result.credential.accessToken;
-    // The signed-in user info.
     const user = result.user;
-    console.log("te has logeado con facebook");
-    // ...
+    // console.log("te has logeado con facebook");
   }).catch((error) => {
     // Handle Errors here.
     var errorCode = error.code;
@@ -74,6 +49,17 @@ export const signInWithFacebook = () => {
     // The firebase.auth.AuthCredential type that was used.
     const credential = error.credential;
     console.log("no has podido ingresar con facebook");
-    // ...
   });
 };
+export const signOut = () => {firebase.auth().signOut().then(() => {
+  // Sign-out successful.
+  console.log('Has cerrado sesion');
+}).catch((error) =>{
+  // An error happened.
+  console.log('Estarás aquí para la eternidad');
+});
+};
+
+//export const currentUser = () => firebase.auth().currentUser;
+
+

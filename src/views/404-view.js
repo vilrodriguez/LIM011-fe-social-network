@@ -13,9 +13,9 @@ export default () => {
                           </div>
                         </nav>
                       </header>
-                      <section class="container-profile">
+                      <section class="error-message">
     <h1>Oops, acá no está lo que buscas.</h1>
-    <img src="./img/404-error.png" alt="404 error image pagina no encontrada"/>
+    <img src="./img/error-404.svg" alt="404 error image pagina no encontrada"/>
     </section>
     `;
   const divElement = document.createElement('div');
