@@ -1,5 +1,5 @@
 import {
-  createUser
+  createUser,
 } from '../firebase-controller/userAuthentication.js';
 /* eslint no-console: ["error", { allow: ["warn", "error"] }] */
 

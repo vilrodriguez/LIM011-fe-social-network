@@ -57,3 +57,15 @@ export const signInWithFacebook = () => {
     console.log("no has podido ingresar con facebook");
   });
 };
+export const signOut = () => {firebase.auth().signOut().then(() => {
+  // Sign-out successful.
+  console.log('Has cerrado sesion');
+}).catch((error) =>{
+  // An error happened.
+  console.log('Estarás aquí para la eternidad');
+});
+};
+
+//export const currentUser = () => firebase.auth().currentUser;
+
+
