@@ -48,9 +48,6 @@ export default () => {
     console.log(btnRegister);
     const email = divElement.querySelector('input[type = "email"]').value;
     const password = divElement.querySelector('input[type= "password"]').value;
-    /* eslint no-console: "error" */
-
-    // custom console
     console.log(email);
     console.log(password);
     createUser(email, password);
