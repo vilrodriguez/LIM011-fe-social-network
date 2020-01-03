@@ -34,8 +34,8 @@ export default () => {
             <div class="links">
               <p class="other-singup-text"> O Ingresa con:</p>
               <p> 
-                <a id = "facebook"class="link-icon" href="#" rel="noopener"><img class="other-icon" src="/src/img/facebookicon.svg"/></a>
-                <a id="google" class="link-icon" href="#" rel="noopener"><img class="other-icon" src="/src/img/gmail.svg"/></a>
+                <a id = "facebook"class="link-icon" href="#" rel="noopener"><img class="other-icon" src="/img/facebookicon.svg"/></a>
+                <a id="google" class="link-icon" href="#" rel="noopener"><img class="other-icon" src="/img/gmail.svg"/></a>
               </p>
               <p class="singup-text"> 
                 <a class="link forgot" href="#/recuperar" rel="noopener">¿Olvidaste tu contraseña?</a>
