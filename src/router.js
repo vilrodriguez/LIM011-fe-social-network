@@ -14,7 +14,7 @@ const changeView = (route) => {
       break;
     case '#/profile': container.appendChild(components.profile());
       break;
-    default: container.appendChild(components.notFound());
+    default: container.appendChild(components.notfound());
     break;
   }
 };
