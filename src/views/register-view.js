@@ -1,4 +1,4 @@
-import { registerFunction } from '../controller-app/register-controller.js';
+import { createUser } from '../firebase-controller/userAuthentication.js';
 
 export default () => {
   const divElement = document.createElement('div');
@@ -18,10 +18,6 @@ export default () => {
             <h2>Registrate</h2>
           </div>
           <div class="input-wrapper">
-            <input class="input form-userName" id="userName" type="text" name="session-username"
-              placeholder="Ingrese un correo:" required />
-          </div>
-          <div class="input-wrapper">
             <input class="input form-email" id="email" type="email" name="session-email"
               placeholder="Ingrese un correo:" required />
           </div>
@@ -29,7 +25,6 @@ export default () => {
             <input class="input form-password" id="password" type="password" name="session-password"
               placeholder="Crear contraseña:" required/>
           </div>
-          <p id ="mensaje-error" class ="mensaje-error "></p>
           <div class="btn-wrapper">
             <input id="button-register" class="submit btn" type="submit" class="button-login" value="Registrar"></input>
           </div>
@@ -50,13 +45,12 @@ export default () => {
     console.log(btnRegister);
     const email = divElement.querySelector('input[type = "email"]').value;
     const password = divElement.querySelector('input[type= "password"]').value;
-    const userName = divElement.querySelector('input[type= "text"]').value;
     /* eslint no-console: "error" */
 
     // custom console
     console.log(email);
     console.log(password);
-    registerFunction(email, password, userName);
+    createUser(email, password);
   });
   return divElement;
 };
