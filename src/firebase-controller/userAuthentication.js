@@ -2,22 +2,12 @@ export const createUser = (email, password) => {
 /* eslint no-console: ["error", { allow: ["warn", "error"] }] */
   // custom console
   console.log(email, password);
-  firebase.auth().createUserWithEmailAndPassword(email, password).catch((error) => {
-    const errorCode = error.code;
-    const errorMessage = error.message;
-    /* eslint no-console: ["error", { allow: ["warn", "error"] }] */
-    // custom console
-    console.log(error.message);
-
-    alert(errorCode);
-
-    alert(errorMessage);
-  });
+  return firebase.auth().createUserWithEmailAndPassword(email, password);
 };
 
 export const signInUser = (email, password) => {
   firebase.auth().signInWithEmailAndPassword(email, password).then(() => {
-    location = '#/home';
+    window.location.hash = '#/home';
     console.log('Me loguie');
   }).catch((error) => {
     const errorCode = error.code;
