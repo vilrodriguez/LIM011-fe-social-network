@@ -17,10 +17,10 @@ export default () => {
                         </div>
                       </nav>
                     </header>
-                    <section class="container-profile">
+                    <section class="container-form">
   <h3>Edita la información en tu cuenta</h3>
-  <form class="form" id="form-register" action="post">
-          <img class="avatar" src="./img/online-menu-big.png" alt="placeholder image">
+  <form class="form-" id="form-register" action="post">
+          <img class="avatar-profile" src="./img/profile-user2.svg" alt="placeholder image">
             <div class="input-wrapper">
             <input class="input form-email" id="email" type="email" name="session-email"
               placeholder="Ingrese un correo:"/>

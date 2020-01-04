@@ -350,6 +350,25 @@ header {
     height:25%;
     margin-top: 2em;
 }
+/************* Profile *************/
+.avatar-profile{
+    width: 25%;
+    height: auto;
+    margin: 1em 1em;
+    background: #FFF;
+    border-radius:50%;
+    display:flex;
+    justify-self: center;
+}
+.container-form{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-top:2em;
+
+}
+
 /************* Home *************/
 .home {
     background-color: #FFF;
