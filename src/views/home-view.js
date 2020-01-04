@@ -1,9 +1,8 @@
 import {
   signOut,
 } from '../firebase-controller/userAuthentication.js';
+
 export default () => {
-  const divElement = document.createElement('div');
-  divElement.className = 'container home';
   const homeView = `<header>
                       <nav class="topnav" id="myTopnav">
                         <a href="#/home" class="active">BonApetit</a>
@@ -80,28 +79,28 @@ export default () => {
                       </div>
                     </section>
                     `;
+  const divElement = document.createElement('div');
+  divElement.className = 'container home';
   divElement.innerHTML = homeView;
   const btnNav = divElement.querySelector('#button-nav');
   const btnProfile = divElement.querySelector('#user-profile');
+  const btnCerrarSesion = divElement.querySelector('#sign-out');
+
   btnProfile.addEventListener('click', (e) => {
     e.preventDefault();
-    
     window.location.hash = '#/profile';
   });
 
-  const btnCerrarSesion = divElement.querySelector('#sign-out');
-  btnCerrarSesion.addEventListener('click', (e)=>{
+  btnCerrarSesion.addEventListener('click', (e) => {
     e.preventDefault();
     signOut();
     window.location.hash = '#/';
   });
-
-
   btnNav.addEventListener('click', (e) => {
     e.preventDefault();
     const x = document.getElementById('button-nav-content');
     if (x.className === 'dropdown-content') {
-      x.className += 'show';
+      x.className += ' show';
     } else {
       x.className = 'dropdown-content';
     }

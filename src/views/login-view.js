@@ -58,7 +58,6 @@ export default () => {
     const email = divElement.querySelector('input[type="email"]').value;
     const password = divElement.querySelector('input[type="password"]').value;
     signInUser(email, password);
-   
   });
 
   google.addEventListener('click', () => {
