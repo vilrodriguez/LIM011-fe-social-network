@@ -9,7 +9,7 @@ export const registerFunction = (email, pass, msjError) => {
     })
     .catch((error) => {
       const errorCode = error.code;
-      const errorMessage = error.message;
+      const errorMessage = error.code;
       console.log('Detectando un error: ', error, errorMessage);
       switch (errorCode) {
         case 'auth/email-already-in-use':
