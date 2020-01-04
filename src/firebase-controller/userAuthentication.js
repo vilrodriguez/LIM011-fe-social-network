@@ -17,6 +17,7 @@ export const signInUser = (email, password) => {
 export const signInWithGoogle = () => {
   const provider = new firebase.auth.GoogleAuthProvider();
   firebase.auth().signInWithPopup(provider).then((result) => {
+    location = '#/home';
     // This gives you a Google Access Token. You can use it to access the Google API.
     const token = result.credential.accessToken;
     // The signed-in user info.
@@ -37,6 +38,7 @@ export const signInWithFacebook = () => {
   const provider = new firebase.auth.FacebookAuthProvider();
   firebase.auth().useDeviceLanguage();
   firebase.auth().signInWithPopup(provider).then((result) => {
+    location = '#/home';
     var token = result.credential.accessToken;
     const user = result.user;
     // console.log("te has logeado con facebook");
@@ -49,6 +51,10 @@ export const signInWithFacebook = () => {
     // The firebase.auth.AuthCredential type that was used.
     const credential = error.credential;
     console.log("no has podido ingresar con facebook");
+    console.log(email);
+    console.log(errorCode);
+    console.log(errorMessage);
+    console.log(credential);
   });
 };
 export const signOut = () => {firebase.auth().signOut().then(() => {

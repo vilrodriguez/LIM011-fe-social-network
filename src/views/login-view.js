@@ -62,9 +62,12 @@ export default () => {
 
   google.addEventListener('click', () => {
     signInWithGoogle();
+    window.location.hash = '#/home';
   });
   facebook.addEventListener('click', () => {
     signInWithFacebook();
+    window.location.hash = '#/home';
+    
   });
   return divElement;
 };
