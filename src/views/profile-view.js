@@ -16,7 +16,7 @@ export default () => {
                     <section class="container-profile">
   <h3>Edita la información en tu cuenta</h3>
   <form class="form" id="form-register" action="post">
-          <img class="avatar" src="/img/online-menu-big.png" alt="placeholder image">
+          <img class="avatar" src="./img/online-menu-big.png" alt="placeholder image">
             <div class="input-wrapper">
             <input class="input form-email" id="email" type="email" name="session-email"
               placeholder="Ingrese un correo:"/>
