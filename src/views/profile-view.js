@@ -26,6 +26,14 @@ export default () => {
               placeholder="Ingrese un correo:"/>
           </div>
           <div class="input-wrapper">
+            <input class="input form-email" id="email" type="email" name="session-email"
+              placeholder="Ingrese un correo:"/>
+          </div>
+          <div class="input-wrapper">
+            <input class="input form-email" id="email" type="email" name="session-email"
+              placeholder="Ingrese un correo:"/>
+          </div>
+          <div class="input-wrapper">
             <input class="input form-password" id="password" type="password" name="session-password"
               placeholder="Crear contraseña:"/>
           </div>

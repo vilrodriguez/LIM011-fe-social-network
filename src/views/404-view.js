@@ -14,7 +14,8 @@ export default () => {
                         </nav>
                       </header>
                       <section class="error-message">
-    <h1>Oops, acá no está lo que buscas.</h1>
+    <h1>¡Oops!</h1>
+    <h3> Acá no está lo que buscas 😅</h3>
     <img src="./img/error-404.svg" alt="404 error image pagina no encontrada"/>
     </section>
     `;
