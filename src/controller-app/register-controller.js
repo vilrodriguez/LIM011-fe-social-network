@@ -4,10 +4,10 @@ export const registerFunction = (email, pass, msjError) => {
   const mensajeError = msjError;
   createUser(email, pass)
     .then(() => {
+      window.location.hash = '#/';
       const user = userCurrent();
       newUser(user.uid, email);
-      console.log('Aqui!! : ', user.uid);
-      window.location.hash = '#/';
+      console.log('datos user', user);
       console.log('Me registre');
       alert('Te has registrado con exito. Puedes logearte.');
     })
