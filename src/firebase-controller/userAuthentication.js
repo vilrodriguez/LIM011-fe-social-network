@@ -54,7 +54,6 @@ export const signInWithFacebook = () => {
     console.log(email);
     console.log(errorCode);
     console.log(errorMessage);
-    
   });
 };
 export const signOut = () => {
