@@ -58,14 +58,16 @@ export default () => {
     const email = divElement.querySelector('input[type="email"]').value;
     const password = divElement.querySelector('input[type="password"]').value;
     signInUser(email, password);
-   
   });
 
   google.addEventListener('click', () => {
     signInWithGoogle();
+    window.location.hash = '#/home';
   });
   facebook.addEventListener('click', () => {
     signInWithFacebook();
+    window.location.hash = '#/home';
+    
   });
   return divElement;
 };

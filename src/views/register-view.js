@@ -42,13 +42,8 @@ export default () => {
 
   btnRegister.addEventListener('click', (e) => {
     e.preventDefault();
-    /* eslint no-console: "error" */
-    // custom console
-    console.log(btnRegister);
     const email = divElement.querySelector('input[type = "email"]').value;
     const password = divElement.querySelector('input[type= "password"]').value;
-    console.log(email);
-    console.log(password);
     createUser(email, password);
   });
   return divElement;

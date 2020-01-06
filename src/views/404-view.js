@@ -1,20 +1,13 @@
 export default () => {
   const viewNotFound = `<header>
                         <nav class="topnav" id="myTopnav">
-                          <a href="#/home" class="active">BonApetit</a>
+                          <a href="#/home" class="active">~Bon-a-Petit~</a>
                           <div class="dropdown" id="button-nav">
-                            <button class="dropbtn"> 
-                              Marilyn Rivero ^ 
-                            </button>
-                            <div class="dropdown-content" id="button-nav-content">
-                              <a href="#/profile">Mi perfil</a>
-                              <a href="#/">Cerrar sesión</a>
-                            </div>
-                          </div>
                         </nav>
                       </header>
                       <section class="error-message">
-    <h1>Oops, acá no está lo que buscas.</h1>
+    <h1>¡Oops!</h1>
+    <h3> Acá no está lo que buscas 😅</h3>
     <img src="./img/error-404.svg" alt="404 error image pagina no encontrada"/>
     </section>
     `;
