@@ -1,4 +1,6 @@
-import { signInUser, signInWithGoogle, signInWithFacebook } from '../firebase-controller/userAuthentication.js';
+import {
+  signInUser, signInWithGoogle, signInWithFacebook, signOut,
+} from '../firebase-controller/userAuthentication.js';
 
 export const loginFunction = (email, pass, mensajeError) => {
   const msjError = mensajeError;
@@ -26,7 +28,6 @@ export const loginFunction = (email, pass, mensajeError) => {
       }
     });
 };
-
 export const loginWithGmail = () => {
   signInWithGoogle()
     .then((result) => {
@@ -50,7 +51,19 @@ export const loginFacebook = () => {
     .catch((error) => {
       const errorCode = error.code;
       if (errorCode === 'auth/account-exists-with-different-credential') {
-        console.log('es el mismo usuario');
+        console.log('Es el mismo usuario');
       }
+    });
+};
+export const logOut = () => {
+  signOut()
+    .then(() => {
+    // Sign-out successful.
+      // console.log('Has cerrado sesion');
+      alert('Has cerrado Sesión');
+    }).catch((error) => {
+    // An error happened.
+      console.log('Estarás aquí para la eternidad');
+      alert(error, 'Estarás aquí para la eternidad');
     });
 };
