@@ -45,6 +45,8 @@ export default () => {
     const email = divElement.querySelector('input[type = "email"]').value;
     const password = divElement.querySelector('input[type= "password"]').value;
     createUser(email, password);
+    alert('Te has registrado con éxito');
+    window.location.hash = '#/home';
   });
   return divElement;
 };
