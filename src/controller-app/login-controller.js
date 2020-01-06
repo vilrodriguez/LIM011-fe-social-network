@@ -50,7 +50,7 @@ export const loginFacebook = () => {
     .catch((error) => {
       const errorCode = error.code;
       if (errorCode === 'auth/account-exists-with-different-credential') {
-        // console.log('es el mismo usuario');
+        console.log('es el mismo usuario');
       }
     });
 };

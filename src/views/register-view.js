@@ -1,4 +1,4 @@
-import {  createUser } from '../firebase-controller/userAuthentication.js';
+import { registerFunction } from '../controller-app/register-controller.js';
 
 export default () => {
   const viewRegister = `
@@ -46,7 +46,6 @@ export default () => {
     const email = divElement.querySelector('input[type = "email"]').value;
     const password = divElement.querySelector('input[type= "password"]').value;
     registerFunction(email, password, mensajeError);
-    alert('Te has registrado con éxito');
   });
   return divElement;
 };
