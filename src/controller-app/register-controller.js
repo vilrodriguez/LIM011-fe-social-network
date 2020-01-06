@@ -9,8 +9,9 @@ export const registerFunction = (email, pass, msjError) => {
     })
     .catch((error) => {
       const errorCode = error.code;
-      const errorMessage = error.message;
-      // console.log('Detectando un error: ', error, errorMessage);
+      const errorMessage = error.code;
+      console.log('Detectando un error: ', error, errorMessage);
+
       switch (errorCode) {
         case 'auth/email-already-in-use':
           mensajeError.innerHTML = '*La dirección de correo ya existe';
