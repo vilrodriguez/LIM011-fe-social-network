@@ -30,7 +30,7 @@ export default () => {
               placeholder="Tipo de menú:"/>
           </div>
           <div class="input-wrap">
-            <input class="input" id="address" type="address" name="address"
+            <input class="input" id="address" type="text" name="address"
               placeholder="Dirección:"/>
           </div>
           <div class="input-wrap">
@@ -38,8 +38,9 @@ export default () => {
               placeholder="Correo de contacto:"/>
           </div>
           <div class="btn-wrapper">
-                <input id="button-update-profile" class="submit btn" type="submit" class="button-login" value="Guardar cambios"></input>
+                <input id="button-update-profile" class="submit btn" type="submit" value="Guardar cambios">
             </div>
+    </form>
   </section>
   `;
   const divElement = document.createElement('div');
