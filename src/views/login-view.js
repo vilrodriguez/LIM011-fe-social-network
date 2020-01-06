@@ -8,12 +8,12 @@ export default () => {
   const viewLogin = ` 
   <div class="wrapper">
         <div class="img">
-          <img src = "/img/side_image2.svg"
+          <img src = "./img/side_image2.svg"
           alt = "SVG image of different prepared dishes and a hand holding a smartphone"/>
         </div>
         <div class="container-login">
             <form class="form" id="form-autentication" class="form-autentication" action="post">
-              <img class="avatar" src="/img/online-menu-big.png" alt="SVG image of an Smartphone with a restaurant menu on the creen and a fork to the side">
+              <img class="avatar" src="./img/online-menu-big.png" alt="SVG image of an Smartphone with a restaurant menu on the creen and a fork to the side">
             <div class="titles">
                 <h1 class="title-app">~Bon-a-Petit~</h1>
                 <h3>Red Social para Restaurants y Food Trucks</h3>
@@ -37,8 +37,8 @@ export default () => {
             <div class="links">
               <p class="other-singup-text"> O Ingresa con:</p>
               <p> 
-                <a id = "facebook"class="link-icon" href="#" rel="noopener"><img class="other-icon" src="/img/facebookicon.svg"/></a>
-                <a id="google" class="link-icon" href="#" rel="noopener"><img class="other-icon" src="/img/gmail.svg"/></a>
+                <a id = "facebook"class="link-icon" href="#" rel="noopener"><img class="other-icon" src="./img/facebookicon.svg"/></a>
+                <a id="google" class="link-icon" href="#" rel="noopener"><img class="other-icon" src="./img/gmail.svg"/></a>
               </p>
               <p class="singup-text"> 
                 <a class="link forgot" href="#/recuperar" rel="noopener">¿Olvidaste tu contraseña?</a>
@@ -72,6 +72,7 @@ export default () => {
   facebook.addEventListener('click', (e) => {
     e.preventDefault();
     loginFacebook();
+
   });
 
   return divElement;

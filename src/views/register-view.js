@@ -1,15 +1,15 @@
-import { registerFunction } from '../controller-app/register-controller.js';
+import {  createUser } from '../firebase-controller/userAuthentication.js';
 
 export default () => {
   const viewRegister = `
     <div class="wrapper">
       <div class="img">
-      <img src = "/img/side_image2.svg"
+      <img src = "./img/side_image2.svg"
       alt = "SVG image of different prepared dishes and a hand holding a smartphone" / >
       </div>
       <div class="container-login">
         <form class="form" id="form-register" action="post">
-          <img class="avatar" src="/img/online-menu-big.png" alt="placeholder image">
+          <img class="avatar" src="./img/online-menu-big.png" alt="placeholder image">
           <div class="titles">
             <h1 class="title-app">~Bon-a-Petit~</h1>
             <h3>Red Social para Restaurants y Food Trucks</h3>
@@ -43,10 +43,10 @@ export default () => {
   const btnRegister = divElement.querySelector('#button-register');
   btnRegister.addEventListener('click', (e) => {
     e.preventDefault();
-
     const email = divElement.querySelector('input[type = "email"]').value;
     const password = divElement.querySelector('input[type= "password"]').value;
     registerFunction(email, password, mensajeError);
+    alert('Te has registrado con éxito');
   });
   return divElement;
 };
