@@ -5,10 +5,10 @@ import {
 export default () => {
   const homeView = `<header>
                       <nav class="topnav" id="myTopnav">
-                        <a href="#/home" class="active">BonApetit</a>
+                        <a href="#/home" class="active">~Bon-a-Petit~</a>
                         <div class="dropdown" id="button-nav">
                           <button class="dropbtn"> 
-                            Marilyn Rivero ^ 
+                          MENU 
                           </button>
                           <div class="dropdown-content" id="button-nav-content">
                             <a id="user-profile" href="#/profile">Mi perfil</a>

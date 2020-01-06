@@ -10,7 +10,7 @@ export default () => {
     <div class="img">
     <img src = "https://vilrodriguez.github.io/LIM011-fe-social-network/src/img/side_image2.svg"
     alt = "SVG image of different prepared dishes and a hand holding a smartphone"/>
-  </div>
+    </div>
       <div class="container-login">
         <form class="form" id="form-register" action="post">
           <img class="avatar" src="./img/online-menu-big.png" alt="placeholder image">
