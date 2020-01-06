@@ -15,5 +15,13 @@ export const signInWithFacebook = () => {
   firebase.auth().useDeviceLanguage();
   return firebase.auth().signInWithPopup(provider);
 };
-
+export const signOut = () => {
+  firebase.auth().signOut().then(() => {
+  // Sign-out successful.
+    console.log('Has cerrado sesion');
+  }).catch((error) => {
+  // An error happened.
+    console.log('Estarás aquí para la eternidad');
+  });
+};
 // export const currentUser = () => firebase.auth().currentUser;

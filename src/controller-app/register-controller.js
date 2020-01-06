@@ -6,6 +6,7 @@ export const registerFunction = (email, pass, msjError) => {
     .then(() => {
       window.location.hash = '#/';
       console.log('Me registre');
+      alert('Te has registrado con exito. Puedes logearte.');
     })
     .catch((error) => {
       const errorCode = error.code;

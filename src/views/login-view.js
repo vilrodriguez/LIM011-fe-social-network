@@ -1,8 +1,4 @@
-import {
-  loginFunction,
-  loginWithGmail,
-  loginFacebook,
-} from '../controller-app/login-controller.js';
+import { loginFunction, loginWithGmail, loginFacebook } from '../controller-app/login-controller.js';
 
 export default () => {
   const viewLogin = ` 
@@ -72,7 +68,6 @@ export default () => {
   facebook.addEventListener('click', (e) => {
     e.preventDefault();
     loginFacebook();
-
   });
 
   return divElement;
