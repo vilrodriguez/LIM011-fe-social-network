@@ -36,7 +36,7 @@ body {
     .container-login{
         width: 40%;
         min-width: fit-content;
-        padding: 2em;
+        padding: 0;
         overflow: auto;
         border-radius: 1em;
         background:rgb(127, 166, 216);
@@ -76,7 +76,7 @@ body {
         font-weight: normal;
         text-align: center;
         display:block;
-        padding-bottom: 2em;
+        padding-bottom: 1em;
         width:inherit;
         /* border: 3px dashed purple; */
     }
@@ -470,6 +470,7 @@ header {
     flex-direction: column;
     margin: 0 10px;
     width: calc(calc(100% / 2) - 20%);
+    border-radius: 1em;
 }
 .banner-profile {
     border-top: rgb(204, 203, 203) 1px solid;
@@ -485,6 +486,17 @@ header {
     border-left: rgb(204, 203, 203) 1px solid;
     min-height: 50px;
     text-align: center;
+}
+.info-profile img.user-icon{
+    width: 20%;
+    height:auto;
+    float:left;
+    padding: .5em 0 .5em 1em;
+}
+.info-profile .user-name{
+    text-align: center;
+    padding: .5em;
+    justify-self: center;
 }
 .feed {
     display:flex;
