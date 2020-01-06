@@ -1,8 +1,4 @@
-import {
-  signInUser,
-  signInWithGoogle,
-  signInWithFacebook,
-} from '../firebase-controller/userAuthentication.js';
+import { loginFunction, loginWithGmail, loginFacebook } from '../controller-app/login-controller.js';
 
 export default () => {
   const viewLogin = ` 
@@ -28,6 +24,9 @@ export default () => {
                 <input class="input form-password" id="password" type="password" name="session-password"
                 placeholder="Ingrese su contraseña:" required/>
             </div>
+            <div>
+                <p id ="mensaje-error" class ="mensaje-error "></p>
+            </div>
             <div class="btn-wrapper">
                 <input id="button-login" class="submit btn" type="submit" class="button-login" value="Iniciar sesión"></input>
             </div>
@@ -50,6 +49,7 @@ export default () => {
   const divElement = document.createElement('div');
   divElement.className = 'container';
   divElement.innerHTML = viewLogin;
+  const menssageError = divElement.querySelector('#mensaje-error');
   const btnLogin = divElement.querySelector('#button-login');
   const google = divElement.querySelector('#google');
   const facebook = divElement.querySelector('#facebook');
@@ -57,17 +57,18 @@ export default () => {
     e.preventDefault();
     const email = divElement.querySelector('input[type="email"]').value;
     const password = divElement.querySelector('input[type="password"]').value;
-    signInUser(email, password);
+    loginFunction(email, password, menssageError);
+    /* alert(' Te has logeado'); */
   });
 
-  google.addEventListener('click', () => {
-    signInWithGoogle();
-    window.location.hash = '#/home';
+  google.addEventListener('click', (e) => {
+    e.preventDefault();
+    loginWithGmail();
   });
-  facebook.addEventListener('click', () => {
-    signInWithFacebook();
-    window.location.hash = '#/home';
-    
+  facebook.addEventListener('click', (e) => {
+    e.preventDefault();
+    loginFacebook();
   });
+
   return divElement;
 };
