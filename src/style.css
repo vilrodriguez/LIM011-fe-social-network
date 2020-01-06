@@ -7,54 +7,59 @@
     font-size: 16px;
 }
 body {
-    background-color: rgb(198, 236, 223);
+    /* background-color: rgb(198, 236, 223); */
+    background: linear-gradient(70deg, rgb(237, 255, 249), white,rgb(237, 255, 249));
+    height: 100%;
+    width: 100%;
 }    
 .container{
-    width: 100%;
+    width: 100vw;
     min-height: 100vh;
     display:flex;
     flex-wrap: wrap;
-    justify-content: center;
     margin:0;
-    padding:0;    
+    /*  justify-content: space-evenly; */
+    /* padding:1.5em 1em 1em 1em; */
+   /* border: 5px dotted red;  */
 }
-    
-    .wrapper{
-        width: inherit;
-        height: inherit;
-        border-radius: 2em;
-        overflow: hidden;
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: space-around;
-        padding:1.5em 1em 1em 1em;
-      /* border: 2px solid blueviolet;  */
-    }
+.wrapper{
+    width: 100vw;
+    height: auto;
+    border-radius: 2em;
+    overflow: hidden;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    padding:1.5em 1em 1em 1em;
+    /* border: 2px solid blueviolet;  */
+}
     .container-login{
-        width: 30em;
-        height: inherit;
+        width: 40%;
         min-width: fit-content;
-        padding: 2em;
+        padding: 0;
         overflow: auto;
-        border-radius: 2em;
-        background:rgb(120, 169, 233);
-        /* background-color: rgba(255, 0, 0, 0.4); */
+        border-radius: 1em;
+        background:rgb(127, 166, 216);
         display: flex;
         justify-content: center;
-        /* border: 4px double blue; */ 
-        /* margin-top: 1.5em; */
+        /* background-color: rgba(127,166, 216, 0.4); */
+        /* border: 4px double blue; */
+         /* margin-top: 1.5em; */
+    }
+    .container-login .avatar{
+        display:none;
     }
     .img{
-        width: auto;
+        width:50%;
         display: flex;
-        justify-content: flex-end;
+        justify-content: start;
         align-items: center;
-         /* border: 2px solid red;  */
     }
     .img img{
-    max-width: 100%;
-    display:flex;
-    justify-self: center;
+        width: 100%;
+        height: 100%;
+        display:flex;
+        justify-self: center;
     }
     .form{
         width: 20em;
@@ -71,7 +76,7 @@ body {
         font-weight: normal;
         text-align: center;
         display:block;
-        padding-bottom: 2em;
+        padding-bottom: 1em;
         width:inherit;
         /* border: 3px dashed purple; */
     }
@@ -133,18 +138,20 @@ body {
         line-height: 1.5;
         text-align: center;
         text-transform: uppercase;
-        color:white;
-        background: #e43950;
+        color:#2f4f4f;
+        background: #ffde49;
         padding: 0em 1.5em 0em 1.5em;
         transition: all .8s;
         /* border: 3px dotted red; */
     }
     
     .btn-wrapper .submit:hover{
-        background: lightseagreen;
-        color: rgb(255, 233, 161);
-        font-size: 1.1em;
+        background: white;
+        color: rgb(47, 109, 190);
+        font-size: 1em;
         font-weight:bold;
+        box-shadow: 5px 10px #888888;
+        border: 2px solid rgb(102, 156, 226);
     }
     ::placeholder{
         color:dimgray;
@@ -159,50 +166,60 @@ body {
         font-size: 1em;
         padding: 1em;
         color:darkslategray;
-        /* border: 3px dotted red; */
+        
     }
     .links span{
         font-weight: bold;
         font-size: 1.2em;
+        padding: 0 .5em 0 0;
     }
-    .links .link{
-        text-decoration: none;
-        color: gray;
+    .links .link {
+        text-decoration: dotted;
+        color: darkslategray;
         font-size: 1em;
         transition: .5s;
-        
+        padding: 0.5em;
+
     }
     .links .link:hover{
-        color:#e43950;
-        font-size: 1.1em;
+        color:yellow;
+        font-size: 1em;
+        
     }
     .links .other-singup-text{
         color: darkslategray;
         font-size: 1.2em;
         margin: .5em 0 .5em 0;
         display: block;
+        font-weight:bold;
     }
     .links .link-icon .other-icon{
         width: 2em;
         height: auto;
         margin: .5em .2em .5em .2em;
         transition: .5s;
+        border-radius: 50%;
         
     }
     .links .link-icon .other-icon:hover{
-        width: 2.3em;
-        height: auto;
+        border-radius: 50%;
+        box-shadow: 3px 4px #888888;
         position: relative;
         
     }
     
     @media(max-width: 60em){
         .wrapper{
-            width:100vw;
-            width:100vw;
+            width:100%;
+            width:100%;
             padding: 0;
             border-radius:0;
         } 
+        .container{
+            padding:0;
+            width:100%;
+            width:100%;
+        }
         .container-login{
         width: 100vw;
         height: 100vh;
@@ -211,6 +228,9 @@ body {
         justify-content: center;
         border-radius: 0;
     /*        border: 2px solid red; */
+        }
+        .container-login .avatar{
+            display:block;
         }
         .form{
             padding: 0 1em 0 1em;
@@ -241,14 +261,18 @@ body {
 /************* CSS de la barra de navegación *************/
 header {
     width: 100%;
+    height: 20%;
+    
 }
 .topnav {
     overflow: hidden;
     background-color: rgb(120, 169, 233);
     width: 100%;
+    height:4em;
     display:flex;
     flex-direction: row;
     justify-content: space-between;
+    text-align: center;
     top: 0;
 }
 .topnav a {
@@ -256,18 +280,22 @@ header {
     display: block;
     color: #f2f2f2;
     text-align: center;
-    padding: 14px 16px;
+    padding: .5em 1em;
     text-decoration: none;
-    font-size: 17px;
+    font-size: 1em;
     font-weight: bold;
+
 }
 .topnav a:hover {
-    background-color: #ddd;
+    background-color:  #ffde49;
     color: black;
 }
 .topnav a.active {
-    background-color: #e43950;
-    color: white;
+    background-color: #ffde49;
+    font-family: 'Pacifico', cursive;
+    font-size: 1.5em;
+    color: darkslategray;
+    font-weight: 200;
 }
 .topnav .icon {
     display: none;
@@ -275,24 +303,27 @@ header {
 .dropdown {
     float: left;
     overflow: hidden;
+    width: 10em;
 }
 .dropdown .dropbtn {
-    font-size: 16px;  
     border: none;
     outline: none;
-    color: white;
     padding: 14px 16px;
-    background-color: inherit;
-    font-family: inherit;
     margin: 0;
+    background-color: inherit;
+    color: white;
+    font-size: 1em;  
+    font-family: inherit;
     font-weight: bold;
+   /*  text-align: right; */
 }
 .dropdown-content {
     display: none !important;
     position: absolute;
-    background-color: #f9f9f9;
+    background-color:#f9f9f9;
     min-width: 160px;
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    box-shadow: 0px 8px 16px 0px
+    rgba(0,0,0,0.2);
     z-index: 1;
 }
 .show {
@@ -307,13 +338,17 @@ header {
     text-align: left;
 }
 .dropdown-content a:hover {
-    background-color: #ddd;
+    background-color: #ffde49;
 }
 .dropdown:hover .dropdown-content {
     display: block;
 }
 
 @media screen and (max-width: 600px) {
+    .topnav{
+        width: 100%;
+        height: 80%;
+    }
     .topnav a:not(:first-child) { 
         display: none;
     }
@@ -321,20 +356,32 @@ header {
         float: right;
         display: block;
     }
+    .topnav a.active {
+        background-color: #ffde49;
+        font-family: 'Pacifico', cursive;
+        font-size: 1em;
+        color: darkslategray;
+        font-weight: 200;
+    }
 }
 @media screen and (max-width: 600px) {
     .topnav.responsive {
         position: relative;
+    
+        /* padding: 1em 1em; */
     }
     .topnav.responsive .icon {
         position: absolute;
         right: 0;
         top: 0;
+    
     }
     .topnav.responsive a {
         float: none;
         display: block;
         text-align: left;
+       /*  padding: 1em 1em; */
+        
     }
 }
 /********** 404 error page ******/
@@ -346,10 +393,68 @@ header {
     margin-top: 4em;
 }
 .error-message img{
-    width: 25%;
-    height:25%;
+    width: 35%;
+    height:auto;
     margin-top: 2em;
 }
+.error-message h1{
+    color: black;
+    font-size: 3em;
+    font-family: 'Pacifico', cursive;
+    margin-bottom: .5em;
+}
+.error-message h3{
+    color: black;
+    font-size: 1em;
+    margin-bottom: .5em;
+    
+}
+/************* Profile *************/
+.avatar-profile{
+    width: 25%;
+    height: auto;
+    margin: 1em 1em;
+    background: #FFF;
+    border-radius:50%;
+    display:flex;
+}
+.container-form{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-top:2em;
+    
+}
+.container-profile{
+    width:100%;
+    height: 100%;
+    background-color:white;
+}
+.input-wrap{
+    position: relative;
+    width: 100%;
+    z-index: 1;
+    display:flex;
+    justify-self: center;
+    justify-content: center;
+    margin-bottom: 1.5em;
+    /* margin-top: 2em; */
+    /* border: 4px double rgb(59, 31, 26); */
+}
+.input-wrap .input{
+    width: 100%;
+    height: 3em;
+    font-size: 1em;
+    line-height: 1.5;
+    color:darkslategray;
+    display:block;
+    background:whitesmoke;
+    border-radius: 2em;
+    border: 2px solid rgb(102, 156, 226);
+    padding: 1em;
+}
+
 /************* Home *************/
 .home {
     background-color: #FFF;
@@ -365,6 +470,7 @@ header {
     flex-direction: column;
     margin: 0 10px;
     width: calc(calc(100% / 2) - 20%);
+    border-radius: 1em;
 }
 .banner-profile {
     border-top: rgb(204, 203, 203) 1px solid;
@@ -380,6 +486,17 @@ header {
     border-left: rgb(204, 203, 203) 1px solid;
     min-height: 50px;
     text-align: center;
+}
+.info-profile img.user-icon{
+    width: 20%;
+    height:auto;
+    float:left;
+    padding: .5em 0 .5em 1em;
+}
+.info-profile .user-name{
+    text-align: center;
+    padding: .5em;
+    justify-self: center;
 }
 .feed {
     display:flex;
@@ -497,6 +614,33 @@ header {
     .feed {
         width: 95%;
         margin-top: 15px;
+    }
+    .error-message{
+        display: flex;
+        justify-content: start;
+        flex-direction: column;
+        margin-top: 0em;
+        width: 100vw;
+        height: 100vh;
+            
+    }
+    .error-message img{
+        width: 35%;
+        height:auto;
+        margin-top: 2em;
+    }
+    .error-message h1{
+        color: black;
+        font-size: 3em;
+        font-family: 'Pacifico', cursive;
+        margin-top: 1em;
+        margin-bottom: .5em;
+    }
+    .error-message h3{
+        color: black;
+        font-size: 1em;
+        margin-bottom: .5em;
+        
     }
 }
 @media screen and (max-width: 600px) {
