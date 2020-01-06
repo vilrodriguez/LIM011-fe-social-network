@@ -1,9 +1,12 @@
-import { createUser } from '../firebase-controller/userAuthentication.js';
+import { createUser, userCurrent, newUser } from '../firebase-controller/userAuthentication.js';
 
 export const registerFunction = (email, pass, msjError) => {
   const mensajeError = msjError;
   createUser(email, pass)
     .then(() => {
+      const user = userCurrent();
+      newUser(user.uid, email);
+      console.log('Aqui!! : ', user.uid);
       window.location.hash = '#/';
       console.log('Me registre');
       alert('Te has registrado con exito. Puedes logearte.');
