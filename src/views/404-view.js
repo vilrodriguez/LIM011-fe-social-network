@@ -1,16 +1,8 @@
 export default () => {
   const viewNotFound = `<header>
                         <nav class="topnav" id="myTopnav">
-                          <a href="#/home" class="active">BonApetit</a>
+                          <a href="#/home" class="active">~Bon-a-Petit~</a>
                           <div class="dropdown" id="button-nav">
-                            <button class="dropbtn"> 
-                              Marilyn Rivero ^ 
-                            </button>
-                            <div class="dropdown-content" id="button-nav-content">
-                              <a href="#/profile">Mi perfil</a>
-                              <a href="#/">Cerrar sesión</a>
-                            </div>
-                          </div>
                         </nav>
                       </header>
                       <section class="error-message">

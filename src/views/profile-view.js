@@ -5,10 +5,10 @@ import {
 export default () => {
   const viewProfile = `<header>
                       <nav class="topnav" id="myTopnav">
-                        <a href="#/home" class="active">BonApetit</a>
+                        <a href="#/home" class="active">~Bon-a-Petit~</a>
                         <div class="dropdown" id="button-nav">
                           <button class="dropbtn"> 
-                            Marilyn Rivero ^ 
+                          MENU
                           </button>
                           <div class="dropdown-content" id="button-nav-content">
                             <a id="user-profile" href="#/profile">Mi perfil</a>
@@ -21,25 +21,25 @@ export default () => {
   <h3>Edita la información en tu cuenta</h3>
   <form class="form-" id="form-register" action="post">
           <img class="avatar-profile" src="./img/profile-user2.svg" alt="placeholder image">
-            <div class="input-wrapper">
-            <input class="input form-email" id="email" type="email" name="session-email"
-              placeholder="Ingrese un correo:"/>
+            <div class="input-wrap">
+            <input class="input" id="user-name" type="text" name="user-name"
+              placeholder="Nombre:"/>
           </div>
-          <div class="input-wrapper">
-            <input class="input form-email" id="email" type="email" name="session-email"
-              placeholder="Ingrese un correo:"/>
+          <div class="input-wrap">
+            <input class="input" id="user-menu" type="text" name="user-menu"
+              placeholder="Tipo de menú:"/>
           </div>
-          <div class="input-wrapper">
-            <input class="input form-email" id="email" type="email" name="session-email"
-              placeholder="Ingrese un correo:"/>
+          <div class="input-wrap">
+            <input class="input" id="address" type="address" name="address"
+              placeholder="Dirección:"/>
           </div>
-          <div class="input-wrapper">
-            <input class="input form-password" id="password" type="password" name="session-password"
-              placeholder="Crear contraseña:"/>
+          <div class="input-wrap">
+            <input class="input" id="email" type="email" name="email"
+              placeholder="Correo de contacto:"/>
           </div>
           <div class="btn-wrapper">
-            <input id="button-savechanges" class="submit btn" type="submit" class="button-login" value="Guardar"></input>
-          </div>
+                <input id="button-update-profile" class="submit btn" type="submit" class="button-login" value="Guardar cambios"></input>
+            </div>
   </section>
   `;
   const divElement = document.createElement('div');
