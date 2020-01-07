@@ -21,7 +21,18 @@ export const signOut = () => {
     console.log('Has cerrado sesion');
   }).catch((error) => {
   // An error happened.
-    console.log('Estarás aquí para la eternidad');
+    console.log(error, 'Estarás aquí para la eternidad');
   });
 };
-// export const currentUser = () => firebase.auth().currentUser;
+
+export const userCurrent = () => (
+  firebase.auth().currentUser
+);
+
+// para llenar la base de datos
+export const newUser = (id, email) => {
+  firebase.firestore().collection('users').doc(id).set({
+    ID: id,
+    Email: email,
+  });
+};
