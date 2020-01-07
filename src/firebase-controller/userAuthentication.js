@@ -30,9 +30,9 @@ export const userCurrent = () => (
 );
 
 // para llenar la base de datos
-export const newUser = (id, email) => {
-  return firebase.firestore().collection('users').doc(id).set({
+export const newUser = (id, email) => (
+  firebase.firestore().collection('users').doc(id).set({
     ID: id,
     Email: email,
-  });
-};
+  })
+);
