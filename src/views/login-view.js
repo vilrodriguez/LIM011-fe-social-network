@@ -49,6 +49,7 @@ export default () => {
   const divElement = document.createElement('div');
   divElement.className = 'container';
   divElement.innerHTML = viewLogin;
+  /* const loginForm = divElement.querySelector('#form-autentication'); */
   const menssageError = divElement.querySelector('#mensaje-error');
   const btnLogin = divElement.querySelector('#button-login');
   const google = divElement.querySelector('#google');
@@ -57,8 +58,7 @@ export default () => {
     e.preventDefault();
     const email = divElement.querySelector('input[type="email"]').value;
     const password = divElement.querySelector('input[type="password"]').value;
-    loginFunction(email, password, menssageError);
-    /* alert(' Te has logeado'); */
+    loginFunction(email, password, menssageError)
   });
 
   google.addEventListener('click', (e) => {

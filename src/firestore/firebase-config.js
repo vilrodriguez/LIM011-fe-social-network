@@ -1,4 +1,8 @@
+const firebase = require("firebase");
+// Required for side-effects
+require("firebase/firestore");
 
+var db = firebase.firestore();
 
   //Add users to collection
   db.collection("users").add({

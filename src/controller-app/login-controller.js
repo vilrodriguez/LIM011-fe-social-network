@@ -4,10 +4,12 @@ import {
 
 export const loginFunction = (email, pass, mensajeError) => {
   const msjError = mensajeError;
+  const loginForm = document.querySelector('#form-autentication');
   signInUser(email, pass)
     .then(() => {
       window.location.hash = '#/home';
-      console.log('Me loguie');
+      console.log('Me loguie otra vez');
+      loginForm.reset();
     })
     .catch((error) => {
       const errorCode = error.code;
