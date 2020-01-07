@@ -4,14 +4,14 @@ export const registerFunction = (email, pass, msjError) => {
   const mensajeError = msjError;
   createUser(email, pass)
     .then((result) => {
-      console.log(result);
+      console.log('se registró',result);
       newUser(result.user.uid, result.user.email)
-        .then((res) => {
-          console.log('se cumple promesa', res);
+        .then(() => {
+          console.log('se registro documento');
           window.location.hash = '#/';
         })
         .catch((err) => {
-          console.log('Se detecto un error', err);
+          console.log('Se detecto un error');
         });
       console.log('Me registre');
       alert('Te has registrado con exito. Puedes logearte');
