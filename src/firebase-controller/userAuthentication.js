@@ -13,6 +13,7 @@ export const signInWithFacebook = () => {
   firebase.auth().useDeviceLanguage();
   return firebase.auth().signInWithPopup(provider);
 };
+
 export const signOut = () => (firebase.auth().signOut());
 
-// export const currentUser = () => firebase.auth().currentUser;
+export const currentUser = () => firebase.auth().currentUser;
