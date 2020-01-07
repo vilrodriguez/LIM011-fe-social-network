@@ -1,15 +1,20 @@
-import { createUser, userCurrent, newUser } from '../firebase-controller/userAuthentication.js';
+import { createUser, newUser } from '../firebase-controller/userAuthentication.js';
 
 export const registerFunction = (email, pass, msjError) => {
   const mensajeError = msjError;
   createUser(email, pass)
-    .then(() => {
-      window.location.hash = '#/';
-      const user = userCurrent();
-      newUser(user.uid, email);
-      console.log('datos user', user);
+    .then((result) => {
+      console.log(result);
+      newUser(result.user.uid, result.user.email)
+        .then((res) => {
+          console.log('se cumple promesa', res);
+          window.location.hash = '#/';
+        })
+        .catch((err) => {
+          console.log('Se detecto un error', err);
+        });
       console.log('Me registre');
-      alert('Te has registrado con exito. Puedes logearte.');
+      alert('Te has registrado con exito. Puedes logearte');
     })
     .catch((error) => {
       const errorCode = error.code;
