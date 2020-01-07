@@ -1,6 +1,6 @@
 import {
-  signOut,
-} from '../firebase-controller/userAuthentication.js';
+  logOut,
+} from '../controller-app/login-controller.js';
 
 export default () => {
   const viewProfile = `<header>
@@ -57,8 +57,7 @@ export default () => {
 
   btnCerrarSesion.addEventListener('click', (e) => {
     e.preventDefault();
-    signOut();
-    window.location.hash = '#/';
+    logOut();
   });
   btnNav.addEventListener('click', (e) => {
     e.preventDefault();

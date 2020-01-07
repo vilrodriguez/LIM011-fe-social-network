@@ -63,6 +63,7 @@ export const logOut = () => {
     // Sign-out successful.
       // console.log('Has cerrado sesion');
       alert('Has cerrado Sesión');
+      window.location.hash = '#/';
     }).catch((error) => {
     // An error happened.
       console.log('Estarás aquí para la eternidad');
