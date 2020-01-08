@@ -25,14 +25,18 @@ export const signOut = () => {
   });
 };
 
+/*
 export const userCurrent = () => (
   firebase.auth().currentUser
 );
+*/
 
 // para llenar la base de datos
-export const newUser = (id, email) => (
+export const newUser = (id, email, name, photo) => (
   firebase.firestore().collection('users').doc(id).set({
     ID: id,
     Email: email,
+    Name: name,
+    Foto: photo,
   })
 );
