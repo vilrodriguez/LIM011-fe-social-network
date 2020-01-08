@@ -32,6 +32,7 @@ export const loginWithGmail = () => {
     .then((result) => {
       const user = result.user;
       const token = result.credential.accessToken;
+      console.log(result);
       console.log('te has logueado con gmail', user, token);
       window.location.hash = '#/home';
     })
@@ -43,7 +44,9 @@ export const loginWithGmail = () => {
 };
 export const loginFacebook = () => {
   signInWithFacebook()
-    .then(() => {
+    .then((result) => {
+      const user = result.user;
+      console.log(result);
       console.log('te has logueado con Facebook');
       window.location.hash = '#/home';
     })
