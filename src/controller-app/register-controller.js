@@ -10,7 +10,7 @@ export const registerFunction = (email, pass, msjError) => {
           console.log('se registro documento');
           window.location.hash = '#/';
         })
-        .catch((err) => {
+        .catch(() => {
           console.log('Se detecto un error');
         });
       console.log('Me registre');
