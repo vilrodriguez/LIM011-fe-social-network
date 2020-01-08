@@ -1,4 +1,6 @@
-import { signInUser, signInWithGoogle, signInWithFacebook } from '../firebase-controller/userAuthentication.js';
+import {
+  signInUser, signInWithGoogle, signInWithFacebook, newUser,
+} from '../firebase-controller/userAuthentication.js';
 
 export const loginFunction = (email, pass, mensajeError) => {
   const msjError = mensajeError;
@@ -33,7 +35,15 @@ export const loginWithGmail = () => {
       const user = result.user;
       const token = result.credential.accessToken;
       console.log('te has logueado con gmail', user, token);
-      window.location.hash = '#/home';
+      // console.log(result);
+      newUser(result.user.uid, result.user.email, result.user.displayName, result.user.photoURL)
+        .then(() => {
+          console.log('se registro documento');
+          window.location.hash = '#/home';
+        })
+        .catch(() => {
+          console.log('se produjo un error');
+        });
     })
     .catch((error) => {
       const errorCode = error.code;
@@ -43,9 +53,17 @@ export const loginWithGmail = () => {
 };
 export const loginFacebook = () => {
   signInWithFacebook()
-    .then(() => {
+    .then((result) => {
       console.log('te has logueado con Facebook');
-      window.location.hash = '#/home';
+      console.log(result);
+      newUser(result.user.uid, result.user.email, result.user.displayName, result.user.photoURL)
+        .then(() => {
+          console.log('se registró documento');
+          window.location.hash = '#/home';
+        })
+        .catch(() => {
+          console.log('se produjo un error');
+        });
     })
     .catch((error) => {
       const errorCode = error.code;
