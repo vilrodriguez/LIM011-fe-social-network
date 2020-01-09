@@ -1,5 +1,17 @@
-import { signInUser, signInWithGoogle, signInWithFacebook } from '../firebase-controller/userAuthentication.js';
+import {
+  signInUser, signInWithGoogle, signInWithFacebook, newUser, observer,
+} from '../firebase-controller/userAuthentication.js';
 
+
+export const userObserver = () => {
+  observer((user) => {
+    if (user) {
+      console.log('usuario logueado', user);
+    } else {
+      console.log('no hay usuario');
+    }
+  });
+};
 export const loginFunction = (email, pass, mensajeError) => {
   const msjError = mensajeError;
   signInUser(email, pass)
@@ -26,7 +38,6 @@ export const loginFunction = (email, pass, mensajeError) => {
       }
     });
 };
-
 export const loginWithGmail = () => {
   signInWithGoogle()
     .then((result) => {
@@ -34,7 +45,15 @@ export const loginWithGmail = () => {
       const token = result.credential.accessToken;
       console.log(result);
       console.log('te has logueado con gmail', user, token);
-      window.location.hash = '#/home';
+      // console.log(result);
+      newUser(result.user.uid, result.user.email, result.user.displayName, result.user.photoURL)
+        .then(() => {
+          console.log('se registro documento');
+          window.location.hash = '#/home';
+        })
+        .catch(() => {
+          console.log('se produjo un error');
+        });
     })
     .catch((error) => {
       const errorCode = error.code;
@@ -45,10 +64,16 @@ export const loginWithGmail = () => {
 export const loginFacebook = () => {
   signInWithFacebook()
     .then((result) => {
-      const user = result.user;
-      console.log(result);
       console.log('te has logueado con Facebook');
-      window.location.hash = '#/home';
+      console.log(result);
+      newUser(result.user.uid, result.user.email, result.user.displayName, result.user.photoURL)
+        .then(() => {
+          console.log('se registró documento');
+          window.location.hash = '#/home';
+        })
+        .catch(() => {
+          console.log('se produjo un error');
+        });
     })
     .catch((error) => {
       const errorCode = error.code;

@@ -1,9 +1,15 @@
 export const createUser = (email, password) => (
   firebase.auth().createUserWithEmailAndPassword(email, password)
 );
+
 export const signInUser = (email, password) => (
   firebase.auth().signInWithEmailAndPassword(email, password)
 );
+
+// observa sí hay un usuario activo
+export const observer = () => {
+  firebase.auth().onAuthStateChanged();
+};
 
 export const signInWithGoogle = () => {
   const provider = new firebase.auth.GoogleAuthProvider();
@@ -25,31 +31,17 @@ export const signOut = () => {
   });
 };
 
-// para llenar la base de datos
-export const newUser = (id, email) => (
+export const newUser = (id, email, name, photo) => (
   firebase.firestore().collection('users').doc(id).set({
     ID: id,
     Email: email,
-    Name: displayName,
-    UserPhoto: photoUrl,
+    Name: name,
+    Foto: photo,
   })
 );
+
 
 // comprobar si usuario está activo
 export const userCurrent = () => (
   firebase.auth().currentUser
 );
-
-// usuario activo
-export const activeUser = () => {
-  firebase.auth().onAuthStateChanged((user) => {
-    if (user) {
-      // User is signed in.
-      console.log('usuario activo', user);
-      
-    } else {
-      // No user is signed in.
-      console.log('no hay usuario activo/logeado');
-    }
-  });
-};
