@@ -1,6 +1,6 @@
 // infor para pintar en el home
-export const getInfo = () => 
-  // verifica que el usuario está activo
+export const getInfo = () => {
+  // verifica que el usuario está activo el cual se verifica en la home
   firebase.auth().onAuthStateChanged((user) => {
     if (user) {
       // se incia seción
