@@ -1,7 +1,9 @@
-import { example } from '../src/example.js';
+import { createUser } from '../src/firebase-controller/userAuthentication.js';
 
-describe('example', () => {
-  it('debería ser una función', () => {
-    expect(typeof example).toBe('function');
+describe('createUser', () => {
+  it('debería logear un usuario', () => {
+    return createUser('prueba-de-red@gmail.com, abc123').then((result) => {
+      expect(result.user.email).toBe('prueba-de-red');
+    });
   });
 });
