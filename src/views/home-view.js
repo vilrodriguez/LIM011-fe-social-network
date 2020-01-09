@@ -86,11 +86,12 @@ export default () => {
   const btnCerrarSesion = divElement.querySelector('#sign-out');
 
   // secci+on del perfil
+  /*
   const userImage = document.querySelector('#photo');
   const userName = document.querySelector('#userName');
   const userEmail = document.querySelector('#email');
-
-  getInfo(userName, userEmail, userImage);
+*/
+  getInfo();
 
   btnProfile.addEventListener('click', (e) => {
     e.preventDefault();
