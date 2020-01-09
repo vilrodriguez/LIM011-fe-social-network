@@ -5,7 +5,7 @@ export const registerFunction = (email, pass, msjError) => {
   createUser(email, pass)
     .then((result) => {
       console.log('se registró', result);
-      newUser(result.user.uid, result.user.email, result.user.displatName, result.user.photoURL)
+      newUser(result.user.uid, result.user.email, result.user.displayName, result.user.photoURL)
         .then(() => {
           console.log('se registro documento');
           window.location.hash = '#/';
