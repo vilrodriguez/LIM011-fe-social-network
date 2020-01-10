@@ -13,9 +13,12 @@ const changeView = (route) => {
       break;
     case '#/home': {
       const user = firebase.auth().currentUser;
+      // console.log(user, user.uid);
       getInfoUser(user.uid)
-        .then(response => {
+        .then((response) => {
+          // console.log(response);
           const dataUser = response.data();
+          // console.log(dataUser);
           container.appendChild(components.home(dataUser));
         });
       break;

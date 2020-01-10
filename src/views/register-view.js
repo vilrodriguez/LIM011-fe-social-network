@@ -24,6 +24,10 @@ export default () => {
             <input class="input form-password" id="password" type="password" name="session-password"
               placeholder="Crear contraseña:" required/>
           </div>
+          <div class="input-wrapper">
+            <input class="input form-user-name" id="user-name" type="text" name="user-name"
+              placeholder="Ingrese su Nombre de usuario:" required />
+          </div>
           <div>
             <p id ="mensaje-error" class ="mensaje-error "></p>
           </div> 

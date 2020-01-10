@@ -2,10 +2,8 @@ import {
   signOut,
 } from '../firebase-controller/userAuthentication.js';
 
-/* import { getInfo , getPost,  } from '../controller-app/getInfo-controller.js'; */
-
 export default (user) => {
-  console.log(user)
+  // console.log(user);
   const homeView = `<header>
                       <nav class="topnav" id="myTopnav">
                         <a href="#/home" class="active">~Bon-a-Petit~</a>
@@ -25,14 +23,13 @@ export default (user) => {
                           <div class="banner-profile">
                             <img class="banner-img" src="./img/backgroundimgfood.jpg" alt="User Banner Image">
                           </div>
-                          <div id ="profile" class="info-profile">
-                            <img id = "photo" class= "user-icon" src="./img/profile-user2.svg" alt="User Profile Picture">
-                              <div class="user-name">
-                                <h1 id = "userName">Marilyn Rivero</h1>
-                                <h1 id = "email">Front-end Developer</h1>
-                              </div>
+                      <div id ="profile" class="info-profile">
+                          <img id ="photo" class="user-icon" src="${user.Foto}" alt="User Profile Picture">
+                          <div class="user-name">
+                            <h1 id = "userName">${user.Name}</h1>
+                            <h1 id = "email">${user.Email}</h1>
                           </div>
-                      </div>
+                        </div>
                       
                       <div class="feed">
                           <div id = "box-post" class="box-create-publication">
@@ -84,25 +81,9 @@ export default (user) => {
   divElement.className = 'container home';
   divElement.innerHTML = homeView;
   const btnNav = divElement.querySelector('#button-nav');
-  const btnProfile = divElement.querySelector('#user-profile');
   const btnCerrarSesion = divElement.querySelector('#sign-out');
-  const profile = divElement.querySelector('#profile');
+  const btnProfile = divElement.querySelector('#user-profile');
 
-  // seccion del perfil
-
-  /* console.log(profile, getInfo(profile));
- */
-/*   getInfo(profile); */
-  // Post 
-  const btnSendPost = divElement.querySelector('#send-post');
-
-  /* btnSendPost.addEventListener('click', (e)=>{
-    e.preventDefault();
-    const userPost = divElement.querySelector('#box-post');
-    getPost(postBox);
-    userPost.innerHTML= `blabla ${getPost()}`;
-  });
-  */
   btnProfile.addEventListener('click', (e) => {
     e.preventDefault();
     window.location.hash = '#/profile';

@@ -4,7 +4,6 @@ import { firebaseConfig } from './firebase-controller/firebaseConfig.js';
 const init = () => {
   firebase.initializeApp(firebaseConfig);
   firebase.firestore();
-  /*  db(); */
   initRouter();
 };
 window.onload = init();
