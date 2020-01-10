@@ -13,18 +13,6 @@ export const userObserver = () => {
     }
   });
 };
-/* export const userObserver = () => {
-  firebase.auth().onAuthStateChanged((user)=> {
-    // console.log(user.uid);
-    if (user) {
-      console.log('usuario logueado', user);
-    } else {
-      console.log('no hay usuario');
-      console.log(user.uid);
-    }
-  });
-}; */
-
 export const loginFunction = (email, pass, mensajeError) => {
   const msjError = mensajeError;
   signInUser(email, pass)

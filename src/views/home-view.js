@@ -2,6 +2,8 @@ import {
   signOut,
 } from '../firebase-controller/userAuthentication.js';
 
+import { getInfo } from '../controller-app/getInfo-controller.js';
+
 export default () => {
   const homeView = `<header>
                       <nav class="topnav" id="myTopnav">
@@ -22,11 +24,11 @@ export default () => {
                           <div class="banner-profile">
                             <img class="banner-img" src="./img/backgroundimgfood.jpg" alt="User Banner Image">
                           </div>
-                          <div class="info-profile">
-                            <img class= "user-icon" src="./img/profile-user2.svg" alt="User Profile Picture">
+                          <div id ="profile" class="info-profile">
+                            <img id = "photo" class= "user-icon" src="./img/profile-user2.svg" alt="User Profile Picture">
                               <div class="user-name">
-                                <h1>Marilyn Rivero</h1>
-                                <h1>Front-end Developer</h1>
+                                <h1 id = "userName">Marilyn Rivero</h1>
+                                <h1 id = "email">Front-end Developer</h1>
                               </div>
                           </div>
                       </div>
@@ -82,6 +84,12 @@ export default () => {
   const btnNav = divElement.querySelector('#button-nav');
   const btnProfile = divElement.querySelector('#user-profile');
   const btnCerrarSesion = divElement.querySelector('#sign-out');
+
+  // seccion del perfil
+
+  const profile = divElement.querySelector('#profile');
+  console.log(profile);
+  getInfo(profile);
 
   btnProfile.addEventListener('click', (e) => {
     e.preventDefault();
