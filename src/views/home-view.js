@@ -2,7 +2,7 @@ import {
   signOut,
 } from '../firebase-controller/userAuthentication.js';
 
-import { getInfo , getPost } from '../controller-app/getInfo-controller.js';
+import { getInfo , getPost,  } from '../controller-app/getInfo-controller.js';
 
 export default () => {
   const homeView = `<header>
@@ -37,8 +37,9 @@ export default () => {
                           <div id = "box-post" class="box-create-publication">
                             <textarea name="publication" class="publication" placeholder="Escribe tu mensaje aquí" cols="30" rows="5"></textarea>
                             <button class="btn-add-image pull-left" type="submit"></button>
-                            <button class="btn pull-right" type="submit">Enviar</button>
+                            <button id="send-post" class="btn pull-right" type="submit">Enviar</button>
                           </div>
+                          
                         <div class="box-publication-feed">
                             <div class="box-publication-feed-header">
                               Marilyn Rivero:
@@ -92,10 +93,15 @@ export default () => {
   
   getInfo(profile);
   // Post 
-  const userPost = document.querySelector('#box-post');
+  const btnSendPost = divElement.querySelector('#send-post');
+
+  btnSendPost.addEventListener('click', (e)=>{
+    e.preventDefault();
+    const userPost = document.querySelector('#box-post');
+    getPost();
+    userPost.innerHTML= `blabla ${getPost()}`;
+  });
  
- // <textarea name="publication" class="publication" placeholder="Escribe tu mensaje aquí" cols="30" rows="5">
-getPost();
   btnProfile.addEventListener('click', (e) => {
     e.preventDefault();
     window.location.hash = '#/profile';

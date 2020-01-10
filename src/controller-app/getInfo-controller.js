@@ -7,7 +7,7 @@ export const getInfo = (profile) => {
     if (user) {
       // se incia seción
       const id = firebase.auth().currentUser.uid;
-      console.log(id);
+     //  console.log(id);
       // obtención de datos de un documento
       firebase.firestore().collection('users').where('ID', '==', id).get()
         .then((querySnapshot) => {
@@ -35,12 +35,7 @@ export const getInfo = (profile) => {
 
   
 
-export const getPost = () => {
-  firebase.firestore().collection('post').get().then((snapshot) => {
-   setUpPost(snapshot.docs);
-    
-  });
-};
+
 const setUpPost = (data) => {
   let html ='';
   data.forEach(doc => {
@@ -50,9 +45,13 @@ const setUpPost = (data) => {
     <div> 
     <p id="user-post"> ${texto.postText}<p>
     </div>`
-    console.log(postTemplate);
-    
     html += postTemplate;
   });
+  console.log(html);
   return html;
+};
+export const getPost = () => {
+  firebase.firestore().collection('post').get().then((snapshot) => {
+   setUpPost(snapshot.docs);
+  });
 };
