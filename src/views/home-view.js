@@ -24,7 +24,7 @@ export default () => {
                           <div class="banner-profile">
                             <img class="banner-img" src="./img/backgroundimgfood.jpg" alt="User Banner Image">
                           </div>
-                          <div class="info-profile">
+                          <div id ="profile" class="info-profile">
                             <img id = "photo" class= "user-icon" src="./img/profile-user2.svg" alt="User Profile Picture">
                               <div class="user-name">
                                 <h1 id = "userName">Marilyn Rivero</h1>
@@ -86,12 +86,10 @@ export default () => {
   const btnCerrarSesion = divElement.querySelector('#sign-out');
 
   // secci+on del perfil
-  /*
-  const userImage = document.querySelector('#photo');
-  const userName = document.querySelector('#userName');
-  const userEmail = document.querySelector('#email');
-*/
-  getInfo();
+
+  const profile = divElement.querySelector('#profile');
+  console.log(profile);
+  getInfo(profile);
 
   btnProfile.addEventListener('click', (e) => {
     e.preventDefault();
