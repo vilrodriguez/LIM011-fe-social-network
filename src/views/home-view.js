@@ -2,27 +2,10 @@ import {
   signOut,
 } from '../firebase-controller/userAuthentication.js';
 
+
 export default (user) => {
   // console.log(user);
-  const homeView = `<header>
-                      <nav class="topnav" id="myTopnav">
-                        <a href="#/home" class="active">~Bon-a-Petit~</a>
-                        <div class="dropdown" id="button-nav">
-                          <button class="dropbtn"> 
-                          MENU 
-                          </button>
-                          <div class="dropdown-content" id="button-nav-content">
-                            <a id="user-profile" href="#/profile">Mi perfil</a>
-                            <a id="sign-out" href="#/">Cerrar sesión</a>
-                          </div>
-                        </div>
-                      </nav>
-                    </header>
-                    <section class="box-home">
-                      <div class="box-profile">
-                          <div class="banner-profile">
-                            <img class="banner-img" src="./img/backgroundimgfood.jpg" alt="User Banner Image">
-                          </div>
+
                       <div id ="profile" class="info-profile">
                           <img id ="photo" class="user-icon" src="${user.Foto}" alt="User Profile Picture">
                           <div class="user-name">
