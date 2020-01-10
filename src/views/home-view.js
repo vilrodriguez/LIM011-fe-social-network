@@ -2,7 +2,7 @@ import {
   signOut,
 } from '../firebase-controller/userAuthentication.js';
 
-import { getInfo } from '../controller-app/getInfo-controller.js';
+import { getInfo , getPost } from '../controller-app/getInfo-controller.js';
 
 export default () => {
   const homeView = `<header>
@@ -34,7 +34,7 @@ export default () => {
                       </div>
                       
                       <div class="feed">
-                          <div class="box-create-publication">
+                          <div id = "box-post" class="box-create-publication">
                             <textarea name="publication" class="publication" placeholder="Escribe tu mensaje aquí" cols="30" rows="5"></textarea>
                             <button class="btn-add-image pull-left" type="submit"></button>
                             <button class="btn pull-right" type="submit">Enviar</button>
@@ -84,13 +84,17 @@ export default () => {
   const btnNav = divElement.querySelector('#button-nav');
   const btnProfile = divElement.querySelector('#user-profile');
   const btnCerrarSesion = divElement.querySelector('#sign-out');
+  const profile = divElement.querySelector('#profile');
 
   // seccion del perfil
 
-  const profile = divElement.querySelector('#profile');
-  console.log(profile);
+  console.log(profile, getInfo(profile));
+  
   getInfo(profile);
-
+  // Post 
+  const userPost = document.querySelector('#box-post');
+ // <textarea name="publication" class="publication" placeholder="Escribe tu mensaje aquí" cols="30" rows="5">
+getPost();
   btnProfile.addEventListener('click', (e) => {
     e.preventDefault();
     window.location.hash = '#/profile';

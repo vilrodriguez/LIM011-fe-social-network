@@ -1,4 +1,4 @@
-
+/* const db = firebase.firestore();  */
 // infor para pintar en el home
 export const getInfo = (profile) => {
   const p = profile;
@@ -30,5 +30,27 @@ export const getInfo = (profile) => {
     } else {
       console.log('Ningun usuario ha iniciado sesion');
     }
+  });
+};
+
+  
+
+export const getPost = () => {
+  firebase.firestore().collection('post').get().then((snapshot) => {
+   setUpPost(snapshot.docs);
+    
+  });
+};
+const setUpPost = (data) => {
+  let html =``;
+  data.forEach(doc => {
+    const guide = doc.data();
+    const postTemplate = `
+    <div> 
+    <p = "postpost"> ${guide.post}<p>
+    </div>`
+    console.log(guide);
+    html += postTemplate;
+    
   });
 };
