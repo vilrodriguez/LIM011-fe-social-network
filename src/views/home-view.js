@@ -24,7 +24,7 @@ export default () => {
                           <div class="banner-profile">
                             <img class="banner-img" src="./img/backgroundimgfood.jpg" alt="User Banner Image">
                           </div>
-                          <div class="info-profile">
+                          <div id ="profile" class="info-profile">
                             <img id = "photo" class= "user-icon" src="./img/profile-user2.svg" alt="User Profile Picture">
                               <div class="user-name">
                                 <h1 id = "userName">Marilyn Rivero</h1>
