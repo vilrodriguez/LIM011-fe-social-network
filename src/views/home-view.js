@@ -93,6 +93,7 @@ export default () => {
   getInfo(profile);
   // Post 
   const userPost = document.querySelector('#box-post');
+ 
  // <textarea name="publication" class="publication" placeholder="Escribe tu mensaje aquí" cols="30" rows="5">
 getPost();
   btnProfile.addEventListener('click', (e) => {

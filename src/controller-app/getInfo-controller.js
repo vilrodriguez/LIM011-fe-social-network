@@ -42,15 +42,17 @@ export const getPost = () => {
   });
 };
 const setUpPost = (data) => {
-  let html =``;
+  let html ='';
   data.forEach(doc => {
-    const guide = doc.data();
+    const texto = doc.data();
+    console.log(texto);
     const postTemplate = `
     <div> 
-    <p = "postpost"> ${guide.post}<p>
+    <p id="user-post"> ${texto.postText}<p>
     </div>`
-    console.log(guide);
-    html += postTemplate;
+    console.log(postTemplate);
     
+    html += postTemplate;
   });
+  return html;
 };
