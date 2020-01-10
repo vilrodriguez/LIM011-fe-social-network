@@ -2,43 +2,25 @@ import {
   signOut,
 } from '../firebase-controller/userAuthentication.js';
 
-import { getInfo } from '../controller-app/getInfo-controller.js';
 
-export default () => {
-  const homeView = `<header>
-                      <nav class="topnav" id="myTopnav">
-                        <a href="#/home" class="active">~Bon-a-Petit~</a>
-                        <div class="dropdown" id="button-nav">
-                          <button class="dropbtn"> 
-                          MENU 
-                          </button>
-                          <div class="dropdown-content" id="button-nav-content">
-                            <a id="user-profile" href="#/profile">Mi perfil</a>
-                            <a id="sign-out" href="#/">Cerrar sesión</a>
+export default (user) => {
+  // console.log(user);
+
+                      <div id ="profile" class="info-profile">
+                          <img id ="photo" class="user-icon" src="${user.Foto}" alt="User Profile Picture">
+                          <div class="user-name">
+                            <h1 id = "userName">${user.Name}</h1>
+                            <h1 id = "email">${user.Email}</h1>
                           </div>
                         </div>
-                      </nav>
-                    </header>
-                    <section class="box-home">
-                      <div class="box-profile">
-                          <div class="banner-profile">
-                            <img class="banner-img" src="./img/backgroundimgfood.jpg" alt="User Banner Image">
-                          </div>
-                          <div id ="profile" class="info-profile">
-                            <img id = "photo" class= "user-icon" src="./img/profile-user2.svg" alt="User Profile Picture">
-                              <div class="user-name">
-                                <h1 id = "userName">Marilyn Rivero</h1>
-                                <h1 id = "email">Front-end Developer</h1>
-                              </div>
-                          </div>
-                      </div>
                       
                       <div class="feed">
-                          <div class="box-create-publication">
+                          <div id = "box-post" class="box-create-publication">
                             <textarea name="publication" class="publication" placeholder="Escribe tu mensaje aquí" cols="30" rows="5"></textarea>
                             <button class="btn-add-image pull-left" type="submit"></button>
-                            <button class="btn pull-right" type="submit">Enviar</button>
+                            <button id="send-post" class="btn pull-right" type="submit">Enviar</button>
                           </div>
+                          
                         <div class="box-publication-feed">
                             <div class="box-publication-feed-header">
                               Marilyn Rivero:
@@ -82,14 +64,8 @@ export default () => {
   divElement.className = 'container home';
   divElement.innerHTML = homeView;
   const btnNav = divElement.querySelector('#button-nav');
-  const btnProfile = divElement.querySelector('#user-profile');
   const btnCerrarSesion = divElement.querySelector('#sign-out');
-
-  // secci+on del perfil
-
-  const profile = divElement.querySelector('#profile');
-  console.log(profile);
-  getInfo(profile);
+  const btnProfile = divElement.querySelector('#user-profile');
 
   btnProfile.addEventListener('click', (e) => {
     e.preventDefault();
