@@ -2,8 +2,18 @@ import {
   signInUser, signInWithGoogle, signInWithFacebook, newUser,
 } from '../firebase-controller/userAuthentication.js';
 
-
+// listening if there is a user logged in
 export const userObserver = () => {
+  firebase.auth().onAuthStateChanged((user) => {
+    // console.log(user.uid);
+    if (user) {
+      console.log('usuario logueado', user);
+    } else {
+      console.log('Ha cerrado sesión', user);
+    }
+  });
+};
+/* export const userObserver = () => {
   firebase.auth().onAuthStateChanged((user)=> {
     // console.log(user.uid);
     if (user) {
@@ -13,7 +23,8 @@ export const userObserver = () => {
       console.log(user.uid);
     }
   });
-};
+}; */
+
 export const loginFunction = (email, pass, mensajeError) => {
   const msjError = mensajeError;
   signInUser(email, pass)
