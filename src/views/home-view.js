@@ -2,9 +2,10 @@ import {
   signOut,
 } from '../firebase-controller/userAuthentication.js';
 
-import { getInfo , getPost,  } from '../controller-app/getInfo-controller.js';
+/* import { getInfo , getPost,  } from '../controller-app/getInfo-controller.js'; */
 
-export default () => {
+export default (user) => {
+  console.log(user)
   const homeView = `<header>
                       <nav class="topnav" id="myTopnav">
                         <a href="#/home" class="active">~Bon-a-Petit~</a>
@@ -89,19 +90,19 @@ export default () => {
 
   // seccion del perfil
 
-  console.log(profile, getInfo(profile));
-  
-  getInfo(profile);
+  /* console.log(profile, getInfo(profile));
+ */
+/*   getInfo(profile); */
   // Post 
   const btnSendPost = divElement.querySelector('#send-post');
 
-  btnSendPost.addEventListener('click', (e)=>{
+  /* btnSendPost.addEventListener('click', (e)=>{
     e.preventDefault();
-    const userPost = document.querySelector('#box-post');
-    getPost();
+    const userPost = divElement.querySelector('#box-post');
+    getPost(postBox);
     userPost.innerHTML= `blabla ${getPost()}`;
   });
- 
+  */
   btnProfile.addEventListener('click', (e) => {
     e.preventDefault();
     window.location.hash = '#/profile';

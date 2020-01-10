@@ -31,5 +31,3 @@ export const newUser = (id, email, name, photo) => (
     Foto: photo,
   })
 );
-
-
