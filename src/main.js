@@ -3,9 +3,10 @@ import { firebaseConfig } from './firebase-controller/firebaseConfig.js';
 
 
 
+
 const init = () => {
   firebase.initializeApp(firebaseConfig);
   initRouter();
-  userObserver();
+  // userObserver();
 };
 window.onload = init();

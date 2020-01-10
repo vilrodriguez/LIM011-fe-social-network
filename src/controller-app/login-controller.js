@@ -1,23 +1,26 @@
 import {
-  signInUser, signInWithGoogle, signInWithFacebook, newUser, observer,
+  signInUser, signInWithGoogle, signInWithFacebook, newUser,
 } from '../firebase-controller/userAuthentication.js';
 
 
 export const userObserver = () => {
-  observer((user) => {
+  firebase.auth().onAuthStateChanged((user)=> {
+    // console.log(user.uid);
     if (user) {
       console.log('usuario logueado', user);
     } else {
       console.log('no hay usuario');
+      console.log(user.uid);
     }
   });
 };
 export const loginFunction = (email, pass, mensajeError) => {
   const msjError = mensajeError;
   signInUser(email, pass)
-    .then(() => {
+    .then((cred) => {
       window.location.hash = '#/home';
       console.log('Me loguie');
+      console.log(cred.user.uid);
     })
     .catch((error) => {
       const errorCode = error.code;
