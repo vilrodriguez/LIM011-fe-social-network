@@ -1,7 +1,6 @@
 import {
   signOut,
 } from '../firebase-controller/userAuthentication.js';
-
 export default (user) => {
   // console.log(user);
   const homeView = `<header>
