@@ -21,10 +21,11 @@ export const getInfoUser = id => firebase.firestore().collection('users').doc(id
 //     callback(data);
 //   });
 
-	export const addTextPost = (userText/* , user */, privacy) => (
+	export const addTextPost = (userText, privacy) => (
   firebase.firestore().collection('post').add({
     private: privacy,
 		postText: userText,
+		
 		/* userPosting: user.id, */
   })
 );

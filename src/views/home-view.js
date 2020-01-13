@@ -36,9 +36,11 @@ export default (user) => {
 
 <div class="feed">
     <div class="box-create-publication">
-      <textarea name="publication" class="publication" placeholder="Escribe tu mensaje aquí" cols="30" rows="5"></textarea>
+      <label for="publication-text"> ${user.Name} dice: </label>
+      <input type="text" id="publication-text" name="publication" class="publication" placeholder="Escribe tu mensaje aquí" cols="30" rows="5"></input>
       <button class="btn-add-image pull-left" type="submit"></button>
-      <button class="btn pull-right" type="submit">Enviar</button>
+      <label for="private">PRIVADO<input type="checkbox" name="private" id="private" value="true"></label>
+      <button id="send-text-post" class="btn pull-right" type="submit">Enviar</button>
     </div>
   <div class="box-publication-feed">
       <div class="box-publication-feed-header">
@@ -85,8 +87,18 @@ export default (user) => {
   const btnNav = divElement.querySelector('#button-nav');
   const btnCerrarSesion = divElement.querySelector('#sign-out');
   const btnProfile = divElement.querySelector('#user-profile');
+  const textPost = divElement.querySelector('#publication-text');
+  const sendtextPost = divElement.querySelector('#send-text-post');
+  /* const privatePost = divElement.querySelector('#private'); */
 
-console.log(addTextPost('prueba de guardado del texto', false));
+  sendtextPost.addEventListener('click', (e)=>{
+    e.preventDefault();
+    /* let privacyOnPost =;
+    if (privatePost.value ==='') */
+    console.log(textPost.value);
+  console.log(addTextPost(textPost.value, false));
+  });
+
   btnProfile.addEventListener('click', (e) => {
     e.preventDefault();
     window.location.hash = '#/profile';
