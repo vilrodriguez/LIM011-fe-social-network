@@ -1,10 +1,12 @@
 import {
   signOut,
 } from '../firebase-controller/userAuthentication.js';
+import { addTextPost } from '../controller-app/getInfo-controller.js';
+
 
 export default (user) => {
   // console.log(user);
-const homeView =`<header>
+  const homeView = `<header>
 <nav class="topnav" id="myTopnav">
   <a href="#/home" class="active">~Bon-a-Petit~</a>
   <div class="dropdown" id="button-nav">
@@ -34,9 +36,11 @@ const homeView =`<header>
 
 <div class="feed">
     <div class="box-create-publication">
-      <textarea name="publication" class="publication" placeholder="Escribe tu mensaje aquí" cols="30" rows="5"></textarea>
+      <label for="publication-text"> ${user.Name} dice: </label>
+      <input type="text" id="publication-text" name="publication" class="publication" placeholder="Escribe tu mensaje aquí" cols="30" rows="5"></input>
       <button class="btn-add-image pull-left" type="submit"></button>
-      <button class="btn pull-right" type="submit">Enviar</button>
+      <label for="private">PRIVADO<input type="checkbox" name="private" id="private" value="true"></label>
+      <button id="send-text-post" class="btn pull-right" type="submit">Enviar</button>
     </div>
   <div class="box-publication-feed">
       <div class="box-publication-feed-header">
@@ -83,12 +87,23 @@ const homeView =`<header>
   const btnNav = divElement.querySelector('#button-nav');
   const btnCerrarSesion = divElement.querySelector('#sign-out');
   const btnProfile = divElement.querySelector('#user-profile');
+  const textPost = divElement.querySelector('#publication-text');
+  const sendtextPost = divElement.querySelector('#send-text-post');
+  /* const privatePost = divElement.querySelector('#private'); */
+
+  sendtextPost.addEventListener('click', (e)=>{
+    e.preventDefault();
+    /* let privacyOnPost =;
+    if (privatePost.value ==='') */
+    console.log(textPost.value);
+  console.log(addTextPost(textPost.value, false));
+  });
 
   btnProfile.addEventListener('click', (e) => {
     e.preventDefault();
     window.location.hash = '#/profile';
   });
-
+  
   btnCerrarSesion.addEventListener('click', (e) => {
     e.preventDefault();
     signOut();
