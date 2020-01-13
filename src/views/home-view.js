@@ -1,10 +1,12 @@
 import {
   signOut,
 } from '../firebase-controller/userAuthentication.js';
+import { addTextPost } from '../controller-app/getInfo-controller.js';
+
 
 export default (user) => {
   // console.log(user);
-const homeView =`<header>
+  const homeView = `<header>
 <nav class="topnav" id="myTopnav">
   <a href="#/home" class="active">~Bon-a-Petit~</a>
   <div class="dropdown" id="button-nav">
@@ -84,11 +86,12 @@ const homeView =`<header>
   const btnCerrarSesion = divElement.querySelector('#sign-out');
   const btnProfile = divElement.querySelector('#user-profile');
 
+console.log(addTextPost('prueba de guardado del texto', false));
   btnProfile.addEventListener('click', (e) => {
     e.preventDefault();
     window.location.hash = '#/profile';
   });
-
+  
   btnCerrarSesion.addEventListener('click', (e) => {
     e.preventDefault();
     signOut();
