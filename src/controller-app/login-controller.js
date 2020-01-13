@@ -1,6 +1,6 @@
 import {
   signInUser, signInWithGoogle, signInWithFacebook, newUser,
-} from '../firebase-controller/userAuthentication.js';
+} from '../model/user-authentication.js';
 
 export const loginFunction = (email, pass, mensajeError) => {
   const msjError = mensajeError;

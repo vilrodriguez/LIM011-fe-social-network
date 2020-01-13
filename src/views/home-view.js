@@ -1,7 +1,7 @@
 import {
   signOut,
-} from '../firebase-controller/userAuthentication.js';
-import { addTextPost } from '../controller-app/getInfo-controller.js';
+} from '../model/user-authentication.js';
+import { addTextPost } from '../model/model-post.js';
 
 
 export default (user) => {
@@ -26,7 +26,7 @@ export default (user) => {
       <img class="banner-img" src="./img/backgroundimgfood.jpg" alt="User Banner Image">
     </div>
     <div class="info-profile">
-      <img class= "user-icon" src="${user.Foto}" alt="User Profile Picture">
+      <img class= "user-icon" src="${user.Photo}" alt="User Profile Picture">
       <div class="user-name">
         <h1 id = "userName">${user.Name}</h1>
         <h1 id = "email">${user.Email}</h1>

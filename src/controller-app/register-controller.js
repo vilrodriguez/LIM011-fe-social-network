@@ -1,4 +1,5 @@
-import { createUser, newUser, userCurrent } from '../firebase-controller/userAuthentication.js';
+import { createUser, newUser, userCurrent } from '../model/user-authentication.js';
+
 
 export const registerFunction = (email, pass, name, msjError) => {
   const mensajeError = msjError;
