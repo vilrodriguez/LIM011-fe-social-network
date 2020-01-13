@@ -2,6 +2,8 @@ export const createUser = (email, password) => (
   firebase.auth().createUserWithEmailAndPassword(email, password)
 );
 
+export const userCurrent = () => firebase.auth().currentUser;
+
 export const signInUser = (email, password) => (
   firebase.auth().signInWithEmailAndPassword(email, password)
 );
@@ -28,6 +30,6 @@ export const newUser = (id, email, name, photo) => (
     ID: id,
     Email: email,
     Name: name,
-    Foto: photo,
+    Photo: photo,
   })
 );

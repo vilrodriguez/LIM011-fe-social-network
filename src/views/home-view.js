@@ -93,8 +93,6 @@ export default (user) => {
 
   sendtextPost.addEventListener('click', (e)=>{
     e.preventDefault();
-    /* let privacyOnPost =;
-    if (privatePost.value ==='') */
     console.log(textPost.value);
   console.log(addTextPost(textPost.value, false));
   });
