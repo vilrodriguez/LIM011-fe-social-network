@@ -2,11 +2,11 @@
 export const getInfoUser = id => firebase.firestore().collection('users').doc(id).get();
 
 
-	export const addTextPost = (userText, privacy) => (
+export const addTextPost = (userText, privacy) => (
   firebase.firestore().collection('post').add({
     private: privacy,
-	postText: userText,
-				/* userPosting: user.id, */
+    postText: userText,
+    /* userPosting: user.id, */
   })
 );
 
@@ -28,7 +28,6 @@ export const getInfoUser = id => firebase.firestore().collection('users').doc(id
 //     });
 //     callback(data);
 //   });
-
 
 
 // export const timeStampsFirestore = () => firebase.firestore().settings({ timestampsInSnapshots: true });
