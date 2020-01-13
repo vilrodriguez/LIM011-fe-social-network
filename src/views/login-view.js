@@ -1,4 +1,4 @@
-import { loginFunction, loginWithGmail, loginFacebook, userObserver, } from '../controller-app/login-controller.js';
+import { loginFunction, loginWithGmail, loginFacebook } from '../controller-app/login-controller.js';
 
 export default () => {
   const viewLogin = ` 
@@ -53,7 +53,7 @@ export default () => {
   const btnLogin = divElement.querySelector('#button-login');
   const google = divElement.querySelector('#google');
   const facebook = divElement.querySelector('#facebook');
-  userObserver();
+  // userObserver();
   btnLogin.addEventListener('click', (e) => {
     e.preventDefault();
     const email = divElement.querySelector('input[type="email"]').value;

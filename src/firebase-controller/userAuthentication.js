@@ -23,6 +23,8 @@ export const signInWithFacebook = () => {
   return firebase.auth().signInWithPopup(provider);
 };
 
+export const currentUser = () => firebase.auth().currentUser;
+
 export const newUser = (id, email, name, photo) => (
   firebase.firestore().collection('users').doc(id).set({
     ID: id,

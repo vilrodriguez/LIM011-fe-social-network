@@ -75,6 +75,7 @@ export const loginFacebook = () => {
 };
 
 // listening if there is a user logged in
+/*
 export const userObserver = () => {
   firebase.auth().onAuthStateChanged((user) => {
     // console.log(user.uid);
@@ -85,3 +86,4 @@ export const userObserver = () => {
     }
   });
 };
+*/

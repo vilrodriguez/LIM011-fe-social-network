@@ -1,5 +1,6 @@
 import { components } from './views/components.js';
-import { getInfoUser } from './controller-app/getInfo-controller.js';
+import { getInfoUser } from './firebase-controller/getInfo.js';
+import { userObserver } from './firebase-controller/userObserver.js';
 
 const changeView = (route) => {
   const container = document.getElementById('container');
@@ -12,6 +13,7 @@ const changeView = (route) => {
     case '#/register': container.appendChild(components.register());
       break;
     case '#/home': {
+      userObserver();
       const user = firebase.auth().currentUser;
       // console.log(user, user.uid);
       getInfoUser(user.uid)
