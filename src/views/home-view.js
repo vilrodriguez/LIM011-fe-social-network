@@ -23,7 +23,7 @@ export default (user) => {
 <section class="box-home">
 <div class="box-profile">
     <div class="banner-profile">
-      <img class="banner-img" src="./img/backgroundimgfood.jpg" alt="User Banner Image">
+      <img class="banner-img" src="./img/Food-Delivery-350x150.jpg" alt="User Banner Image">
     </div>
     <div class="info-profile">
       <img class= "user-icon" src="${user.Photo}" alt="User Profile Picture">
@@ -37,7 +37,7 @@ export default (user) => {
 <div class="feed">
     <div class="box-create-publication">
       <label for="publication-text"> ${user.Name} dice: </label>
-      <input type="text" id="publication-text" name="publication" class="publication" placeholder="Escribe tu mensaje aquí" cols="30" rows="5"></input>
+      <textarea id="publication-text" name="publication" class="publication" placeholder="Escribe tu mensaje aquí" cols="30" rows="5"></textarea>
       <button class="btn-add-image pull-left" type="submit"></button>
       <label for="private">PRIVADO<input type="checkbox" name="private" id="private" value="true"></label>
       <button id="send-text-post" class="btn pull-right" type="submit">Enviar</button>
@@ -52,7 +52,7 @@ export default (user) => {
       </div>
       <div class="box-likes">
         <div class="text-likes">
-          <img class="heart-likes" src="./img/heart.png" alt="Likes heart picture">
+          <img class="heart-likes" src="./img/lover.svg" alt="Likes heart picture">
           a 4 personas les gusta esto.
         </div>
       </div>
@@ -87,21 +87,23 @@ export default (user) => {
   const btnNav = divElement.querySelector('#button-nav');
   const btnCerrarSesion = divElement.querySelector('#sign-out');
   const btnProfile = divElement.querySelector('#user-profile');
-  const textPost = divElement.querySelector('#publication-text');
+  
   const sendtextPost = divElement.querySelector('#send-text-post');
   /* const privatePost = divElement.querySelector('#private'); */
 
-  sendtextPost.addEventListener('click', (e)=>{
+  sendtextPost.addEventListener('click', (e) => {
     e.preventDefault();
-    console.log(textPost.value);
-  console.log(addTextPost(textPost.value, false));
+    console.log('hice click');
+    const textPost = divElement.querySelector('#publication-text').value;
+    console.log(textPost);
+   console.log(addTextPost(textPost, false));
   });
 
   btnProfile.addEventListener('click', (e) => {
     e.preventDefault();
     window.location.hash = '#/profile';
   });
-  
+
   btnCerrarSesion.addEventListener('click', (e) => {
     e.preventDefault();
     signOut();
@@ -118,3 +120,4 @@ export default (user) => {
   });
   return divElement;
 };
+/* <input type="text" id="publication-text" name="publication" class="publication" placeholder="Escribe tu mensaje aquí" cols="30" rows="5"></input> */
