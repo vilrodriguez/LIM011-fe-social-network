@@ -1,4 +1,5 @@
-import { createUser } from '../src/firebase-controller/userAuthentication.js';
+import { createUser } from '../src/model/user-authentication.js';
+
 
 describe('createUser', () => {
   it('debería logear un usuario', () => {

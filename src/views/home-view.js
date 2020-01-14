@@ -5,6 +5,19 @@ import { addTextPost, userObserver } from '../model/model-post.js';
 
 export default (user) => {
   // console.log(user);
+  /* const ProfilePhoto = () => {
+    const userPhoto = document.createElement('img');
+    if (user.Photo === null) {
+      userPhoto.setAttribute('src', '../img/profile-user2.svg');
+    } else {
+      userPhoto.setAttribute('src', `${user.Photo}`);
+      console.log(userPhoto);
+    }
+    return userPhoto;
+  };
+  console.log(ProfilePhoto());
+  const photoUser = ProfilePhoto(); */
+
   const homeView = `<header>
 <nav class="topnav" id="myTopnav">
   <a href="#/home" class="active">~Bon-a-Petit~</a>
@@ -22,11 +35,11 @@ export default (user) => {
 <section class="box-home">
 <div class="box-profile">
     <div class="banner-profile">
-      <img class="banner-img" src="./img/backgroundimgfood.jpg" alt="User Banner Image">
+      <img class="banner-img" src="./img/Food-Delivery-350x150.jpg" alt="User Banner Image">
     </div>
     <div class="info-profile">
-      <img class= "user-icon" src="${user.Photo}" alt="User Profile Picture">
-      <div class="user-name">
+      <img src=${user.Photo === null ? './img/profile-user2.svg' : user.Photo} class="user-icon"/>
+      <div id="info-profile" class="user-name">
         <h1 id = "userName">${user.Name}</h1>
         <h1 id = "email">${user.Email}</h1>
       </div>
@@ -36,7 +49,7 @@ export default (user) => {
 <div class="feed">
     <div class="box-create-publication">
       <label for="publication-text"> ${user.Name} dice: </label>
-      <input type="text" id="publication-text" name="publication" class="publication" placeholder="Escribe tu mensaje aquí" cols="30" rows="5"></input>
+      <textarea id="publication-text" name="publication" class="publication" placeholder="Escribe tu mensaje aquí" cols="30" rows="5"></textarea>
       <button class="btn-add-image pull-left" type="submit"></button>
       <label for="private">PRIVADO<input type="checkbox" name="private" id="private" value="true"></label>
       <button id="send-text-post" class="btn pull-right" type="submit">Enviar</button>
@@ -51,7 +64,7 @@ export default (user) => {
       </div>
       <div class="box-likes">
         <div class="text-likes">
-          <img class="heart-likes" src="./img/heart.png" alt="Likes heart picture">
+          <img class="heart-likes" src="./img/lover.svg" alt="Likes heart picture">
           a 4 personas les gusta esto.
         </div>
       </div>
@@ -79,14 +92,16 @@ export default (user) => {
   </div>
 
 </section>
-                    `;
+`;
+
   const divElement = document.createElement('div');
   divElement.className = 'container home';
   divElement.innerHTML = homeView;
+
+
   const btnNav = divElement.querySelector('#button-nav');
   const btnCerrarSesion = divElement.querySelector('#sign-out');
   const btnProfile = divElement.querySelector('#user-profile');
-  const textPost = divElement.querySelector('#publication-text');
   const sendtextPost = divElement.querySelector('#send-text-post');
   /* const privatePost = divElement.querySelector('#private'); */
   userObserver();
@@ -94,8 +109,10 @@ export default (user) => {
 
   sendtextPost.addEventListener('click', (e) => {
     e.preventDefault();
-    console.log(textPost.value);
-    console.log(addTextPost(textPost.value, false));
+    console.log('hice click');
+    const textPost = divElement.querySelector('#publication-text').value;
+    console.log(textPost);
+    console.log(addTextPost(textPost, false));
   });
 
   btnProfile.addEventListener('click', (e) => {
