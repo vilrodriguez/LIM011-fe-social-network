@@ -1,8 +1,7 @@
 import {
   signOut,
 } from '../model/user-authentication.js';
-import { addTextPost } from '../model/model-post.js';
-
+import { addTextPost, userObserver } from '../model/model-post.js';
 
 export default (user) => {
   // console.log(user);
@@ -90,18 +89,20 @@ export default (user) => {
   const textPost = divElement.querySelector('#publication-text');
   const sendtextPost = divElement.querySelector('#send-text-post');
   /* const privatePost = divElement.querySelector('#private'); */
+  userObserver();
 
-  sendtextPost.addEventListener('click', (e)=>{
+
+  sendtextPost.addEventListener('click', (e) => {
     e.preventDefault();
     console.log(textPost.value);
-  console.log(addTextPost(textPost.value, false));
+    console.log(addTextPost(textPost.value, false));
   });
 
   btnProfile.addEventListener('click', (e) => {
     e.preventDefault();
     window.location.hash = '#/profile';
   });
-  
+
   btnCerrarSesion.addEventListener('click', (e) => {
     e.preventDefault();
     signOut();

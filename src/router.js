@@ -1,5 +1,5 @@
 import { components } from './views/components.js';
-import { getInfoUser } from './model/model-post.js';
+import { getInfoUser, userObserver } from './model/model-post.js';
 
 const changeView = (route) => {
   const container = document.getElementById('container');
@@ -12,18 +12,34 @@ const changeView = (route) => {
     case '#/register': container.appendChild(components.register());
       break;
     case '#/home': {
-      const user = firebase.auth().currentUser;
-      // console.log(user, user.uid);
-      getInfoUser(user.uid)
-        .then((response) => {
-          // console.log(response);
-          const dataUser = response.data();
-          // console.log(dataUser);
-          container.appendChild(components.home(dataUser));
-        });
-      break;
+      const userInformation = (id) => {
+        console.log(id);
+        getInfoUser(id)
+          .then((response) => {
+            const dataUser = response.data();
+            container.appendChild(components.home(dataUser));
+          })
+          .catch((error) => {
+            console.log(error);
+          });
+      };
+      userObserver(userInformation);
     }
-    case '#/profile': container.appendChild(components.profile());
+      break;
+    case '#/profile': {
+      const userInformation = (id) => {
+        console.log(id);
+        getInfoUser(id)
+          .then((response) => {
+            const dataUser = response.data();
+            container.appendChild(components.profile(dataUser));
+          })
+          .catch((error) => {
+            console.log(error);
+          });
+      };
+      userObserver(userInformation);
+    }
       break;
     default: container.appendChild(components.notfound());
       break;

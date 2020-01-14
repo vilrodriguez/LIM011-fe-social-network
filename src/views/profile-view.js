@@ -2,7 +2,7 @@ import {
   signOut,
 } from '../model/user-authentication.js';
 
-export default () => {
+export default (user) => {
   const viewProfile = `<header>
                       <nav class="topnav" id="myTopnav">
                         <a href="#/home" class="active">~Bon-a-Petit~</a>
@@ -20,11 +20,15 @@ export default () => {
                     <section class="container-form">
   <h3>Edita la información en tu cuenta</h3>
   <form class="form-" id="form-register" action="post">
-          <img class="avatar-profile" src="./img/profile-user2.svg" alt="placeholder image">
+          <img class="avatar-profile" src="${user.Foto}" alt="placeholder image">
             <div class="input-wrap">
             <input class="input" id="user-name" type="text" name="user-name"
-              placeholder="Nombre:"/>
-          </div>
+              placeholder="Nombre:" value="${user.Name}" disabled/>
+           </div>
+          <div class="input-wrap">
+          <input class="input" id="email" type="email" name="email"
+            placeholder="Correo de contacto:" value="${user.Email}" disabled/>
+         </div>
           <div class="input-wrap">
             <input class="input" id="user-menu" type="text" name="user-menu"
               placeholder="Tipo de menú:"/>
@@ -32,10 +36,6 @@ export default () => {
           <div class="input-wrap">
             <input class="input" id="address" type="text" name="address"
               placeholder="Dirección:"/>
-          </div>
-          <div class="input-wrap">
-            <input class="input" id="email" type="email" name="email"
-              placeholder="Correo de contacto:"/>
           </div>
           <div class="btn-wrapper">
                 <input id="button-update-profile" class="submit btn" type="submit" value="Guardar cambios">
