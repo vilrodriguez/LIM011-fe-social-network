@@ -6,6 +6,19 @@ const changeView = (route) => {
   container.innerHTML = '';
   switch (route) {
     case '': container.appendChild(components.login());
+      // funcion de callback para guiarse
+      /*
+  const userObserver = (obtDatos) => {
+    firebase.auth().onAuthStateChanged((user) => {
+      if (user) {
+        obtDatos(user.uid);
+        console.log('usuario logueado', user);
+      } else {
+        console.log('Ha cerrado sesión');
+      }
+    });
+  };
+  */
       break;
     case '#/': container.appendChild(components.login());
       break;

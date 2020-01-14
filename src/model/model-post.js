@@ -40,8 +40,6 @@ export const getTextPost = () => {
 //   });
 
 
-// export const timeStampsFirestore = () => firebase.firestore().settings({ timestampsInSnapshots: true });
-
 // export const renderPost = (doc) =>{
 // let li  = document.createElement('li');
 // let post = document.createElement('span');
