@@ -11,14 +11,14 @@ export const addTextPost = (userText, privacy) => (
 );
 
 // create elements to render post text
-
-/* export const getPostText = () => {
+/*
+export const getTextPost = () => {
   firebase.firestore().collection('post').get().then((snapshot) => {
   snapshot.docs.forEach(doc =>{
 		console.log(snapshot.doc.data().postText);
 		})
-	});
-}; */
+	})
+} */
 
 // export const getPost = (callback) => firebase.firestore().collection('post')
 //   .onSnapshot((snapshot) => {
