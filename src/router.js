@@ -5,6 +5,19 @@ import { userObserver } from './firebase-controller/userObserver.js';
 const changeView = (route) => {
   const container = document.getElementById('container');
   container.innerHTML = '';
+  // funcion de callback para guiarse
+  /*
+  const userObserver = (obtDatos) => {
+    firebase.auth().onAuthStateChanged((user) => {
+      if (user) {
+        obtDatos(user.uid);
+        console.log('usuario logueado', user);
+      } else {
+        console.log('Ha cerrado sesión');
+      }
+    });
+  };
+  */
   switch (route) {
     case '': container.appendChild(components.login());
       break;
@@ -13,19 +26,34 @@ const changeView = (route) => {
     case '#/register': container.appendChild(components.register());
       break;
     case '#/home': {
-      userObserver();
-      const user = firebase.auth().currentUser;
-      // console.log(user, user.uid);
-      getInfoUser(user.uid)
-        .then((response) => {
-          // console.log(response);
-          const dataUser = response.data();
-          // console.log(dataUser);
-          container.appendChild(components.home(dataUser));
-        });
-      break;
+      const userInformation = (id) => {
+        console.log(id);
+        getInfoUser(id)
+          .then((response) => {
+            const dataUser = response.data();
+            container.appendChild(components.home(dataUser));
+          })
+          .catch((error) => {
+            console.log(error);
+          });
+      };
+      userObserver(userInformation);
     }
-    case '#/profile': container.appendChild(components.profile());
+      break;
+    case '#/profile': {
+      const userInformation = (id) => {
+        console.log(id);
+        getInfoUser(id)
+          .then((response) => {
+            const dataUser = response.data();
+            container.appendChild(components.profile(dataUser));
+          })
+          .catch((error) => {
+            console.log(error);
+          });
+      };
+      userObserver(userInformation);
+    }
       break;
     default: container.appendChild(components.notfound());
       break;

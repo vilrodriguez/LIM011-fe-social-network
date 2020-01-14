@@ -1,5 +1,5 @@
 import {
-  signOut, currentUser
+  signOut
 } from '../firebase-controller/userAuthentication.js';
 
 export default (user) => {
@@ -23,11 +23,11 @@ export default (user) => {
           <img class="avatar-profile" src="${user.Foto}" alt="placeholder image">
             <div class="input-wrap">
             <input class="input" id="user-name" type="text" name="user-name"
-              placeholder="Nombre:" value="${user.Name}"/>
+              placeholder="Nombre:" value="${user.Name}" disabled/>
            </div>
           <div class="input-wrap">
           <input class="input" id="email" type="email" name="email"
-            placeholder="Correo de contacto:" value="${user.Email}"/>
+            placeholder="Correo de contacto:" value="${user.Email}" disabled/>
          </div>
           <div class="input-wrap">
             <input class="input" id="user-menu" type="text" name="user-menu"

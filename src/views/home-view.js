@@ -1,13 +1,13 @@
 import {
   signOut,
 } from '../firebase-controller/userAuthentication.js';
-import { addTextPost } from '../controller-app/getInfo-controller.js';
+// import { addTextPost } from '../controller-app/getInfo-controller.js';
 
 import { userObserver } from '../firebase-controller/userObserver.js';
 
 export default (user) => {
   // console.log(user);
-  const homeView =  `
+  const homeView = `
                     <header>
                     <nav class="topnav" id="myTopnav">
                       <a href="#/home" class="active">~Bon-a-Petit~</a>
@@ -94,7 +94,7 @@ export default (user) => {
     e.preventDefault();
     window.location.hash = '#/profile';
   });
-  
+
   btnCerrarSesion.addEventListener('click', (e) => {
     e.preventDefault();
     signOut();
