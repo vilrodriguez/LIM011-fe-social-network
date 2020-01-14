@@ -2,6 +2,14 @@
 export const getInfoUser = id => firebase.firestore().collection('users').doc(id).get();
 
 
+export const addTextPost = (userText, privacy) => (
+  firebase.firestore().collection('post').add({
+    private: privacy,
+    postText: userText,
+    /* userPosting: user.id, */
+  })
+);
+
 // create elements to render post text
 
 /* export const getPostText = () => {
@@ -20,15 +28,6 @@ export const getInfoUser = id => firebase.firestore().collection('users').doc(id
 //     });
 //     callback(data);
 //   });
-
-	export const addTextPost = (userText, privacy) => (
-  firebase.firestore().collection('post').add({
-    private: privacy,
-		postText: userText,
-		
-		/* userPosting: user.id, */
-  })
-);
 
 
 // export const timeStampsFirestore = () => firebase.firestore().settings({ timestampsInSnapshots: true });

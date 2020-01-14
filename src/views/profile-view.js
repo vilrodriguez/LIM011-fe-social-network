@@ -1,6 +1,6 @@
 import {
   signOut,
-} from '../firebase-controller/userAuthentication.js';
+} from '../model/user-authentication.js';
 
 export default () => {
   const viewProfile = `<header>

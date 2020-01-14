@@ -1,20 +1,7 @@
 import { registerFunction } from '../controller-app/register-controller.js';
 
 export default () => {
-  const viewRegister = `<header>
-  <nav class="topnav" id="myTopnav">
-    <a href="#/home" class="active">~Bon-a-Petit~</a>
-    <div class="dropdown" id="button-nav">
-      <button class="dropbtn"> 
-      MENU
-      </button>
-      <div class="dropdown-content" id="button-nav-content">
-        <a id="user-profile" href="#/profile">Mi perfil</a>
-        <a id="sign-out" href="#/">Cerrar sesión</a>
-      </div>
-    </div>
-  </nav>
-</header>
+  const viewRegister = `
     <div class="wrapper">
       <div class="img">
       <img src = "./img/side_image2.svg"
@@ -63,7 +50,9 @@ export default () => {
     e.preventDefault();
     const email = divElement.querySelector('input[type = "email"]').value;
     const password = divElement.querySelector('input[type= "password"]').value;
-    registerFunction(email, password, mensajeError);
+    const userName = divElement.querySelector('#user-name').value;
+    console.log(userName);
+    registerFunction(email, password, userName, mensajeError);
   });
   return divElement;
 };

@@ -1,5 +1,5 @@
 import { components } from './views/components.js';
-import { getInfoUser } from './controller-app/getInfo-controller.js';
+import { getInfoUser } from './model/model-post.js';
 
 const changeView = (route) => {
   const container = document.getElementById('container');
