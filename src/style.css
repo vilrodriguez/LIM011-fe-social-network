@@ -14,17 +14,18 @@ body {
     
 }    
 .container{
-    width: 85%;
+    width: 100%;
     min-height: 50%;
     display:flex;
     flex-wrap: wrap;
     margin:0;
+    padding: 0;
     /* justify-content: space-evenly; */
     /* padding:1.5em 1em 1em 1em; */
     /* border: 5px dotted red;  */
 }
 .wrapper{
-    width: 100%;
+    width: 85%;
     height: auto;
     border-radius: 2em;
     overflow: hidden;
