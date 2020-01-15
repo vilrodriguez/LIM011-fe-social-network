@@ -76,7 +76,7 @@ export default (user) => {
   });
   
   const postBox = divElement.querySelector('#test');
-  console.log(getTextPost(postBox));
+  console.log(getTextPost(postBox, user));
   btnProfile.addEventListener('click', (e) => {
     e.preventDefault();
     window.location.hash = '#/profile';
