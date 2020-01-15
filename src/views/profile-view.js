@@ -2,7 +2,7 @@ import {
   signOut,
 } from '../model/user-authentication.js';
 
-export default () => {
+export default (user) => {
   const viewProfile = `<header>
                       <nav class="topnav" id="myTopnav">
                         <a href="#/home" class="active">~Bon-a-Petit~</a>
@@ -20,18 +20,18 @@ export default () => {
                     <section class="container-form">
   <h3>Edita la información en tu cuenta</h3>
   <form class="form-" id="form-register" action="post">
-          <img class="avatar-profile" src="./img/profile-user2.svg" alt="placeholder image">
+          <img class="avatar-profile" src=${user.Photo === null ? './img/profile-user2.svg' : user.Photo} alt="placeholder image">
             <div class="input-wrap">
             <input class="input" id="user-name" type="text" name="user-name"
-              placeholder="Nombre:"/>
+              placeholder="Nombre:" value = "${user.Name}" disabled/>
           </div>
           <div class="input-wrap">
             <input class="input" id="user-menu" type="text" name="user-menu"
-              placeholder="Tipo de menú:"/>
+              placeholder="Tipo de menú:" value = ""/>
           </div>
           <div class="input-wrap">
             <input class="input" id="address" type="text" name="address"
-              placeholder="Dirección:"/>
+              placeholder="Dirección:" value="${user.Email}" disabled/>
           </div>
           <div class="input-wrap">
             <input class="input" id="email" type="email" name="email"

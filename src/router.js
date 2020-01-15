@@ -41,7 +41,6 @@ const changeView = (route) => {
       };
       userObserver(userInformation);
     }
- 
       break;
     default: container.appendChild(components.notfound());
       break;
