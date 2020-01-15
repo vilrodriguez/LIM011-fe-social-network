@@ -91,11 +91,12 @@ export default (user) => {
   const btnProfile = divElement.querySelector('#user-profile');
   const sendtextPost = divElement.querySelector('#send-text-post');
   /* const privatePost = divElement.querySelector('#private'); */
-  
+
   sendtextPost.addEventListener('click', (e) => {
     e.preventDefault();
-    console.log('hice click');
+    // console.log('hice click');
     const textPost = divElement.querySelector('#publication-text').value;
+    addTextPost(textPost, false);
     console.log(textPost);
     console.log(addTextPost(textPost, false));
   });
