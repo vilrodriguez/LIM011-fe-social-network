@@ -1,25 +1,23 @@
-import { createUser } from '../firebase-controller/userAuthentication.js';
+import { createUser, newUser, userCurrent } from '../model/user-authentication.js';
 
-export const registerFunction = (email, pass, msjError) => {
+
+export const registerFunction = (email, pass, name, msjError) => {
   const mensajeError = msjError;
   createUser(email, pass)
-    .then((credential) => {
-      let userId=credential.user.uid;
-      /* let userName= */
-      console.log(credential.user.uid);
-      console.log(credential.user.email);
-      console.log(credential.user.displayName);
-      console.log(credential.user);
-      /*displayName: null
-      email: "mkmk@mkmk.com"
-      ​phoneNumber: null
-      ​photoURL: null
-      ​providerId: "password"
-      uid: "mkmk@mkmk.com"*/
-
-      window.location.hash = '#/';
+    .then(() => {
+      const user = userCurrent();
+      // console.log('se registró', result);
+      console.log(user.uid, user.email, name, user.photoURL);
+      newUser(user.uid, user.email, name, user.photoURL)
+        .then(() => {
+          console.log('se registro documento');
+          window.location.hash = '#/';
+        })
+        .catch(() => {
+          console.log('Se detecto un error');
+        });
       console.log('Me registre');
-      alert('Te has registrado con exito. Puedes logearte.');
+      alert('Te has registrado con exito. Puedes logearte');
     })
     .catch((error) => {
       const errorCode = error.code;
