@@ -2,8 +2,6 @@ import { setupPost } from '../controller-app/post-controller.js';
 
 // get users id on database
 export const getInfoUser = id => firebase.firestore().collection('users').doc(id).get();
-
-
 export const addTextPost = (userText, privacy) => (
   firebase.firestore().collection('post').add({
     private: privacy,

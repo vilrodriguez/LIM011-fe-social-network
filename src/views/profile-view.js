@@ -31,11 +31,11 @@ export default (user) => {
          </div>
           <div class="input-wrap">
             <input class="input" id="user-menu" type="text" name="user-menu"
-              placeholder="Tipo de menú:"/>
+              placeholder="Tipo de menú:" value = ""/>
           </div>
           <div class="input-wrap">
             <input class="input" id="address" type="text" name="address"
-              placeholder="Dirección:"/>
+              placeholder="Dirección:" value="${user.Email}" disabled/>
           </div>
           <div class="btn-wrapper">
                 <input id="button-update-profile" class="submit btn" type="submit" value="Guardar cambios">
