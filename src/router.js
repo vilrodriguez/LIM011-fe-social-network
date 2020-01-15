@@ -1,4 +1,5 @@
 import { components } from './views/components.js';
+
 import { getInfoUser, userObserver } from './model/model-post.js';
 
 const changeView = (route) => {
