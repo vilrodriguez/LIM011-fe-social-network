@@ -1,24 +1,11 @@
 import {
-  signOut,
+  signOut
 } from '../model/user-authentication.js';
-import { addTextPost } from '../model/model-post.js';
+import { addTextPost, getTextPost } from '../model/model-post.js';
 
 
 export default (user) => {
   // console.log(user);
-  /* const ProfilePhoto = () => {
-    const userPhoto = document.createElement('img');
-    if (user.Photo === null) {
-      userPhoto.setAttribute('src', '../img/profile-user2.svg');
-    } else {
-      userPhoto.setAttribute('src', `${user.Photo}`);
-      console.log(userPhoto);
-    }
-    return userPhoto;
-  };
-  console.log(ProfilePhoto());
-  const photoUser = ProfilePhoto(); */
-
   const homeView = `<header>
 <nav class="topnav" id="myTopnav">
   <a href="#/home" class="active">~Bon-a-Petit~</a>
@@ -48,6 +35,7 @@ export default (user) => {
 </div>
 
 <div class="feed">
+
     <div class="box-create-publication">
       <label for="publication-text"> ${user.Name} dice: </label>
       <textarea id="publication-text" name="publication" class="publication" placeholder="Escribe tu mensaje aquí" cols="30" rows="5"></textarea>
@@ -56,35 +44,7 @@ export default (user) => {
       <button id="send-text-post" class="btn pull-right" type="submit">Enviar</button>
     </div>
   <div class="box-publication-feed">
-      <div class="box-publication-feed-header">
-        Marilyn Rivero:
-      </div>
-      <div class="box-publication-feed-text">
-        At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti
-        atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident.
-      </div>
-      <div class="box-likes">
-        <div class="text-likes">
-          <img class="heart-likes" src="./img/lover.svg" alt="Likes heart picture">
-          a 4 personas les gusta esto.
-        </div>
-      </div>
-      <div class="box-publication-feed-comment">
-        <div class="box-publication-feed-comment-header">
-          Vilmarys dice:
-        </div>
-        <div class="box-publication-feed-comment-text ">
-          The wise man therefore always holds in these matters to this principle of selection.
-        </div>
-      </div>
-    <div class="box-publication-feed-comment">
-      <div class="box-publication-feed-comment-header">
-        Lilian dice:
-      </div>
-      <div class="box-publication-feed-comment-text ">
-      Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus.
-      </div>
-    </div>
+  <div id = "test"> </div>
     </div>
     <div class="box-create-comment">
       <textarea name="comment" class="publication" placeholder="Escribe tu comentario aquí" cols="30" rows="3"></textarea>
@@ -110,10 +70,13 @@ export default (user) => {
     e.preventDefault();
     console.log('hice click');
     const textPost = divElement.querySelector('#publication-text').value;
-    console.log(textPost);
-    console.log(addTextPost(textPost, false));
+    // console.log(textPost);
+    console.log('Post enviado:', addTextPost(textPost, false));
+  
   });
-
+  const postBox = divElement.querySelector('#test');
+  console.log(getTextPost(postBox, user));
+  
   btnProfile.addEventListener('click', (e) => {
     e.preventDefault();
     window.location.hash = '#/profile';

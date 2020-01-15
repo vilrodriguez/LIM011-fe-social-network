@@ -20,11 +20,15 @@ export default (user) => {
                     <section class="container-form">
   <h3>Edita la información en tu cuenta</h3>
   <form class="form-" id="form-register" action="post">
-          <img class="avatar-profile" src=${user.Photo === null ? './img/profile-user2.svg' : user.Photo} alt="placeholder image">
+          <img class="avatar-profile" src=${user.Photo === null ? './img/profile-user2.svg' : user.Photo} alt="User's profile picture">
             <div class="input-wrap">
             <input class="input" id="user-name" type="text" name="user-name"
-              placeholder="Nombre:" value = "${user.Name}" disabled/>
-          </div>
+              placeholder="Nombre:" value="${user.Name}" disabled/>
+           </div>
+          <div class="input-wrap">
+          <input class="input" id="email" type="email" name="email"
+            placeholder="Correo de contacto:" value="${user.Email}" disabled/>
+         </div>
           <div class="input-wrap">
             <input class="input" id="user-menu" type="text" name="user-menu"
               placeholder="Tipo de menú:" value = ""/>
@@ -32,10 +36,6 @@ export default (user) => {
           <div class="input-wrap">
             <input class="input" id="address" type="text" name="address"
               placeholder="Dirección:" value="${user.Email}" disabled/>
-          </div>
-          <div class="input-wrap">
-            <input class="input" id="email" type="email" name="email"
-              placeholder="Correo de contacto:"/>
           </div>
           <div class="btn-wrapper">
                 <input id="button-update-profile" class="submit btn" type="submit" value="Guardar cambios">
