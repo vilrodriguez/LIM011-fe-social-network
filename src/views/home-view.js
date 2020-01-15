@@ -74,7 +74,7 @@ export default (user) => {
     console.log('Post enviado:', addTextPost(textPost, false));
   });
   const postBox = divElement.querySelector('#test');
-    getTextPost(postBox, user);
+  getTextPost(postBox, user);
 
   btnProfile.addEventListener('click', (e) => {
     e.preventDefault();
