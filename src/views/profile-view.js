@@ -20,7 +20,7 @@ export default (user) => {
                     <section class="container-form">
   <h3>Edita la información en tu cuenta</h3>
   <form class="form-" id="form-register" action="post">
-          <img class="avatar-profile" src="${user.Foto}" alt="placeholder image">
+          <img class="avatar-profile" src=${user.Photo === null ? './img/profile-user2.svg' : user.Photo} alt="User's profile picture">
             <div class="input-wrap">
             <input class="input" id="user-name" type="text" name="user-name"
               placeholder="Nombre:" value="${user.Name}" disabled/>

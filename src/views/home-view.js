@@ -1,23 +1,10 @@
 import {
   signOut,
 } from '../model/user-authentication.js';
-import { addTextPost, userObserver } from '../model/model-post.js';
+import { addTextPost } from '../model/model-post.js';
 
 export default (user) => {
   // console.log(user);
-  /* const ProfilePhoto = () => {
-    const userPhoto = document.createElement('img');
-    if (user.Photo === null) {
-      userPhoto.setAttribute('src', '../img/profile-user2.svg');
-    } else {
-      userPhoto.setAttribute('src', `${user.Photo}`);
-      console.log(userPhoto);
-    }
-    return userPhoto;
-  };
-  console.log(ProfilePhoto());
-  const photoUser = ProfilePhoto(); */
-
   const homeView = `<header>
 <nav class="topnav" id="myTopnav">
   <a href="#/home" class="active">~Bon-a-Petit~</a>
@@ -104,9 +91,7 @@ export default (user) => {
   const btnProfile = divElement.querySelector('#user-profile');
   const sendtextPost = divElement.querySelector('#send-text-post');
   /* const privatePost = divElement.querySelector('#private'); */
-  userObserver();
-
-
+  
   sendtextPost.addEventListener('click', (e) => {
     e.preventDefault();
     console.log('hice click');
