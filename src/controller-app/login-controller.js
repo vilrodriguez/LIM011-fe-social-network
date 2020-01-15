@@ -74,15 +74,3 @@ export const loginFacebook = () => {
       }
     });
 };
-
-// listening if there is a user logged in
-export const userObserver = () => {
-  firebase.auth().onAuthStateChanged((user) => {
-    // console.log(user.uid);
-    if (user) {
-      console.log('usuario logueado', user);
-    } else {
-      console.log('Ha cerrado sesión', user);
-    }
-  });
-};
