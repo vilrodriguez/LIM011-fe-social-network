@@ -1,5 +1,6 @@
 import { loginFunction, loginWithGmail, loginFacebook } from '../controller-app/login-controller.js';
 
+
 export default () => {
   const viewLogin = ` 
   <div class="wrapper">
@@ -53,14 +54,14 @@ export default () => {
   const btnLogin = divElement.querySelector('#button-login');
   const google = divElement.querySelector('#google');
   const facebook = divElement.querySelector('#facebook');
-  // userObserver();
+  console.log(getTextPost());
+  
   btnLogin.addEventListener('click', (e) => {
     e.preventDefault();
     const email = divElement.querySelector('input[type="email"]').value;
     const password = divElement.querySelector('input[type="password"]').value;
     loginFunction(email, password, menssageError);
     /* alert(' Te has logeado'); */
-    
   });
 
   google.addEventListener('click', (e) => {

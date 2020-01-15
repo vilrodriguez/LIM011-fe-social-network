@@ -1,3 +1,4 @@
+
 // get users id on database
 export const getInfoUser = id => firebase.firestore().collection('users').doc(id).get();
 
@@ -20,15 +21,20 @@ export const userObserver = (userInformation) => {
     }
   });
 };
-// create elements to render post text
-/*
+// get post content
+
+export const setupGuides = (data) =>{
+    let template = '';
+    data.forEach(doc =>{
+        const guide = doc.data();
+        console.log(guide);
+    })
+}
 export const getTextPost = () => {
-  firebase.firestore().collection('post').get().then((snapshot) => {
-  snapshot.docs.forEach(doc =>{
-		console.log(snapshot.doc.data().postText);
-		})
-	})
-} */
+  firebase.firestore().collection('guides').get().then(((snapshot) => {
+    setupGuides(snapshot.docs);
+  }));
+};
 
 // export const getPost = (callback) => firebase.firestore().collection('post')
 //   .onSnapshot((snapshot) => {
