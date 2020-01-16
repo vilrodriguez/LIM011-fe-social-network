@@ -1,6 +1,7 @@
 import {
   signOut,
 } from '../model/user-authentication.js';
+import { actualizandoPerfil } from '../controller-app/profile-controller.js';
 
 export default (user) => {
   const viewProfile = `<header>
@@ -38,17 +39,34 @@ export default (user) => {
               placeholder="Dirección:" value="${user.Email}" disabled/>
           </div>
           <div class="btn-wrapper">
-                <input id="button-update-profile" class="submit btn" type="submit" value="Guardar cambios">
-            </div>
+                <input id="editar" class="submit btn" type="submit" value="Editar"/>
+                <br>
+          </div>
+          <div class="btn-wrapper">
+                <input id="guardar" class="submit btn" type="submit" value="Guardar"/>
+                <br>
+          </div>
+           <div class="btn-wrapper">
+                <input id="inicio" class="submit btn" type="submit" value="Inicio"/>
+          </div>
     </form>
   </section>
   `;
   const divElement = document.createElement('div');
   divElement.className = 'container-profile';
   divElement.innerHTML = viewProfile;
+
+  const userName = divElement.querySelector('#user-name');
+  const userMenu = divElement.querySelector('#user-menu');
+  const userAdress = divElement.querySelector('#address');
+
   const btnNav = divElement.querySelector('#button-nav');
   const btnProfile = divElement.querySelector('#user-profile');
   const btnCerrarSesion = divElement.querySelector('#sign-out');
+  const btnEditar = divElement.querySelector('#editar');
+  const btnGuardar = divElement.querySelector('#guardar');
+  const btnInicio = divElement.querySelector('#inicio');
+  btnGuardar.style.display = 'block';
 
   btnProfile.addEventListener('click', (e) => {
     e.preventDefault();
@@ -68,6 +86,25 @@ export default (user) => {
     } else {
       x.className = 'dropdown-content';
     }
+  });
+
+  btnEditar.addEventListener('click', (e) => {
+    e.preventDefault();
+    userName.disabled = false;
+    userName.focus();
+    userName.setSelectionRange(0, userName.nodeValue.length);
+    btnEditar.style.display = 'none';
+  });
+
+  btnGuardar.addEventListener('click', (e) => {
+    e.preventDefault();
+    const nuevoUserNombre = userName.value;
+    actualizandoPerfil(nuevoUserNombre);
+    userName.disabled = true;
+  });
+  btnInicio.addEventListener('click', (e) => {
+    e.preventDefault();
+    window.location.hash = '#/home';
   });
   return divElement;
 };
