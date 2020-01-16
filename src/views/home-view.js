@@ -71,11 +71,13 @@ export default (user) => {
     console.log('hice click');
     const textPost = divElement.querySelector('#publication-text').value;
     // console.log(textPost);
+
     console.log('Post enviado:', addTextPost(textPost, user.ID, user.Name, false));
     getTextPost(postBox, user);
   });
   const postBox = divElement.querySelector('#test');
   getTextPost(postBox, user);
+
 
   btnProfile.addEventListener('click', (e) => {
     e.preventDefault();
