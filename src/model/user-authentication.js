@@ -8,6 +8,8 @@ export const newUser = (id, email, name, photo) => (
     Email: email,
     Name: name,
     Photo: photo,
+    Menu: '',
+    Adress: '',
   })
 );
 
