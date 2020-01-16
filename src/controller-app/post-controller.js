@@ -20,5 +20,5 @@ export const setupPost = (data, postContent, user) => {
     template += div;
   });
   postTemplate.innerHTML = template;
-  console.log(postTemplate);
+  // console.log(postTemplate);
 };

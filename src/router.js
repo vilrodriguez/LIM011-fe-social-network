@@ -27,14 +27,15 @@ const changeView = (route) => {
       break;
     case '#/home': {
       const userInformation = (id) => {
-        console.log(id);
+        // console.log(id);
         getInfoUser(id)
           .then((response) => {
             const dataUser = response.data();
             container.appendChild(components.home(dataUser));
           })
+          // eslint-disable-next-line no-unused-vars
           .catch((error) => {
-            console.log(error);
+            // console.log(error);
           });
       };
       userObserver(userInformation);
@@ -42,14 +43,15 @@ const changeView = (route) => {
       break;
     case '#/profile': {
       const userInformation = (id) => {
-        console.log(id);
+        //  console.log(id);
         getInfoUser(id)
           .then((response) => {
             const dataUser = response.data();
             container.appendChild(components.profile(dataUser));
           })
+          // eslint-disable-next-line no-unused-vars
           .catch((error) => {
-            console.log(error);
+            // console.log(error);
           });
       };
       userObserver(userInformation);

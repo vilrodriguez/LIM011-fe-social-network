@@ -23,7 +23,7 @@ export const userObserver = (userInformation) => {
 
       // console.log('usuario logueado', user);
     } else {
-      console.log('Ha cerrado sesión');
+      // console.log('Ha cerrado sesión');
     }
   });
 };
