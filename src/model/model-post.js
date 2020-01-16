@@ -3,11 +3,14 @@ import { setupPost } from '../controller-app/post-controller.js';
 // get users id on database
 export const getInfoUser = id => firebase.firestore().collection('users').doc(id).get();
 
-export const addTextPost = (userText, privacy) => (
+export const addTextPost = (userText, userID, userName, privacy) => (
+
   firebase.firestore().collection('post').add({
-    private: privacy,
     postText: userText,
-    /* userPosting: user.id, */
+    UID: userID,
+    name: userName,
+    privatePost: privacy,
+    datePost: firebase.firestore.FieldValue.serverTimestamp(),
   })
 );
 
@@ -16,7 +19,6 @@ export const getTextPost = (content, user) => {
     setupPost(snapshot.docs, content, user);
   }));
 };
-
 // export const getPost = (callback) => firebase.firestore().collection('post')
 //   .onSnapshot((snapshot) => {
 //     const data = [];

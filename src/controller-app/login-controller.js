@@ -73,6 +73,3 @@ export const loginFacebook = () => {
       }
     });
 };
-
-// listening if there is a user logged in
-
