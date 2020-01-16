@@ -1,5 +1,5 @@
 import {
-  signOut
+  signOut,
 } from '../model/user-authentication.js';
 import { addTextPost, getTextPost } from '../model/model-post.js';
 
@@ -71,12 +71,12 @@ export default (user) => {
     console.log('hice click');
     const textPost = divElement.querySelector('#publication-text').value;
     // console.log(textPost);
-    console.log('Post enviado:', addTextPost(textPost, false));
-  
+    console.log('Post enviado:', addTextPost(textPost, user.ID, user.Name, false));
+    getTextPost(postBox, user);
   });
   const postBox = divElement.querySelector('#test');
-  console.log(getTextPost(postBox, user));
-  
+  getTextPost(postBox, user);
+
   btnProfile.addEventListener('click', (e) => {
     e.preventDefault();
     window.location.hash = '#/profile';
