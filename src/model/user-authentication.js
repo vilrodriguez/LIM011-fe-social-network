@@ -33,3 +33,14 @@ export const signInWithFacebook = () => {
   firebase.auth().useDeviceLanguage();
   return firebase.auth().signInWithPopup(provider);
 };
+export const userObserver = (userInformation) => {
+  firebase.auth().onAuthStateChanged((user) => {
+    if (user) {
+      userInformation(user.uid);
+
+      // console.log('usuario logueado', user);
+    } else {
+      console.log('Ha cerrado sesión');
+    }
+  });
+};
