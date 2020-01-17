@@ -1,7 +1,8 @@
 import {
-  signOut,
+  signOut, 
 } from '../model/user-authentication.js';
 import { addTextPost, getTextPost } from '../model/model-post.js';
+import { getdate } from '../controller-app/post-controller.js';
 
 
 export default (user) => {
@@ -59,13 +60,13 @@ export default (user) => {
   divElement.className = 'container home';
   divElement.innerHTML = homeView;
 
-
-  const btnNav = divElement.querySelector('#button-nav');
+ const btnNav = divElement.querySelector('#button-nav');
   const btnCerrarSesion = divElement.querySelector('#sign-out');
   const btnProfile = divElement.querySelector('#user-profile');
   const sendtextPost = divElement.querySelector('#send-text-post');
   /* const privatePost = divElement.querySelector('#private'); */
 
+  const postBox = divElement.querySelector('#test');
   sendtextPost.addEventListener('click', (e) => {
     e.preventDefault();
     console.log('hice click');
@@ -74,8 +75,9 @@ export default (user) => {
     console.log('Post enviado:', addTextPost(textPost, user.ID, user.Name, false));
     getTextPost(postBox, user);
   });
-  const postBox = divElement.querySelector('#test');
   getTextPost(postBox, user);
+ getdate();
+
 
   btnProfile.addEventListener('click', (e) => {
     e.preventDefault();
