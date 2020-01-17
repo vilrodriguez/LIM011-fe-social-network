@@ -13,7 +13,7 @@ export const loginFunction = (email, pass, mensajeError) => {
     })
     .catch((error) => {
       const errorCode = error.code;
-      const errorMessage = error.message;
+      // const errorMessage = error.message;
       // console.log('Detectando un error: ', error, errorMessage);
       switch (errorCode) {
         case 'auth/user-not-found':

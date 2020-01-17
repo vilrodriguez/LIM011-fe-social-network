@@ -8,6 +8,8 @@ export const newUser = (id, email, name, photo) => (
     Email: email,
     Name: name,
     Photo: photo,
+    Menu: '',
+    Adress: '',
   })
 );
 
@@ -31,4 +33,15 @@ export const signInWithFacebook = () => {
   const provider = new firebase.auth.FacebookAuthProvider();
   firebase.auth().useDeviceLanguage();
   return firebase.auth().signInWithPopup(provider);
+};
+export const userObserver = (userInformation) => {
+  firebase.auth().onAuthStateChanged((user) => {
+    if (user) {
+      userInformation(user.uid);
+
+      // console.log('usuario logueado', user);
+    } else {
+      console.log('Ha cerrado sesión');
+    }
+  });
 };
