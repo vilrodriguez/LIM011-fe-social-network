@@ -1,11 +1,50 @@
-import {
-  signOut,
-} from '../model/user-authentication.js';
-import { addTextPost, getTextPost } from '../model/model-post.js';
+import { signOut } from '../model/user-authentication.js';
+import { addTextPost } from '../model/model-post.js';
 
 
-export default (user) => {
-  // console.log(user);
+const printDate = (dat) => {
+  const time = dat.toDate();
+  const month = time.toLocaleString('default', { month: 'short' });
+  const getDay = time.getDate();
+  const getYear = time.getFullYear();
+  const getHour = time.getHours();
+  const getMinutes = time.getMinutes();
+  const day = `${getDay} of ${month}, ${getYear} `;
+  const postingTime = `A las ${getHour}:${getMinutes}`;
+  const postingDate = `${day}. ${postingTime}`;
+  return postingDate;
+};
+const setupPost = (data, postContent) => {
+  const postTemplate = postContent;
+  let template = '';
+  console.log(data);
+  data.forEach((doc) => {
+    // console.log(doc.docID,doc.text, doc.privacidad, doc.userName, doc.userUID);
+    const horaPost = printDate(doc.date);
+    const div = `
+          <div id = "${doc.docID}" class="box-publication-feed">
+            <div class="box-publication-feed-header">
+              <span id ="poster-name">${doc.userName} dice:</span>
+            </div>
+            <div class="box-publication-feed-text">${doc.text}</div>
+            <div class="box-likes">
+              <div class="text-likes">
+                <img class="heart-likes" src="./img/lover.svg" alt="Likes heart picture"/>
+                <p class ="post-date">${horaPost}</p>
+                <button id="editar">Editar</button>
+                <button id="eliminar">Eliminar</button>
+              </div>
+            </div>
+          </div>`;
+
+    template += div;
+  });
+  postTemplate.innerHTML = template;
+  // console.log(postTemplate);
+};
+
+export default (user, datos) => {
+  console.log(datos);
   const homeView = `<header>
 <nav class="topnav" id="myTopnav">
   <a href="#/home" class="active">~Bon-a-Petit~</a>
@@ -44,7 +83,7 @@ export default (user) => {
       <button id="send-text-post" class="btn pull-right" type="submit">Enviar</button>
     </div>
   <div class="box-publication-feed">
-  <div id = "test"> </div>
+  <div id = "test"></div>
     </div>
     <div class="box-create-comment">
       <textarea name="comment" class="publication" placeholder="Escribe tu comentario aquí" cols="30" rows="3"></textarea>
@@ -59,11 +98,11 @@ export default (user) => {
   divElement.className = 'container home';
   divElement.innerHTML = homeView;
 
-
   const btnNav = divElement.querySelector('#button-nav');
   const btnCerrarSesion = divElement.querySelector('#sign-out');
   const btnProfile = divElement.querySelector('#user-profile');
   const sendtextPost = divElement.querySelector('#send-text-post');
+  const postBox = divElement.querySelector('#test');
   /* const privatePost = divElement.querySelector('#private'); */
 
   sendtextPost.addEventListener('click', (e) => {
@@ -71,14 +110,9 @@ export default (user) => {
     // console.log('hice click');
     const textPost = divElement.querySelector('#publication-text').value;
     // console.log(textPost);
-
-    console.log('Post enviado:', addTextPost(textPost, user.ID, user.Name, false));
-    getTextPost(postBox, user);
+    addTextPost(textPost, user.ID, user.Name, false);
   });
-  const postBox = divElement.querySelector('#test');
-  getTextPost(postBox, user);
-
-
+  setupPost(datos, postBox);
   btnProfile.addEventListener('click', (e) => {
     e.preventDefault();
     window.location.hash = '#/profile';
