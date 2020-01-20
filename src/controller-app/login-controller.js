@@ -4,6 +4,7 @@ import {
 
 export const loginFunction = (email, pass, mensajeError) => {
   const msjError = mensajeError;
+  const loginForm = document.querySelector('#form-autentication');
   signInUser(email, pass)
     .then(() => {
       window.location.hash = '#/home';
@@ -69,7 +70,7 @@ export const loginFacebook = () => {
     .catch((error) => {
       const errorCode = error.code;
       if (errorCode === 'auth/account-exists-with-different-credential') {
-        console.log('es el mismo usuario');
+        console.log('Es el mismo usuario');
       }
     });
 };

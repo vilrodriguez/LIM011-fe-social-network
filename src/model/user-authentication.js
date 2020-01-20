@@ -29,7 +29,6 @@ export const signInWithGoogle = () => {
   const provider = new firebase.auth.GoogleAuthProvider();
   return firebase.auth().signInWithPopup(provider);
 };
-
 export const signInWithFacebook = () => {
   const provider = new firebase.auth.FacebookAuthProvider();
   firebase.auth().useDeviceLanguage();

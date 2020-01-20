@@ -1,4 +1,4 @@
-import { setupPost } from '../controller-app/post-controller.js';
+// import { setupPost } from '../controller-app/post-controller.js';
 
 // get users id on database
 export const getInfoUser = id => firebase.firestore().collection('users').doc(id).get();
@@ -14,11 +14,32 @@ export const addTextPost = (userText, userID, userName, privacy) => (
   })
 );
 
-export const getTextPost = (content, user) => {
+// const funt = (datos) =>{
+//   console.log(datos);
+// };
+
+export const getTextPost = (funcionleerdatos) => {
+  firebase.firestore().collection('post').onSnapshot((snapshot) => {
+    const array = [];
+    snapshot.forEach((doc) => {
+      array.push({
+        docID: doc.id,
+        userName: doc.data().name,
+        text: doc.data().postText,
+        userUID: doc.data().UID,
+        date: doc.data().datePost,
+        privacidad: doc.data().privatePost,
+      });
+    });
+    funcionleerdatos(array);
+  });
+};
+
+/* export const getTextPost = (content, user) => {
   firebase.firestore().collection('post').get().then(((snapshot) => {
     setupPost(snapshot.docs, content, user);
   }));
-};
+}; */
 // export const getPost = (callback) => firebase.firestore().collection('post')
 //   .onSnapshot((snapshot) => {
 //     const data = [];
