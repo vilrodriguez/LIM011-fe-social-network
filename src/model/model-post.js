@@ -14,10 +14,6 @@ export const addTextPost = (userText, userID, userName, privacy) => (
   })
 );
 
-// const funt = (datos) =>{
-//   console.log(datos);
-// };
-
 export const getTextPost = (funcionleerdatos) => {
   firebase.firestore().collection('post').onSnapshot((snapshot) => {
     const array = [];
@@ -34,27 +30,3 @@ export const getTextPost = (funcionleerdatos) => {
     funcionleerdatos(array);
   });
 };
-
-/* export const getTextPost = (content, user) => {
-  firebase.firestore().collection('post').get().then(((snapshot) => {
-    setupPost(snapshot.docs, content, user);
-  }));
-}; */
-// export const getPost = (callback) => firebase.firestore().collection('post')
-//   .onSnapshot((snapshot) => {
-//     const data = [];
-//     snapshot.forEach((doc) => {
-//       data.push({ id: doc.id, ...doc.data() });
-//     });
-//     callback(data);
-//   });
-
-
-// export const renderPost = (doc) =>{
-// let li  = document.createElement('li');
-// let post = document.createElement('span');
-// li.setAttribute('data-id', docs.id);
-// post.textContent = docs.data().postText;
-// li.appendChild(post);
-
-// };
