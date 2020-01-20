@@ -107,9 +107,7 @@ export default (user, datos) => {
 
   sendtextPost.addEventListener('click', (e) => {
     e.preventDefault();
-    // console.log('hice click');
     const textPost = divElement.querySelector('#publication-text').value;
-    // console.log(textPost);
     addTextPost(textPost, user.ID, user.Name, false);
   });
   setupPost(datos, postBox);
