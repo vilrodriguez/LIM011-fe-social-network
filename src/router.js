@@ -32,6 +32,7 @@ const changeView = (route) => {
           .then((response) => {
             const dataUser = response.data();
             const funt = (datos) => {
+              container.innerHTML = '';
               container.appendChild(components.home(dataUser, datos));
             };
             getTextPost(funt);
