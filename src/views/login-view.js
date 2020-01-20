@@ -53,6 +53,7 @@ export default () => {
   const btnLogin = divElement.querySelector('#button-login');
   const google = divElement.querySelector('#google');
   const facebook = divElement.querySelector('#facebook');
+
   btnLogin.addEventListener('click', (e) => {
     e.preventDefault();
     const email = divElement.querySelector('input[type="email"]').value;
