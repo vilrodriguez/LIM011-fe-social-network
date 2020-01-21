@@ -4,7 +4,6 @@
 export const getInfoUser = id => firebase.firestore().collection('users').doc(id).get();
 
 export const addTextPost = (userText, userID, userName, privacy) => (
-
   firebase.firestore().collection('post').add({
     postText: userText,
     UID: userID,
@@ -15,7 +14,7 @@ export const addTextPost = (userText, userID, userName, privacy) => (
 );
 
 export const getTextPost = (funcionleerdatos) => {
-  firebase.firestore().collection('post').onSnapshot((snapshot) => {
+  firebase.firestore().collection('post').orderBy('datePost', 'desc').onSnapshot((snapshot) => {
     const array = [];
     snapshot.forEach((doc) => {
       array.push({

@@ -4,6 +4,7 @@ import {
 
 export const loginFunction = (email, pass, mensajeError) => {
   const msjError = mensajeError;
+  // eslint-disable-next-line no-unused-vars
   const loginForm = document.querySelector('#form-autentication');
   signInUser(email, pass)
     .then(() => {
@@ -33,7 +34,9 @@ export const loginFunction = (email, pass, mensajeError) => {
 export const loginWithGmail = () => {
   signInWithGoogle()
     .then((result) => {
+      // eslint-disable-next-line no-unused-vars
       const user = result.user;
+      // eslint-disable-next-line no-unused-vars
       const token = result.credential.accessToken;
       // console.log(result);
       // console.log('te has logueado con gmail', user, token);
@@ -44,13 +47,14 @@ export const loginWithGmail = () => {
           window.location.hash = '#/home';
         })
         .catch(() => {
-          console.log('se produjo un error');
+          // console.log('se produjo un error');
         });
     })
+    // eslint-disable-next-line no-unused-vars
     .catch((error) => {
-      const errorCode = error.code;
-      const errorMessage = error.message;
-      alert(`Error detectado: ${errorMessage}, Tipo: ${errorCode} `);
+      // const errorCode = error.code;
+      // const errorMessage = error.message;
+      // alert(`Error detectado: ${errorMessage}, Tipo: ${errorCode} `);
     });
 };
 export const loginFacebook = () => {
@@ -60,17 +64,17 @@ export const loginFacebook = () => {
       // console.log(result);
       newUser(result.user.uid, result.user.email, result.user.displayName, result.user.photoURL)
         .then(() => {
-          console.log('se registró documento');
+          // console.log('se registró documento');
           window.location.hash = '#/home';
         })
         .catch(() => {
-          console.log('se produjo un error');
+          // console.log('se produjo un error');
         });
     })
     .catch((error) => {
       const errorCode = error.code;
       if (errorCode === 'auth/account-exists-with-different-credential') {
-        console.log('Es el mismo usuario');
+        // console.log('es el mismo usuario');
       }
     });
 };

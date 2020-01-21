@@ -17,7 +17,7 @@ const printDate = (dat) => {
 const setupPost = (data, postContent) => {
   const postTemplate = postContent;
   let template = '';
-  console.log(data);
+  // console.log(data);
   data.forEach((doc) => {
     // console.log(doc.docID,doc.text, doc.privacidad, doc.userName, doc.userUID);
     const horaPost = printDate(doc.date);
@@ -44,7 +44,7 @@ const setupPost = (data, postContent) => {
 };
 
 export default (user, datos) => {
-  console.log(datos);
+  // console.log(datos);
   const homeView = `<header>
 <nav class="topnav" id="myTopnav">
   <a href="#/home" class="active">~Bon-a-Petit~</a>
