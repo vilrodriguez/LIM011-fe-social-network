@@ -1,5 +1,5 @@
 import { signOut } from '../model/user-authentication.js';
-import { addTextPost /* deletePost */ } from '../model/model-post.js';
+import { addTextPost, getPostToDelete } from '../model/model-post.js';
 
 
 /* const printDate = (dat) => {
@@ -35,7 +35,18 @@ const setupPost = (data) => {
             </div>
           </div>`;
 
-  // console.log(postTemplate);
+  console.log(postTemplate);
+  const btnEliminar = postTemplate.querySelector(`#eliminar-${data.docID}`);
+  console.log(btnEliminar);
+  btnEliminar.addEventListener('click', () => {
+    getPostToDelete(data.docID);/* .then(()=>{
+      console.log('Se ha eliminado el post');
+    }).catch(()=>{
+      console.log('Ha ocurrido un error');
+    });
+    console.log('click eliminar'); */
+  });
+
   return postTemplate;
 };
 
@@ -115,14 +126,6 @@ export default (user, datos) => {
     e.preventDefault();
     window.location.hash = '#/profile';
   });
-
-  // const newPost = divElement.querySelector(`btn-eliminar`);
-  // const deletePostBtn = divElement.querySelector('btn-eliminar');
-  // deletePostBtn.addEventListener('click', () => {
-  // console.log(datos.data().docId);
-  // //  deletePost(doc.docID);
-  // console.log('intenté borrar');
-  // });
 
   btnCerrarSesion.addEventListener('click', (e) => {
     e.preventDefault();
