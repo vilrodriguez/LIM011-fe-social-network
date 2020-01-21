@@ -4,6 +4,7 @@ import {
 
 export const loginFunction = (email, pass, mensajeError) => {
   const msjError = mensajeError;
+  // eslint-disable-next-line no-unused-vars
   const loginForm = document.querySelector('#form-autentication');
   signInUser(email, pass)
     .then(() => {

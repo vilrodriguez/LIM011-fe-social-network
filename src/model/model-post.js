@@ -4,7 +4,6 @@
 export const getInfoUser = id => firebase.firestore().collection('users').doc(id).get();
 
 export const addTextPost = (userText, userID, userName, privacy) => (
-
   firebase.firestore().collection('post').add({
     postText: userText,
     UID: userID,
