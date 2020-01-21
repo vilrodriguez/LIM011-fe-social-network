@@ -32,11 +32,7 @@ const changeView = (route) => {
           .then((response) => {
             const dataUser = response.data();
             const funt = (datos) => {
-<<<<<<< HEAD
-              container.innerHTML='';
-=======
               container.innerHTML = '';
->>>>>>> 321300fc7a4feb302b9242aad82aff12ece43d26
               container.appendChild(components.home(dataUser, datos));
             };
             getTextPost(funt);
