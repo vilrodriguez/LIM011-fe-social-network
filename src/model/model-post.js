@@ -33,15 +33,10 @@ export const getTextPost = (funcionleerdatos) => {
 };
 
 // deletes a post from collection
-export const getPostToDelete = (postId) => {
-  firebase.firestore().collection('post').doc(postId).delete();
-};
+export const getPostToDelete = postId => firebase.firestore().collection('post').doc(postId).delete();
 
-export const deletePost = (post) => {
-  getPostToDelete(post.id).then(() => {
-    console.log('Document successfully deleted!');
-  })
-    .catch((error) => {
-      console.error('Error removing document: ', error);
-    });
-};
+// export const deletePost = (post) => {
+//   getPostToDelete(post.docID).then(() => {
+//     // console.log('Document successfully deleted!');
+//   });
+// };
