@@ -37,7 +37,6 @@ const setupPost = (data) => {
 
   console.log(postTemplate);
   return postTemplate;
-  
 };
 
 
