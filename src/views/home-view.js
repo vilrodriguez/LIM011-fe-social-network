@@ -35,14 +35,13 @@ const setupPost = (data) => {
             </div>
           </div>`;
 
-  console.log(postTemplate);
+  // console.log(postTemplate);
   return postTemplate;
-  
 };
 
 
 export default (user, datos) => {
-  console.log(datos);
+  // console.log(datos);
   const homeView = `<header>
 <nav class="topnav" id="myTopnav">
   <a href="#/home" class="active">~Bon-a-Petit~</a>
