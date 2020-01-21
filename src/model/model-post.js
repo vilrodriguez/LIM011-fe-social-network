@@ -3,6 +3,7 @@
 // get users id on database
 export const getInfoUser = id => firebase.firestore().collection('users').doc(id).get();
 
+// add text post when user submits
 export const addTextPost = (userText, userID, userName, privacy) => (
   firebase.firestore().collection('post').add({
     postText: userText,
@@ -13,6 +14,7 @@ export const addTextPost = (userText, userID, userName, privacy) => (
   })
 );
 
+// gets post collection in descending order
 export const getTextPost = (funcionleerdatos) => {
   firebase.firestore().collection('post').orderBy('datePost', 'desc').onSnapshot((snapshot) => {
     const array = [];
@@ -28,4 +30,18 @@ export const getTextPost = (funcionleerdatos) => {
     });
     funcionleerdatos(array);
   });
+};
+
+// deletes a post from collection
+export const getPostToDelete = (postId) => {
+  firebase.firestore().collection('post').doc(postId).delete();
+};
+
+export const deletePost = (post) => {
+  getPostToDelete(post.id).then(() => {
+    console.log('Document successfully deleted!');
+  })
+    .catch((error) => {
+      console.error('Error removing document: ', error);
+    });
 };

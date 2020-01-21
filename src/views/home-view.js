@@ -1,8 +1,8 @@
 import { signOut } from '../model/user-authentication.js';
-import { addTextPost } from '../model/model-post.js';
+import { addTextPost /* deletePost */ } from '../model/model-post.js';
 
 
-const printDate = (dat) => {
+/* const printDate = (dat) => {
   const time = dat.toDate();
   const month = time.toLocaleString('default', { month: 'short' });
   const getDay = time.getDate();
@@ -13,38 +13,36 @@ const printDate = (dat) => {
   const postingTime = `A las ${getHour}:${getMinutes}`;
   const postingDate = `${day}. ${postingTime}`;
   return postingDate;
-};
-const setupPost = (data, postContent) => {
-  const postTemplate = postContent;
-  let template = '';
-  // console.log(data);
-  data.forEach((doc) => {
-    // console.log(doc.docID,doc.text, doc.privacidad, doc.userName, doc.userUID);
-    const horaPost = printDate(doc.date);
-    const div = `
-          <div id = "${doc.docID}" class="box-publication-feed">
+}; */
+
+const setupPost = (data) => {
+  /* const horaPost = printDate(data.date); */
+  const postTemplate = document.createElement('div');
+  postTemplate.classList.add('publication-post');
+  postTemplate.innerHTML = `
+          <div id ="${data.docID}" class="box-publication-feed">
             <div class="box-publication-feed-header">
-              <span id ="poster-name">${doc.userName} dice:</span>
+              <span id ="poster-name">${data.userName} dice:</span>
             </div>
-            <div class="box-publication-feed-text">${doc.text}</div>
+            <div class="box-publication-feed-text">${data.text}</div>
             <div class="box-likes">
               <div class="text-likes">
                 <img class="heart-likes" src="./img/lover.svg" alt="Likes heart picture"/>
-                <p class ="post-date">${horaPost}</p>
-                <button id="editar">Editar</button>
-                <button id="eliminar">Eliminar</button>
+                
+                <button id="editar-${data.docID}">Editar</button>
+                <button class = "btn-eliminar" id="eliminar-${data.docID}">Eliminar</button>
               </div>
             </div>
           </div>`;
 
-    template += div;
-  });
-  postTemplate.innerHTML = template;
-  // console.log(postTemplate);
+  console.log(postTemplate);
+  return postTemplate;
+  
 };
 
+
 export default (user, datos) => {
-  // console.log(datos);
+  console.log(datos);
   const homeView = `<header>
 <nav class="topnav" id="myTopnav">
   <a href="#/home" class="active">~Bon-a-Petit~</a>
@@ -102,19 +100,30 @@ export default (user, datos) => {
   const btnCerrarSesion = divElement.querySelector('#sign-out');
   const btnProfile = divElement.querySelector('#user-profile');
   const sendtextPost = divElement.querySelector('#send-text-post');
-  const postBox = divElement.querySelector('#test');
-  /* const privatePost = divElement.querySelector('#private'); */
 
   sendtextPost.addEventListener('click', (e) => {
     e.preventDefault();
     const textPost = divElement.querySelector('#publication-text').value;
     addTextPost(textPost, user.ID, user.Name, false);
   });
-  setupPost(datos, postBox);
+
+  const postElement = divElement.querySelector('#test');
+  datos.forEach((doc) => {
+    postElement.appendChild(setupPost(doc));
+  });
+
   btnProfile.addEventListener('click', (e) => {
     e.preventDefault();
     window.location.hash = '#/profile';
   });
+
+  // const newPost = divElement.querySelector(`btn-eliminar`);
+  // const deletePostBtn = divElement.querySelector('btn-eliminar');
+  // deletePostBtn.addEventListener('click', () => {
+  // console.log(datos.data().docId);
+  // //  deletePost(doc.docID);
+  // console.log('intenté borrar');
+  // });
 
   btnCerrarSesion.addEventListener('click', (e) => {
     e.preventDefault();
