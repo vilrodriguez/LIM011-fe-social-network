@@ -15,7 +15,7 @@ export const addTextPost = (userText, userID, userName, privacy) => (
 );
 
 export const getTextPost = (funcionleerdatos) => {
-  firebase.firestore().collection('post').onSnapshot((snapshot) => {
+  firebase.firestore().collection('post').orderBy('datePost', 'desc').onSnapshot((snapshot) => {
     const array = [];
     snapshot.forEach((doc) => {
       array.push({
