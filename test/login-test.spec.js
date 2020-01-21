@@ -1,5 +1,6 @@
 import {
-  createUser, signInUser, signOut, signInWithGoogle, signInWithFacebook, userCurrent,
+  // eslint-disable-next-line max-len
+  createUser, newUser, signInUser, signOut, signInWithGoogle, signInWithFacebook, userCurrent,
 } from '../src/model/user-authentication.js';
 
 const firebasemock = require('firebase-mock');
@@ -17,6 +18,16 @@ global.firebase = firebasemock.MockFirebaseSdk(
 // registrar usuario
 describe('Crear usuario', () => {
   it('debería logear un usuario', () => {
+    newUser('prueba-de-red@gmail.com, abc123').then((user) => {
+      // eslint-disable-next-line jest/valid-expect
+      expect(user.id, user.email, user.name, user.photo).toBe('user.uid, user.email, name, user.photoURL');
+    });
+  });
+});
+
+// new usuario
+describe('Registro de nuevo usuario', () => {
+  it('debería registrar un usuario nuevo', () => {
     createUser('prueba-de-red@gmail.com, abc123').then((user) => {
       expect(user.email).toBe('prueba-de-red');
     });
