@@ -39,9 +39,6 @@ export const getPostToDelete = (postId) => {
 
 export const deletePost = (post) => {
   getPostToDelete(post.id).then(() => {
-    console.log('Document successfully deleted!');
-  })
-    .catch((error) => {
-      console.error('Error removing document: ', error);
-    });
+    // console.log('Document successfully deleted!');
+  });
 };
