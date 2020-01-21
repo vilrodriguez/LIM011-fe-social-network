@@ -51,7 +51,7 @@ export default () => {
     const email = divElement.querySelector('input[type = "email"]').value;
     const password = divElement.querySelector('input[type= "password"]').value;
     const userName = divElement.querySelector('#user-name').value;
-    console.log(userName);
+    // console.log(userName);
     registerFunction(email, password, userName, mensajeError);
   });
   return divElement;

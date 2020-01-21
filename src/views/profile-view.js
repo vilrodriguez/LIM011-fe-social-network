@@ -57,8 +57,8 @@ export default (user) => {
   divElement.innerHTML = viewProfile;
 
   const userName = divElement.querySelector('#user-name');
-  const userMenu = divElement.querySelector('#user-menu');
-  const userAdress = divElement.querySelector('#address');
+  // const userMenu = divElement.querySelector('#user-menu');
+  // const userAdress = divElement.querySelector('#address');
 
   const btnNav = divElement.querySelector('#button-nav');
   const btnProfile = divElement.querySelector('#user-profile');
