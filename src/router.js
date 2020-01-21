@@ -1,6 +1,6 @@
 import { components } from './views/components.js';
 import { getInfoUser, getTextPost } from './model/model-post.js';
-import { userObserver } from './model/user-authentication.js';
+import { userObserver } from './controller-app/observador.js';
 
 const changeView = (route) => {
   const container = document.getElementById('container');
