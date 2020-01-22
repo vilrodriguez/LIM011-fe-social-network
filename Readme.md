@@ -146,7 +146,7 @@ anterior en la siguiente sección.
 
 
 ### HTML y CSS
-
+buscar seo info, html, 
 * [x] [HTML semántico](https://developer.mozilla.org/en-US/docs/Glossary/Semantics#Semantics_in_HTML)
 * [x] [CSS `flexbox`](https://css-tricks.com/snippets/css/a-guide-to-flexbox/)
 * [x] Construir tu aplicación respetando el diseño realizado (maquetación).
@@ -170,8 +170,8 @@ anterior en la siguiente sección.
 * [x] [Firestore](https://firebase.google.com/docs/firestore)
 * [x] [Firebase Auth](https://firebase.google.com/docs/auth/web/start)
 * [ ] [Firebase security rules](https://firebase.google.com/docs/rules)
-* [ ] [Uso de onSnapshot](https://firebase.google.com/docs/firestore/query-data/listen)
-| [onAuthStateChanged](https://firebase.google.com/docs/auth/web/start#set_an_authentication_state_observer_and_get_user_data)
+* [x] [Uso de onSnapshot](https://firebase.google.com/docs/firestore/query-data/listen)
+* [ ] [onAuthStateChanged](https://firebase.google.com/docs/auth/web/start#set_an_authentication_state_observer_and_get_user_data)
 
 ### Testing
 
@@ -195,7 +195,7 @@ anterior en la siguiente sección.
 ### Buenas prácticas de desarrollo
 
 * [x] Modularización
-* [x] Nomenclatura / Semántica
+* [ ] Nomenclatura / Semántica
 * [x] Linting
 
 ***
