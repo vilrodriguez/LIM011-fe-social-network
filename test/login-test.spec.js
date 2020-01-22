@@ -54,7 +54,8 @@ describe('Cerrar sesion', () => {
 describe('Iniciar sesion con gmail', () => {
   it('Deberia iniciar sesion con gmail ', () => signInWithGoogle()
     .then(() => {
-      expect(' ').toBe(' ');
+      console.log(firebase.auth().currentUser);
+      expect('').toBe('');
     }));
 });
 

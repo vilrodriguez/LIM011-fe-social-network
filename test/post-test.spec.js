@@ -31,9 +31,11 @@ global.firebase = new MockFirebase(fixtureData, { isNaiveSnapshotListenerEnabled
 describe('Agregar post', () => {
   it('Deberia agregar un post', done => addTextPost('post de prueba', '1', '30/08/19', 'usuariotest', false)
     .then(() => getTextPost(
-      (posts) => {
-        const result = posts.find(element => element.postText === 'post de prueba');
-        expect(result.postText).toBe('post de prueba');
+      (datos) => {
+        const result = datos.find(element => element.text === 'post de prueba');
+        console.log(result);
+        expect(result.text).toBe('post de prueba');
+        expect(result).not.toBe(undefined);
         done();
       },
     )));
@@ -49,3 +51,4 @@ describe('Eliminar post', () => {
       },
     )));
 });
+
