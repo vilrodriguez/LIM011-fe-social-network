@@ -1,0 +1,201 @@
+
+/************* Home *************/
+ .home {
+    background-color: #FFF;
+}
+.box-home {
+    display:flex;
+    flex-direction: row;
+    margin: 15px 0;   
+    justify-content: space-between; 
+}
+.box-profile {
+    display:flex;
+    flex-direction: column;
+    margin: 0 10px;
+    width: calc(calc(100% / 2) - 20%);
+    border-radius: 1em;
+}
+.banner-profile {
+    border-top: rgb(204, 203, 203) 1px solid;
+    border-right: rgb(204, 203, 203) 1px solid;
+    border-left: rgb(204, 203, 203) 1px solid;
+}
+.banner-img {
+    width: 100%;
+}
+.info-profile {
+    border-bottom: rgb(204, 203, 203) 1px solid;
+    border-right: rgb(204, 203, 203) 1px solid;
+    border-left: rgb(204, 203, 203) 1px solid;
+    min-height: 50px;
+    text-align: center;
+}
+.info-profile img.user-icon{
+    width: 20%;
+    height:auto;
+    float:left;
+    padding: .5em 0 .5em 1em;
+}
+.info-profile .user-name{
+    text-align: center;
+    padding: .5em;
+    justify-self: center;
+}
+.feed {
+    display:flex;
+    flex-direction: column;
+    margin: 0 10px;
+    width: calc(calc(100% / 2) + 15%);
+}
+.box-create-publication {
+    border:rgb(204, 203, 203) 1px solid;
+    border-radius: 2px;
+    padding: 5px;
+    margin-bottom: 20px;
+}
+.publication {
+    width: 100%;
+    height: auto;
+    border-radius: 4px;
+    margin: 0 auto;
+}
+.btn {
+    background-color:rgb(120, 169, 233);
+    border: none;
+    color: white;
+    padding: 5px 15px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+}
+.btn-add-image {
+    background-color: transparent;
+    border: none;
+    padding: 5px;
+    display: inline-block;
+    background-image: url('./img/add-image.png');
+    width: 35px;
+    height: 40px;
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+.pull-right {
+    float: right !important;
+}
+.pull-left {
+    float: left !important;
+}
+.box-publication-feed {
+    border:rgb(204, 203, 203) 1px solid;
+    min-height: 100px;
+    margin-bottom: 20px;
+}
+.box-publication-feed-header {
+    background-color: rgb(120, 169, 233);
+    border:rgb(102, 156, 226);
+    min-height: 10px;
+    border-radius: 2px;
+    padding: 5px;
+    font-weight: bold;
+}
+.box-publication-feed-text {
+    text-align: left;
+    padding: 5px;
+}
+.box-publication-feed-comment {
+    border:rgb(204, 203, 203) 1px solid;
+    min-height: 50px;
+    height: auto;
+    width: 95%;
+    text-align: left;
+    margin: 10px auto;
+    border-radius: 2px;
+}
+.box-publication-feed-comment-header {
+    background-color: rgb(120, 169, 233);
+    border:rgb(102, 156, 226);
+    min-height: 10px;
+    border-radius: 2px;
+    padding: 5px;
+    font-weight: bold;
+}
+.box-publication-feed-comment-text {
+    text-align: left;
+    padding: 5px;
+}
+.box-create-comment {
+    border:rgb(204, 203, 203) 1px solid;
+    border-radius: 2px;
+    padding: 5px;
+    margin-bottom: 20px;
+    width: 95%;
+    /* margin: 5px auto; */
+    min-height: 110px;
+}
+.box-likes {
+    width: 95%;
+    margin: 5px auto;
+    margin-bottom: 10px;
+}
+.heart-likes {
+    width: 30px;
+}
+.text-likes {
+    font-size: 12px;
+    vertical-align: middle;
+}
+
+@media screen and (max-width: 600px) {
+    .box-home {
+        flex-direction: column;
+    }
+    .box-profile {
+        width: 95%;
+        margin-top: 15px;
+    }
+    .feed {
+        width: 95%;
+        margin-top: 15px;
+    }
+    .error-message{
+        display: flex;
+        justify-content: start;
+        flex-direction: column;
+        margin-top: 0em;
+        width: 100vw;
+        height: 100vh;
+            
+    }
+    .error-message img{
+        width: 35%;
+        height:auto;
+        margin-top: 2em;
+    }
+    .error-message h1{
+        color: black;
+        font-size: 3em;
+        font-family: 'Pacifico', cursive;
+        margin-top: 1em;
+        margin-bottom: .5em;
+    }
+    .error-message h3{
+        color: black;
+        font-size: 1em;
+        margin-bottom: .5em;
+        
+    }
+}
+@media screen and (max-width: 600px) {
+    .box-home {
+        flex-direction: column;
+    }
+    .box-profile {
+        width: 95%;
+    }
+    .feed {
+        
+        width: 95%;
+    }
+}
