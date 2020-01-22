@@ -19,9 +19,9 @@ export const signInUser = (email, password) => (
   firebase.auth().signInWithEmailAndPassword(email, password)
 );
 
-export const signOut = () => {
-  firebase.auth().signOut();
-};
+export const signOut = () => (
+  firebase.auth().signOut()
+);
 
 export const signInWithGoogle = () => {
   const provider = new firebase.auth.GoogleAuthProvider();
@@ -31,14 +31,4 @@ export const signInWithFacebook = () => {
   const provider = new firebase.auth.FacebookAuthProvider();
   // firebase.auth().useDeviceLanguage();
   return firebase.auth().signInWithPopup(provider);
-};
-export const userObserver = (userInformation) => {
-  firebase.auth().onAuthStateChanged((user) => {
-    if (user) {
-      userInformation(user.uid);
-      // console.log('usuario logueado', user);
-    } else {
-      // console.log('Ha cerrado sesión');
-    }
-  });
 };

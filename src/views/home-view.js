@@ -1,22 +1,8 @@
 import { signOut } from '../model/user-authentication.js';
 import { addTextPost, getPostToDelete } from '../model/model-post.js';
 
-
-/* const printDate = (dat) => {
-  const time = dat.toDate();
-  const month = time.toLocaleString('default', { month: 'short' });
-  const getDay = time.getDate();
-  const getYear = time.getFullYear();
-  const getHour = time.getHours();
-  const getMinutes = time.getMinutes();
-  const day = `${getDay} of ${month}, ${getYear} `;
-  const postingTime = `A las ${getHour}:${getMinutes}`;
-  const postingDate = `${day}. ${postingTime}`;
-  return postingDate;
-}; */
-
 const setupPost = (data) => {
-  /* const horaPost = printDate(data.date); */
+  // const horaPost = printDate(data.date);
   const postTemplate = document.createElement('div');
   postTemplate.classList.add('publication-post');
   postTemplate.innerHTML = `
@@ -35,9 +21,9 @@ const setupPost = (data) => {
             </div>
           </div>`;
 
-  console.log(postTemplate);
+  //  console.log(postTemplate);
   const btnEliminar = postTemplate.querySelector(`#eliminar-${data.docID}`);
-  console.log(btnEliminar);
+  // console.log(btnEliminar);
   btnEliminar.addEventListener('click', () => {
     getPostToDelete(data.docID);/* .then(()=>{
       console.log('Se ha eliminado el post');
