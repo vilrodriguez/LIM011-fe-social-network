@@ -45,26 +45,31 @@ describe('Iniciar Sesion', () => {
 // Cerrar sesion
 describe('Cerrar sesion', () => {
   it('Deberia cerrar sesion', () => {
-    signOut();
-    expect(firebase.auth().currentUser).toBe(null);
+    signOut().then(() => {
+      expect(firebase.auth().currentUser).toBe(null);
+    });
   });
 });
 
 // Ingresar con gmail
 describe('Iniciar sesion con gmail', () => {
-  it('Deberia iniciar sesion con gmail ', () => signInWithGoogle()
-    .then(() => {
-      console.log(firebase.auth().currentUser);
-      expect('').toBe('');
-    }));
+  it('Deberia iniciar sesion con gmail ', () => {
+    signInWithGoogle().then(() => {
+      const result = (firebase.auth().currentUser);
+      expect(result.isAnonymous).toBe(false);
+    });
+  });
 });
+
 
 // ingresar con facebook
 describe('Iniciar sesion con facebook', () => {
-  it('Deberia iniciar sesion con facebook', () => signInWithFacebook()
-    .then(() => {
-      expect(' ').toBe(' ');
-    }));
+  it('Deberia iniciar sesion con facebook', () => {
+    signInWithFacebook().then(() => {
+      const result = (firebase.auth().currentUser);
+      expect(result.isAnonymous).toBe(false);
+    });
+  });
 });
 
 // Usuario actual

@@ -33,7 +33,7 @@ describe('Agregar post', () => {
     .then(() => getTextPost(
       (datos) => {
         const result = datos.find(element => element.text === 'post de prueba');
-        console.log(result);
+        // console.log(result);
         expect(result.text).toBe('post de prueba');
         expect(result).not.toBe(undefined);
         done();
@@ -51,4 +51,3 @@ describe('Eliminar post', () => {
       },
     )));
 });
-
