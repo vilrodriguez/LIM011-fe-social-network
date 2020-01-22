@@ -35,8 +35,8 @@ export const getTextPost = (funcionleerdatos) => {
 // deletes a post from collection
 export const getPostToDelete = postId => firebase.firestore().collection('post').doc(postId).delete();
 
-// export const deletePost = (post) => {
-//   getPostToDelete(post.docID).then(() => {
-//     // console.log('Document successfully deleted!');
-//   });
-// };
+export const updatePost = (userText, id) => {
+  firebase.firestore().collection('post').doc(id).update({
+    postText: userText,
+  });
+};
