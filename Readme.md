@@ -270,3 +270,38 @@ Recuerda que no puedes usar frameworks CSS, sólo *vanilla css* o [*sass*](https
 * [Mobile First Is NOT Mobile Only - Nielsen Norman Group](https://www.nngroup.com/articles/mobile-first-not-mobile-only/)
 
 ***
+Objetivos de aprendizajes pendientes
+HTML y CSS
+ [X] [HTML semántico]
+[X][CSS flexbox]
+ Construir tu aplicación respetando el diseño realizado (maquetación).
+DOM y Web APIs
+ [Manipulación dinámica del DOM]
+[ ] [History API]
+[ ] [localStorage]
+Javascript
+[X] [Uso de callbacks]
+[X] [Consumo de Promesas]
+ Uso ES modules
+Firebase
+[X] [Firestore]
+[X][Firebase Auth]
+[X] [Firebase security rules]
+[X] [Uso de onSnapshot] | [onAuthStateChange
+Testing
+[X] [Testeo de tus funciones]
+[X] [Testeo asíncrono]
+[X] [Mocking]
+Colaboración en Github
+[X]Branches
+[X]Pull Requests
+[ ] Tags
+Organización en Github
+ [X]Projects
+ [X]Issues
+ [X]Labels
+[X] Milestones
+Buenas prácticas de desarrollo
+[X] Modularización
+[X]Nomenclatura / Semántica
+[X]Linting
